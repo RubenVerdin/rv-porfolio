@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { name, role, email, mailtoHref } from '../data/portfolio'
+import { name, role, email, mailtoHref } from '~/data/portfolio'
 </script>
 
 <template>

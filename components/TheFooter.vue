@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { name, year, socials } from '../data/portfolio'
+import { name, year, socials } from '~/data/portfolio'
 </script>
 
 <template>

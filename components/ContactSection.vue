@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { email, mailtoHref, location, socials } from '../data/portfolio'
+import { email, mailtoHref, location, socials } from '~/data/portfolio'
 </script>
 
 <template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { stats } from '../data/portfolio'
+import { stats } from '~/data/portfolio'
 </script>
 
 <template>

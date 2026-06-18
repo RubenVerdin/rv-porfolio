@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { skills } from '../data/portfolio'
+import { skills } from '~/data/portfolio'
 </script>
 
 <template>

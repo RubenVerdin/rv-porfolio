@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useTheme } from 'rv-design'
-import { firstName, navLinks } from '../data/portfolio'
+import { firstName, navLinks } from '~/data/portfolio'
 
 const { mode, cycle } = useTheme()
 </script>
