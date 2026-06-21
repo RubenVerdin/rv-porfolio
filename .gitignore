@@ -16,6 +16,9 @@ dist-ssr
 .nuxt
 .output
 
+# Claude
+CLAUDE.MD
+
 # Env
 .env
 .env.*
