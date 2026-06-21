@@ -4,6 +4,22 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
 
+  devServer: {
+    port: 3000
+  },
+
+  runtimeConfig: {
+    public: {
+      wpBaseUrl: process.env.NUXT_PUBLIC_WP_BASE_URL
+    }
+  },
+
+  nitro: {
+    prerender: {
+      crawlLinks: true
+    }
+  },
+
   alias: {
     'rv-design': fileURLToPath(new URL('./node_modules/rv-design/src/index.ts', import.meta.url)),
   },

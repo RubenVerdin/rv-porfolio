@@ -5,6 +5,7 @@
     <AboutSection />
     <SkillsSection />
     <ExperienceSection />
+    <ProjectsSection />
     <ResumeCta />
     <ContactSection />
     <TheFooter />
