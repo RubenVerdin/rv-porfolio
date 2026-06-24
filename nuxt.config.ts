@@ -28,8 +28,14 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Ruben Verdin — Frontend Engineer',
-      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+      title: 'Ruben Verdin — Frontend Developer',
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        {
+          rel: 'stylesheet',
+          href: 'https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap',
+        },
+      ],
       style: [
         { children: 'html { scroll-behavior: smooth; } body { margin: 0; } *::selection { background: var(--rv-accent-subtle); }' },
       ],
