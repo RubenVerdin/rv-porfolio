@@ -1,5 +1,6 @@
 <script setup lang="ts">
 // Round cancellation mark: two short lines ("APR 30" / "2025").
+// Parents can set --postmark-rotate, --postmark-size, --postmark-font-size.
 withDefaults(defineProps<{
   lines: [string, string]
   size?: 'md' | 'sm'
@@ -19,27 +20,26 @@ withDefaults(defineProps<{
 
 <style scoped lang="scss">
 .postmark {
-  --postmark-size: 78px;
-
   position: relative;
   display: flex;
   flex: none;
   align-items: center;
   justify-content: center;
-  width: var(--postmark-size);
-  height: var(--postmark-size);
+  width: var(--postmark-size, 78px);
+  height: var(--postmark-size, 78px);
   border-radius: var(--rv-radius-round);
   border: var(--rv-border-thick) solid var(--rv-color-ink);
   text-align: center;
   font-family: var(--rv-font-mono);
-  font-size: var(--rv-text-9-5);
+  font-size: var(--postmark-font-size, var(--rv-text-9-5));
   letter-spacing: var(--rv-tracking-10);
   line-height: var(--rv-leading-140);
   color: var(--rv-color-ink);
   transform: rotate(var(--postmark-rotate, -8deg));
 
   &--sm {
-    --postmark-size: 72px;
+    width: var(--postmark-size, 72px);
+    height: var(--postmark-size, 72px);
   }
 }
 </style>

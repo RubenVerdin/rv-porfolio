@@ -1,10 +1,12 @@
 <script setup lang="ts">
-import type { Section } from '~/types/content'
-import { name, nav } from '~/data/site'
+import type { NavKey } from '~/types/content'
+import { primaryNav } from '~/data/nav'
+import { name } from '~/data/site'
 
 // The homepage top bar, used on every page (decision 2026-10-17).
+// `current` is undefined on pages outside the nav (/sitemap, /privacy).
 defineProps<{
-  current?: Section
+  current?: NavKey
 }>()
 
 const { edition, setEdition } = useEdition()
@@ -42,7 +44,7 @@ const menu = useTemplateRef<{ open: (trigger?: EventTarget | null) => void, isOp
       <div class="site-header__actions">
         <PrimaryNav
           class="site-header__nav"
-          :items="nav"
+          :items="primaryNav"
           :current="current"
         />
         <EditionToggle v-model="editionModel" />

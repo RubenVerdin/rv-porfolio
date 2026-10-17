@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { NavItem, Section } from '~/types/content'
+import type { NavItem, NavKey } from '~/types/content'
 
 defineProps<{
   items: NavItem[]
-  current?: Section
+  current?: NavKey
 }>()
 </script>
 
@@ -17,8 +17,8 @@ defineProps<{
       :key="item.to"
       :to="item.to"
       class="primary-nav__link"
-      :class="{ 'primary-nav__link--current': item.section === current }"
-      :aria-current="item.section === current ? 'page' : undefined"
+      :class="{ 'primary-nav__link--current': item.key === current }"
+      :aria-current="item.key === current ? 'page' : undefined"
     >
       {{ item.label }}
     </NuxtLink>

@@ -70,3 +70,13 @@ export function numberWord(n: number) {
 export function slugOf(path: string) {
   return path.split('/').filter(Boolean).pop() ?? ''
 }
+
+/** "October 17, 2026" — the "Last updated" line. UTC so SSG output is stable. */
+export function longDate(value: string | Date) {
+  return toDate(value).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    timeZone: 'UTC',
+  })
+}

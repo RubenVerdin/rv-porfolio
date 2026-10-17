@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Default page</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="../styles/site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rv {{themeClass}}" style="min-height: 100vh">
+<dc-import name="Header" in-page="{{ true }}" current="page" night="{{night}}" on-day="{{setDay}}" on-night="{{setNight}}" hint-size="100%,110px"></dc-import>
+<dc-import name="PageHead" in-page="{{ true }}" kicker="The Fine Print" aside="Last updated · [Month DD, YYYY]" title="Lorem ipsum" accent="dolor sit." dek="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Page summary falls back to this line when none is provided." hint-size="100%,380px"></dc-import>
+<article class="wrap" aria-label="Page content" style="padding-top: 8px; padding-bottom: 120px">
+<div class="prose">
+<p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p>Duis aute irure dolor in <a href="Page.dc.html">reprehenderit in voluptate</a> velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia <strong>deserunt mollit anim</strong> id est laborum. Sed ut perspiciatis unde <em>omnis iste natus</em> error sit voluptatem.</p>
+<h2>Lorem ipsum dolor</h2>
+<p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.</p>
+<h3>Sit amet consectetur</h3>
+<ul><li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li><li>Sed do eiusmod tempor incididunt ut labore et dolore.</li><li>Ut enim ad minim veniam, quis nostrud exercitation.<ul><li>Nested item — duis aute irure dolor in reprehenderit.</li></ul></li></ul>
+<ol><li>Neque porro quisquam est qui dolorem ipsum.</li><li>Quia dolor sit amet, consectetur, adipisci velit.</li><li>Sed quia non numquam eius modi tempora incidunt.</li></ol>
+<blockquote>Lorem ipsum dolor sit amet, consectetur adipiscing elit — sed do eiusmod tempor.<cite>— Lorem Ipsum</cite></blockquote>
+<h4>Ut enim ad minima veniam</h4>
+<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur. Use <code>inline code</code> for short snippets.</p>
+<figure><div class="plate-img"><div class="plate-ph"><span class="mono">[ Image · 3:2 ]</span></div></div><figcaption><span>Fig. 1 — Lorem ipsum dolor sit amet.</span><span>Credit</span></figcaption></figure>
+<div class="table-wrap"><table><thead><tr><th>Lorem</th><th>Ipsum</th><th>Dolor</th></tr></thead><tbody><tr><td>Sit amet</td><td>Consectetur adipiscing</td><td>MMXXVI</td></tr><tr><td>Sed do</td><td>Eiusmod tempor</td><td>MMXXV</td></tr><tr><td>Ut labore</td><td>Et dolore magna</td><td>MMXXIV</td></tr></tbody></table></div>
+<hr>
+<pre><div class="code-h"><span>example.ts</span><span>TypeScript</span></div><code>// Lorem ipsum dolor sit amet
+export const loremIpsum = (dolor: string) =&gt; `sit amet, ${dolor}`</code></pre>
+<div class="callout"><span class="mono">Nota bene</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Callouts hold notices, disclaimers or anything the reader shouldn’t miss.</div>
+<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+</div>
+<div class="signoff" style="margin-top: 56px">
+<div><div style="font-family: var(--display); font-style: italic; font-size: 18px; color: var(--ink-2)">Yours in code &amp; ink,</div><div style="font-family: var(--display); font-style: italic; font-size: 32px">R. Verdin</div></div>
+<a href="Sitemap.dc.html" class="btn btn-line">Sitemap <span class="arr">→</span></a>
+</div>
+</article>
+<dc-import name="BackPage" in-page="{{ true }}" hint-size="100%,1000px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"edition": {"editor": "enum", "options": ["Day", "Night"], "default": "Day"}, "$preview": {"width": 1440, "height": 4100}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { night: null };
+  }
+  renderVals() {
+    var self = this;
+    var night = this.state.night !== null ? this.state.night : (this.props.edition === 'Night');
+    return {
+      themeClass: night ? 'theme-night' : 'theme-day',
+      night: night,
+      setDay: function () { self.setState({ night: false }); },
+      setNight: function () { self.setState({ night: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+--- a/Main.dc.html	2026-10-17 14:38:47.710907788 -0400
++++ b/Main.dc.html	2026-10-17 14:38:47.713261327 -0400
+@@ -26,8 +26,10 @@
+ </div>
+ <div class="tb-right">
+ <nav class="topnav" aria-label="Primary">
++<a href="Main.dc.html" class="mono" aria-current="page" style="text-decoration: none; padding: 12px 0; color: var(--accent); border-bottom: 2px solid var(--accent)">Home</a>
+ <a href="WorkList.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">Work</a>
+ <a href="WritingList.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">Writing</a>
++<a href="About.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">About</a>
+ <a href="Contact.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">Contact</a>
+ </nav>
+ <div class="ed" role="group" aria-label="Theme">
+@@ -52,10 +54,11 @@
+ <p class="ml-p">Where shall we set sail? Pick a heading below and I’ll take you there.</p>
+ </div>
+ <nav aria-label="Menu" class="ml-nav">
+-<a href="#about" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">N</span><span class="ml-t">The Chart</span><span class="ml-dots"></span><span class="ml-s">what I do</span></a>
+-<a href="WorkList.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">E</span><span class="ml-t">Work</span><span class="ml-dots"></span><span class="ml-s">atlas of works</span></a>
+-<a href="WritingList.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">S</span><span class="ml-t">Writing</span><span class="ml-dots"></span><span class="ml-s">correspondence</span></a>
+-<a href="Contact.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">W</span><span class="ml-t">Contact</span><span class="ml-dots"></span><span class="ml-s">the back page</span></a>
++<a href="#about" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">N</span><span class="ml-t">Home</span><span class="ml-dots"></span><span class="ml-s">the chart</span></a>
++<a href="WorkList.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">NE</span><span class="ml-t">Work</span><span class="ml-dots"></span><span class="ml-s">atlas of works</span></a>
++<a href="WritingList.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">E</span><span class="ml-t">Writing</span><span class="ml-dots"></span><span class="ml-s">correspondence</span></a>
++<a href="About.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">SE</span><span class="ml-t">About</span><span class="ml-dots"></span><span class="ml-s">the correspondent</span></a>
++<a href="Contact.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">S</span><span class="ml-t">Contact</span><span class="ml-dots"></span><span class="ml-s">the back page</span></a>
+ </nav>
+ <div class="ml-sign">
+ <div><div class="ml-p" style="font-style: italic">Yours in code &amp; ink,</div><div class="ml-name">R. Verdin</div></div>

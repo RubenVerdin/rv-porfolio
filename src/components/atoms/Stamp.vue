@@ -2,23 +2,29 @@
 import type { StampColor } from '~/types/content'
 
 // Perforated postage stamp. `paper` is the colour the perforations are cut
-// from: the page paper, or the fixed envelope paper.
+// from: the page paper, or the fixed envelope paper. `title` adds a big
+// place name over the label ("México" / "ORIGEN"); `placeholder` is the
+// dashed, uncoloured "next port" stamp.
 withDefaults(defineProps<{
   color: StampColor
   icon: string
   label: string
-  size?: 'md' | 'sm'
+  title?: string
+  size?: 'md' | 'sm' | 'lg'
   paper?: 'page' | 'envelope'
+  placeholder?: boolean
 }>(), {
+  title: undefined,
   size: 'md',
   paper: 'page',
+  placeholder: false,
 })
 </script>
 
 <template>
   <div
     class="stamp"
-    :class="[`stamp--${size}`, `stamp--on-${paper}`]"
+    :class="[`stamp--${size}`, `stamp--on-${paper}`, { 'stamp--placeholder': placeholder }]"
   >
     <div
       class="stamp__face"
@@ -31,6 +37,10 @@ withDefaults(defineProps<{
       >
         <path :d="icon" />
       </svg>
+      <b
+        v-if="title"
+        class="stamp__title"
+      >{{ title }}</b>
       {{ label }}
     </div>
   </div>
@@ -54,6 +64,11 @@ withDefaults(defineProps<{
   &--sm {
     --stamp-width: 52px;
     --stamp-height: 62px;
+  }
+
+  &--lg {
+    --stamp-width: 96px;
+    --stamp-height: 112px;
   }
 
   &__face {
@@ -82,6 +97,43 @@ withDefaults(defineProps<{
     stroke: var(--rv-stamp-ink);
     fill: none;
     stroke-width: 1.5;
+  }
+
+  &__title {
+    font-family: var(--rv-font-display);
+    font-weight: var(--rv-weight-regular);
+    font-size: var(--rv-text-20);
+    letter-spacing: var(--rv-tracking-0);
+    text-transform: none;
+  }
+
+  &--lg &__face {
+    font-size: var(--rv-text-10);
+  }
+
+  &--placeholder &__face {
+    background: transparent;
+    border: var(--rv-border-medium) dashed var(--rv-color-ink-muted);
+    color: var(--rv-color-ink-muted);
+  }
+
+  &--placeholder &__icon {
+    stroke: var(--rv-color-ink-muted);
+  }
+}
+
+@include page-below(xs) {
+  .stamp--lg {
+    --stamp-width: 78px;
+    --stamp-height: 92px;
+  }
+
+  .stamp--lg .stamp__face {
+    font-size: var(--rv-text-9);
+  }
+
+  .stamp__title {
+    font-size: var(--rv-text-16);
   }
 }
 </style>

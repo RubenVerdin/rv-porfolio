@@ -1,9 +1,6 @@
 import type {
   CrossBannerPreset,
-  FooterLink,
   LinkRow,
-  MenuItem,
-  NavItem,
   NewsItem,
   Territory,
 } from '~/types/content'
@@ -23,19 +20,6 @@ export const intro
 export const email = 'contact@rubenverdin.com'
 export const linkedin = { handle: 'ruben-verdin', url: 'https://www.linkedin.com/in/ruben-verdin' }
 export const github = { handle: 'RubenVerdin', url: 'https://github.com/RubenVerdin' }
-
-export const nav: NavItem[] = [
-  { label: 'Work', to: '/work', section: 'work' },
-  { label: 'Writing', to: '/writing', section: 'writing' },
-  { label: 'Contact', to: '/contact', section: 'contact' },
-]
-
-export const menu: MenuItem[] = [
-  { point: 'N', label: 'The Chart', aside: 'what I do', to: '/#about' },
-  { point: 'E', label: 'Work', aside: 'atlas of works', to: '/work' },
-  { point: 'S', label: 'Writing', aside: 'correspondence', to: '/writing' },
-  { point: 'W', label: 'Contact', aside: 'the back page', to: '/contact' },
-]
 
 /** The third item ("Off the press") is filled from the lead dispatch. */
 export const news: NewsItem[] = [
@@ -115,13 +99,6 @@ export const contactRows: LinkRow[] = [
 
 export const colophon
   = 'Set in IM Fell English, Newsreader, Antonio & IBM Plex Mono. Independent views on software, design, and urbanism. Content is for general information, not professional advice.'
-
-// TODO: design these pages (decision 2026-10-17 — links stay, point nowhere).
-export const footerLinks: FooterLink[] = [
-  { label: 'RSS', href: null },
-  { label: 'Privacy', href: null },
-  { label: 'Sitemap', href: null },
-]
 
 export const crossBanners: Record<'toWriting' | 'toWork', CrossBannerPreset> = {
   toWriting: {

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { MenuItem } from '~/types/content'
+import type { NavItem } from '~/types/content'
 
 defineProps<{
-  item: MenuItem
+  item: NavItem
 }>()
 </script>
 
@@ -14,7 +14,7 @@ defineProps<{
     <span class="menu-link__point">{{ item.point }}</span>
     <span class="menu-link__label">{{ item.label }}</span>
     <Leader class="menu-link__leader" />
-    <span class="menu-link__aside">{{ item.aside }}</span>
+    <span class="menu-link__aside">{{ item.sub }}</span>
   </NuxtLink>
 </template>
 
@@ -38,8 +38,8 @@ defineProps<{
     border: var(--rv-border-hairline) solid var(--rv-object-letter-accent);
     border-radius: var(--rv-radius-round);
     font-family: var(--rv-font-mono);
-    font-size: var(--rv-text-11);
-    letter-spacing: var(--rv-tracking-10);
+    font-size: var(--rv-text-10);
+    letter-spacing: var(--rv-tracking-4);
     color: var(--rv-object-letter-accent);
     transform: translateY(calc(var(--rv-space-3) * -1));
   }

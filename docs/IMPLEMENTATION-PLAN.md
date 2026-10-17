@@ -417,3 +417,34 @@ the `nuxt-starter/` files either, so they never existed as separate files: the p
 (§3). Extra boards that aren't in the handoff are `Artboard-skay` (a moodboard of 8 pasted
 reference images) and the `*-Tablet` / `*-Mobile` wrappers, which just embed the desktop pages
 at 834 and 390px.
+
+---
+
+## 10. v2 delta (2026-10-17)
+
+Source: `design-handoff/v2/CHANGES.md`. The v1 handoff moved to `design-handoff/v1/`. Applied in
+the suggested order 1 → 2 → 3 → 6 → 5 → 4; unchanged pages were not rebuilt.
+
+| # | Change | Where it landed |
+| --- | --- | --- |
+| 1 | CSS v9–v14 | v9 → `_prose.scss` (links, `strong`, `h4`, Roman `ol`, nested lists, inline code, dotted `hr`, tables) + `content/ProseTable.vue` + `content/Callout.vue`. v10 → `IndexRow`. v13/v14 → scoped in the About components. `.ml-n` → `MenuLink`. New tokens: `--rv-weight-semibold`, `--rv-text-section-sub`, `--rv-leading-120`, `--rv-tracking-4`, `--rv-shadow-paper-xl`, `--rv-shadow-vignette`, `--rv-shadow-port-ring`, `--rv-texture-photo-halftone`, `--rv-texture-rule-dots`, and the theme-aware `--rv-filter-photo` / `--rv-blend-halftone` / `--rv-opacity-halftone`. |
+| 2 | Home + About nav; 5 compass points | `src/data/nav.ts` (`primaryNav`) feeds `SiteHeader`/`PrimaryNav` and `MenuLetter`/`MenuLink`. `Section` → `NavKey` (adds `about`); `section` meta is optional, so `/sitemap` and `/privacy` highlight nothing. |
+| 3 | Footer links | `footerLinks` in `nav.ts`: Privacy → `/privacy`, Sitemap → `/sitemap`; RSS stays inert. |
+| 6 | Default content page | `pages/[...slug].vue` + `pages` collection (`content/pages/*.md`, prefix `/`) + `useContentPage`; lorem fallback in `content/fallback/page.md` (`pageFallback` collection). |
+| 5 | `/sitemap` | `pages/sitemap.vue` → `PageIndex` → `IndexRow`, rows from `sitemapPages`. |
+| 4 | `/about` | `pages/about.vue`: `AboutIntro` (`AboutPortrait` + story) · `Logbook` (`LogbookEntry`) · `InstrumentsAboard` · `PortsOfCall` · `CrossBanner` (`toWork`). Data in `src/data/about.ts`, story in `content/about/story.md`, mapping in `useAbout`. `Stamp` gained `title`, `size="lg"`, `placeholder`; `Postmark` takes `--postmark-size` / `--postmark-font-size`; `SectionHead` gained `size="sub"` and placeholder links (`to: null`). |
+
+**Decisions (2026-10-17):**
+
+- **RSS:** stays inert until a feed exists (no `/rss.xml`).
+- **`/sitemap.xml`:** `@nuxtjs/sitemap` is deferred. When it's added it needs the production site URL.
+- **About content:** the short story is markdown; the logbook, instruments and ports are TS layout copy.
+- **Home link:** goes to `/` from everywhere, including the menu letter. The old `/#about` chart jump is gone.
+- **Supersedes §8:** "About page removed" no longer applies, because the v2 design adds `/about`.
+
+**Deliberate deviations:**
+
+- **Logbook route line:** it is centred on the port dots. The design CSS puts the desktop line at 150px, about 20px left of the dots.
+- **Instrument columns:** each column takes its kicker and role from the matching chart territory in `site.ts`, so it can't drift from the homepage. The ports kicker comes from the Traveler territory the same way.
+- **Privacy has no copy yet:** only its title is set, so the page shows the full lorem fallback, which doubles as the visual test page.
+- **Placeholders:** the portrait `src`, `[Download CV]` and every bracketed value stay as they are.

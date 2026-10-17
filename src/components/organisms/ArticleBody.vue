@@ -1,9 +1,20 @@
 <script setup lang="ts">
-import type { ProjectsCollectionItem, PostsCollectionItem } from '@nuxt/content'
+import type {
+  AboutCollectionItem,
+  PageFallbackCollectionItem,
+  PagesCollectionItem,
+  PostsCollectionItem,
+  ProjectsCollectionItem,
+} from '@nuxt/content'
 
 // Markdown body inside the global `.prose` block (see assets/styles/_prose.scss).
 defineProps<{
-  value: ProjectsCollectionItem | PostsCollectionItem
+  value:
+    | ProjectsCollectionItem
+    | PostsCollectionItem
+    | PagesCollectionItem
+    | PageFallbackCollectionItem
+    | AboutCollectionItem
 }>()
 </script>
 

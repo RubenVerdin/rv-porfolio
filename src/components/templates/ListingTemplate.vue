@@ -1,16 +1,10 @@
 <script setup lang="ts">
-import type { CrossBannerPreset } from '~/types/content'
+import type { CrossBannerPreset, PageHeadView } from '~/types/content'
 
 // /work and /writing: page heading, the listing, then the cross-link
 // banner to the other section.
 defineProps<{
-  head: {
-    kicker: string
-    aside?: string
-    title: string
-    accent?: string
-    dek?: string
-  }
+  head: PageHeadView
   banner: CrossBannerPreset
   label: string
 }>()

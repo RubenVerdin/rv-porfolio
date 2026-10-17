@@ -19,6 +19,8 @@ export default defineNuxtConfig({
 
   typescript: {
     strict: true,
+    // The handoff's starter .ts files are reference material, not app code.
+    tsConfig: { exclude: ['../design-handoff'] },
   },
 
   // Atomic folders (atoms/molecules/organisms/templates) are organisational

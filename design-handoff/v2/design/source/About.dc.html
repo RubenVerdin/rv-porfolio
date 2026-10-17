@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>About — The Correspondent</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="../styles/site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rv {{themeClass}}" style="min-height: 100vh">
+<dc-import name="Header" in-page="{{ true }}" current="about" night="{{night}}" on-day="{{setDay}}" on-night="{{setNight}}" hint-size="100%,110px"></dc-import>
+<dc-import name="PageHead" in-page="{{ true }}" kicker="Section E — The Correspondent" aside="México · Toronto" title="About" accent="the correspondent." dek="Developer, designer, writer and traveler — a short story and a long logbook." hint-size="100%,380px"></dc-import>
+<section class="wrap" aria-label="My story" style="padding-top: 16px; padding-bottom: 120px">
+<div class="about-intro">
+<figure class="portrait">
+<div class="stamp" aria-hidden="true"><div class="stamp-in st-seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M12 3l3 9-3 9-3-9z"></path></svg>MX·CA</div></div>
+<div class="portrait-frame">
+<div class="portrait-vignette"></div>
+<div class="portrait-ph"><span class="mono">[ Your portrait · 4:5 ]</span></div>
+</div>
+<figcaption class="mono"><span>Fig. — R. Verdin</span><span>[Place, Year]</span></figcaption>
+<div class="pm" aria-hidden="true">TORONTO<br>ON</div>
+</figure>
+<div class="about-story">
+<div class="mono" style="color: var(--accent); margin-bottom: 18px">A short story</div>
+<div class="prose">
+<p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+<blockquote>Lorem ipsum dolor sit amet — consectetur adipiscing elit, sed do eiusmod.<cite>— [A line you live by]</cite></blockquote>
+<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+</div>
+<div class="about-sign">
+<div><div style="font-family: var(--display); font-style: italic; font-size: 18px; color: var(--ink-2)">Yours in code &amp; ink,</div><div style="font-family: var(--display); font-style: italic; font-size: 34px">R. Verdin</div></div>
+<a href="Contact.dc.html" class="btn btn-ink">Write to me <span class="arr">→</span></a>
+</div>
+</div>
+</div>
+</section>
+<section class="wrap" aria-label="Experience" style="padding-bottom: 120px">
+<div class="sec-head"><span class="mono">The Logbook</span><a href="Contact.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">[Download CV] ↓</a></div>
+<h2 class="sec-sub">Ports of <em>experience.</em></h2>
+<div class="logbook">
+<div class="log-entry is-now">
+<span class="log-when">[2024] — Now</span><span class="log-port" aria-hidden="true"></span>
+<div><h3 class="log-role">[Role title]</h3><div class="log-co">[Company or studio]</div><p class="log-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore — [one or two lines on what you did and shipped].</p></div>
+<span class="log-where">Toronto, CA</span>
+</div>
+<div class="log-entry">
+<span class="log-when">[2021] — [2024]</span><span class="log-port" aria-hidden="true"></span>
+<div><h3 class="log-role">[Role title]</h3><div class="log-co">[Company or studio]</div><p class="log-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore — [one or two lines on what you did and shipped].</p></div>
+<span class="log-where">[City, Country]</span>
+</div>
+<div class="log-entry">
+<span class="log-when">[2018] — [2021]</span><span class="log-port" aria-hidden="true"></span>
+<div><h3 class="log-role">[Role title]</h3><div class="log-co">[Company or studio]</div><p class="log-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore — [one or two lines on what you did and shipped].</p></div>
+<span class="log-where">[City, Country]</span>
+</div>
+<div class="log-entry">
+<span class="log-when">[2015] — [2018]</span><span class="log-port" aria-hidden="true"></span>
+<div><h3 class="log-role">[Role title]</h3><div class="log-co">[School or first job]</div><p class="log-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore — [one or two lines on what you did and shipped].</p></div>
+<span class="log-where">México</span>
+</div>
+</div>
+</section>
+<section class="wrap" aria-label="Skills" style="padding-bottom: 120px">
+<div class="sec-head"><span class="mono">Instruments aboard</span><span class="mono" style="color: var(--ink-2)">What I work with</span></div>
+<div class="instruments">
+<div class="instr"><span class="mono" style="color: var(--accent)">I. · Costa del Código</span><h3>Developer</h3><ul><li>Vue</li><li>TypeScript</li><li>[Tool]</li><li>[Tool]</li><li>[Tool]</li></ul></div>
+<div class="instr"><span class="mono" style="color: var(--accent)">II. · Islas del Diseño</span><h3>Designer</h3><ul><li>Design tokens</li><li>Component systems</li><li>Documentation</li><li>[Tool]</li><li>[Tool]</li></ul></div>
+<div class="instr"><span class="mono" style="color: var(--accent)">III. · Bahía de las Letras</span><h3>Writer</h3><ul><li>Essays on craft</li><li>Cities &amp; urbanism</li><li>[Topic]</li><li>[Topic]</li></ul></div>
+</div>
+</section>
+<section class="wrap" aria-label="Places" style="padding-bottom: 130px">
+<div class="sec-head"><span class="mono">IV. · Tierra Natal — Ports of call</span><span class="mono" style="color: var(--ink-2)">Where I’ve been</span></div>
+<div class="ports">
+<div class="stamp"><div class="stamp-in st-red"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M5 20l3-6h8l3 6M9 14l3-8 3 8"></path></svg><b>México</b>ORIGEN</div></div>
+<div class="stamp"><div class="stamp-in st-navy"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v20M8 22h8M10 8h4M9 12h6"></path></svg><b>Toronto</b>HOME PORT</div></div>
+<div class="stamp"><div class="stamp-in st-brown"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M4 12h16M12 4c3 3 3 13 0 16M12 4c-3 3-3 13 0 16"></path></svg><b>[Place]</b>[YEAR]</div></div>
+<div class="stamp"><div class="stamp-in st-steel"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"></circle><path d="M4 12h16M12 4c3 3 3 13 0 16M12 4c-3 3-3 13 0 16"></path></svg><b>[Place]</b>[YEAR]</div></div>
+<div class="stamp ph-next"><div class="stamp-in"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg><b>Next port</b>[?]</div></div>
+</div>
+</section>
+<dc-import name="CrossBanner" in-page="{{ true }}" kicker="Next port · The Atlas of Works" title="See the" accent="atlas." dek="Good ideas, carefully made — every project catalogued as a plate." cta="Open the atlas" href="WorkList.dc.html" words="The Atlas|plates|Projects|works" hint-size="100%,680px"></dc-import>
+<dc-import name="BackPage" in-page="{{ true }}" hint-size="100%,1000px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"edition": {"editor": "enum", "options": ["Day", "Night"], "default": "Day"}, "$preview": {"width": 1440, "height": 4600}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { night: null };
+  }
+  renderVals() {
+    var self = this;
+    var night = this.state.night !== null ? this.state.night : (this.props.edition === 'Night');
+    return {
+      themeClass: night ? 'theme-night' : 'theme-day',
+      night: night,
+      setDay: function () { self.setState({ night: false }); },
+      setNight: function () { self.setState({ night: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,9 +1,12 @@
 <script setup lang="ts">
-// /work/[slug] and /writing/[slug]: head, optional media, the prose body,
-// then whatever follows the article (pager, more dispatches).
+// /work/[slug], /writing/[slug] and content pages: head, optional media,
+// the prose body, then whatever follows the article (pager, more dispatches).
 withDefaults(defineProps<{
-  /** `airy` under a cover image (work); `snug` straight after the head (writing). */
-  spacing?: 'airy' | 'snug'
+  /**
+   * `airy` under a cover image (work); `snug` straight after the head
+   * (writing); `flush` right under a PageHead (content pages).
+   */
+  spacing?: 'airy' | 'snug' | 'flush'
 }>(), {
   spacing: 'airy',
 })
@@ -34,6 +37,11 @@ withDefaults(defineProps<{
     &--snug {
       padding-top: var(--rv-space-40);
       padding-bottom: var(--rv-space-80);
+    }
+
+    &--flush {
+      padding-top: var(--rv-space-8);
+      padding-bottom: var(--rv-space-120);
     }
   }
 }

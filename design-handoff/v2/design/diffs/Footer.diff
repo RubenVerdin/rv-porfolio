@@ -1,0 +1,13 @@
+--- a/Footer.dc.html	2026-10-17 14:38:47.715449941 -0400
++++ b/Footer.dc.html	2026-10-17 14:38:47.717477774 -0400
+@@ -28,8 +28,8 @@
+ <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 4px 22px; align-items: center">
+ <span class="mono" style="color: var(--ink-2)">© 2026 Ruben Verdin</span>
+ <a href="Main.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">RSS</a>
+-<a href="Main.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">Privacy</a>
+-<a href="Main.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">Sitemap</a>
++<a href="Page.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">Privacy</a>
++<a href="Sitemap.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">Sitemap</a>
+ </nav>
+ </footer>
+ </div>

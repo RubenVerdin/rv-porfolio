@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sitemap</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="../styles/site.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rv {{themeClass}}" style="min-height: 100vh">
+<dc-import name="Header" in-page="{{ true }}" current="sitemap" night="{{night}}" on-day="{{setDay}}" on-night="{{setNight}}" hint-size="100%,110px"></dc-import>
+<dc-import name="PageHead" in-page="{{ true }}" kicker="The Index" aside="Every page, in one place" title="The" accent="Sitemap." dek="Every page on this site, in one list." hint-size="100%,380px"></dc-import>
+<section class="wrap" aria-label="All pages" style="padding-bottom: 120px">
+<div class="ix-wrap">
+<a href="Main.dc.html" class="ix"><span class="ix-n">01</span><span class="ix-t">Home</span><span class="mono ix-hide" style="color: var(--ink-2)">The chart · what I do</span><span class="mono ix-hide"></span><span class="arr">→</span></a>
+<a href="WorkList.dc.html" class="ix"><span class="ix-n">02</span><span class="ix-t">Work</span><span class="mono ix-hide" style="color: var(--ink-2)">The Atlas of Works</span><span class="mono ix-hide"></span><span class="arr">→</span></a>
+<a href="WritingList.dc.html" class="ix"><span class="ix-n">03</span><span class="ix-t">Writing</span><span class="mono ix-hide" style="color: var(--ink-2)">Correspondence</span><span class="mono ix-hide"></span><span class="arr">→</span></a>
+<a href="About.dc.html" class="ix"><span class="ix-n">04</span><span class="ix-t">About</span><span class="mono ix-hide" style="color: var(--ink-2)">The correspondent</span><span class="mono ix-hide"></span><span class="arr">→</span></a>
+<a href="Contact.dc.html" class="ix"><span class="ix-n">05</span><span class="ix-t">Contact</span><span class="mono ix-hide" style="color: var(--ink-2)">Let’s work together</span><span class="mono ix-hide"></span><span class="arr">→</span></a>
+<a href="Page.dc.html" class="ix"><span class="ix-n">06</span><span class="ix-t">Privacy</span><span class="mono ix-hide" style="color: var(--ink-2)">The fine print</span><span class="mono ix-hide"></span><span class="arr">→</span></a>
+<a href="Sitemap.dc.html" class="ix"><span class="ix-n">07</span><span class="ix-t">Sitemap</span><span class="mono ix-hide" style="color: var(--ink-2)">You are here</span><span class="mono ix-hide"></span><span class="arr">→</span></a>
+<a href="Sitemap.dc.html" class="ix"><span class="ix-n">08</span><span class="ix-t">RSS</span><span class="mono ix-hide" style="color: var(--ink-2)">[Feed URL]</span><span class="mono ix-hide"></span><span class="arr">→</span></a>
+</div>
+</section>
+<dc-import name="BackPage" in-page="{{ true }}" hint-size="100%,1000px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"edition": {"editor": "enum", "options": ["Day", "Night"], "default": "Day"}, "$preview": {"width": 1440, "height": 2200}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { night: null };
+  }
+  renderVals() {
+    var self = this;
+    var night = this.state.night !== null ? this.state.night : (this.props.edition === 'Night');
+    return {
+      themeClass: night ? 'theme-night' : 'theme-day',
+      night: night,
+      setDay: function () { self.setState({ night: false }); },
+      setNight: function () { self.setState({ night: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

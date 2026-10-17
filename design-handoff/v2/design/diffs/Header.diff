@@ -1,0 +1,44 @@
+--- a/Header.dc.html	2026-10-17 14:38:47.706411626 -0400
++++ b/Header.dc.html	2026-10-17 14:38:47.708881467 -0400
+@@ -24,6 +24,7 @@
+ <a href="Main.dc.html" class="mono {{hHome}}">Home</a>
+ <a href="WorkList.dc.html" class="mono {{hWork}}">Work</a>
+ <a href="WritingList.dc.html" class="mono {{hWriting}}">Writing</a>
++<a href="About.dc.html" class="mono {{hAbout}}">About</a>
+ <a href="Contact.dc.html" class="mono {{hContact}}">Contact</a>
+ </nav>
+ <div class="ed" role="group" aria-label="Theme">
+@@ -48,10 +49,11 @@
+ <p class="ml-p">Where shall we set sail? Pick a heading below and I’ll take you there.</p>
+ </div>
+ <nav aria-label="Menu" class="ml-nav">
+-<a href="Main.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">N</span><span class="ml-t">The Chart</span><span class="ml-dots"></span><span class="ml-s">what I do</span></a>
+-<a href="WorkList.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">E</span><span class="ml-t">Work</span><span class="ml-dots"></span><span class="ml-s">atlas of works</span></a>
+-<a href="WritingList.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">S</span><span class="ml-t">Writing</span><span class="ml-dots"></span><span class="ml-s">correspondence</span></a>
+-<a href="Contact.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">W</span><span class="ml-t">Contact</span><span class="ml-dots"></span><span class="ml-s">the back page</span></a>
++<a href="Main.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">N</span><span class="ml-t">Home</span><span class="ml-dots"></span><span class="ml-s">the chart</span></a>
++<a href="WorkList.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">NE</span><span class="ml-t">Work</span><span class="ml-dots"></span><span class="ml-s">atlas of works</span></a>
++<a href="WritingList.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">E</span><span class="ml-t">Writing</span><span class="ml-dots"></span><span class="ml-s">correspondence</span></a>
++<a href="About.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">SE</span><span class="ml-t">About</span><span class="ml-dots"></span><span class="ml-s">the correspondent</span></a>
++<a href="Contact.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">S</span><span class="ml-t">Contact</span><span class="ml-dots"></span><span class="ml-s">the back page</span></a>
+ </nav>
+ <div class="ml-sign">
+ <div><div class="ml-p" style="font-style: italic">Yours in code &amp; ink,</div><div class="ml-name">R. Verdin</div></div>
+@@ -62,7 +64,7 @@
+ </sc-if>
+ </div>
+ </x-dc>
+-<script type="text/x-dc" data-dc-script data-props='{"inPage": {"editor": null, "default": false}, "night": {"editor": null}, "onDay": {"editor": null}, "onNight": {"editor": null}, "current": {"editor": "enum", "options": ["home", "work", "writing", "contact"], "default": "home"}, "$preview": {"width": 1440, "height": 110}}'>
++<script type="text/x-dc" data-dc-script data-props='{"inPage": {"editor": null, "default": false}, "night": {"editor": null}, "onDay": {"editor": null}, "onNight": {"editor": null}, "current": {"editor": "enum", "options": ["home", "work", "writing", "about", "contact"], "default": "home"}, "$preview": {"width": 1440, "height": 110}}'>
+ class Component extends DCLogic {
+   constructor(props) {
+     super(props);
+@@ -78,7 +80,7 @@
+     return {
+       scope: scope, today: today,
+       hHome: cur === 'home' ? 'is-here' : '', hWork: cur === 'work' ? 'is-here' : '',
+-      hWriting: cur === 'writing' ? 'is-here' : '', hContact: cur === 'contact' ? 'is-here' : '',
++      hWriting: cur === 'writing' ? 'is-here' : '', hAbout: cur === 'about' ? 'is-here' : '', hContact: cur === 'contact' ? 'is-here' : '',
+       dayCls: night ? '' : 'is-on', nightCls: night ? 'is-on' : '',
+       dayPressed: night ? 'false' : 'true', nightPressed: night ? 'true' : 'false',
+       onDay: this.props.onDay || noop, onNight: this.props.onNight || noop,

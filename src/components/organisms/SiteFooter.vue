@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { colophon, footerLinks, name } from '~/data/site'
+import { footerLinks } from '~/data/nav'
+import { colophon, name } from '~/data/site'
 
 // Colophon footer. `showCta` adds the "Let's work together" strip
 // (work detail); the BackPage organism embeds it without the strip.
@@ -46,15 +47,26 @@ const year = new Date().getFullYear()
         <MonoLabel tone="muted">
           © {{ year }} {{ name }}
         </MonoLabel>
-        <!-- TODO: RSS / Privacy / Sitemap pages are still being designed. -->
-        <a
+        <template
           v-for="link in footerLinks"
           :key="link.label"
-          :href="link.href ?? '#'"
-          class="site-footer__link"
-          :aria-disabled="link.href ? undefined : 'true'"
-          @click="link.href ? undefined : $event.preventDefault()"
-        >{{ link.label }}</a>
+        >
+          <NuxtLink
+            v-if="link.to"
+            :to="link.to"
+            class="site-footer__link"
+          >
+            {{ link.label }}
+          </NuxtLink>
+          <!-- Not live yet (RSS): inert, and href="#" keeps crawlLinks happy. -->
+          <a
+            v-else
+            href="#"
+            class="site-footer__link"
+            aria-disabled="true"
+            @click.prevent
+          >{{ link.label }}</a>
+        </template>
       </nav>
     </div>
   </Container>

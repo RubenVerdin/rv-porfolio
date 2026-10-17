@@ -46,20 +46,35 @@
     padding: var(--rv-space-8) var(--rv-space-12) 0 0;
   }
 
+  h4 {
+    font-family: var(--rv-font-display);
+    font-weight: var(--rv-weight-regular);
+    font-style: italic;
+    font-size: var(--rv-text-26);
+    line-height: var(--rv-leading-120);
+    margin: var(--rv-space-36) 0 var(--rv-space-10);
+  }
+
   a {
-    text-decoration-color: var(--rv-color-accent);
-    text-underline-offset: 0.18em;
+    color: var(--rv-color-accent);
+    text-decoration: underline;
+    text-decoration-thickness: var(--rv-border-hairline);
+    text-underline-offset: var(--rv-space-3);
+
+    &:hover {
+      color: var(--rv-color-ink);
+    }
   }
 
   strong {
-    font-weight: var(--rv-weight-medium);
+    font-weight: var(--rv-weight-semibold);
   }
 
   // Inline code (block code is ProsePre).
   :not(pre) > code {
     font-family: var(--rv-font-mono);
     font-size: 0.82em;
-    padding: 0 var(--rv-space-4);
+    padding: var(--rv-space-1) var(--rv-space-6);
     background: var(--rv-color-paper);
     border: var(--rv-border-hairline) solid var(--rv-color-faint);
   }
@@ -98,26 +113,81 @@
   }
 
   ol {
-    padding-left: var(--rv-space-28);
+    padding: 0;
+    list-style: none;
+    counter-reset: prose-ol;
   }
 
-  ul > li {
+  li {
     position: relative;
-    padding-left: var(--rv-space-28);
     margin-bottom: var(--rv-space-10);
 
     &::before {
-      content: '—';
       position: absolute;
       left: 0;
       color: var(--rv-color-accent);
     }
   }
 
+  ul > li {
+    padding-left: var(--rv-space-28);
+
+    &::before {
+      content: '—';
+    }
+  }
+
+  // Roman numerals, right-aligned in a gutter: "I.", "II.", "III."
+  ol > li {
+    padding-left: var(--rv-space-44);
+    counter-increment: prose-ol;
+
+    &::before {
+      content: counter(prose-ol, upper-roman) '.';
+      width: var(--rv-space-36);
+      text-align: right;
+      font-family: var(--rv-font-display);
+      font-size: var(--rv-text-19);
+    }
+  }
+
+  li > ul,
+  li > ol {
+    margin: var(--rv-space-10) 0 0;
+  }
+
+  // A dotted rule, like a chart's soundings line.
   hr {
+    height: var(--rv-space-24);
+    margin: var(--rv-space-48) 0;
     border: 0;
-    border-top: var(--rv-border-hairline) solid var(--rv-color-ink);
-    margin: var(--rv-space-52) 0;
+    background: radial-gradient(circle, var(--rv-color-ink) 1.6px, transparent 2px) center / var(--rv-texture-rule-dots) var(--rv-space-24) repeat-x;
+    opacity: 0.7;
+  }
+
+  // Tables render through ProseTable (scroll wrapper); cells are bare.
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--rv-text-17);
+    border-top: var(--rv-border-double) double var(--rv-color-ink);
+    border-bottom: var(--rv-border-hairline) solid var(--rv-color-ink);
+  }
+
+  th {
+    @include label(var(--rv-text-11), var(--rv-tracking-12));
+
+    font-weight: var(--rv-weight-medium);
+    text-align: left;
+    color: var(--rv-color-ink-muted);
+    padding: var(--rv-space-12) var(--rv-space-14) var(--rv-space-12) 0;
+    border-bottom: var(--rv-border-hairline) solid var(--rv-color-ink);
+  }
+
+  td {
+    padding: var(--rv-space-12) var(--rv-space-14) var(--rv-space-12) 0;
+    border-bottom: var(--rv-border-hairline) solid var(--rv-color-faint);
+    vertical-align: top;
   }
 }
 

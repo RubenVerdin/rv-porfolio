@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { menu } from '~/data/site'
+import { primaryNav } from '~/data/nav'
 
 // The menu, styled as a folded letter. Teleported to <body> so it covers
 // the viewport wherever the reader has scrolled; behaviour in useDialog.
@@ -58,8 +58,8 @@ defineExpose({ open, isOpen })
           aria-label="Menu"
         >
           <MenuLink
-            v-for="item in menu"
-            :key="item.point"
+            v-for="item in primaryNav"
+            :key="item.key"
             :item="item"
             @click="close({ restoreFocus: false })"
           />

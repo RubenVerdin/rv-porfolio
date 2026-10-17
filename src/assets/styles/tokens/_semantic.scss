@@ -28,6 +28,10 @@
   --rv-color-chart-glow: var(--rv-palette-brass-500-a22);
   --rv-glow: 0;
   --rv-blend-roller: multiply;
+  // Photo toning (about portrait): sepia print + ink halftone.
+  --rv-filter-photo: grayscale(1) sepia(0.45) contrast(1.12) brightness(0.96);
+  --rv-blend-halftone: multiply;
+  --rv-opacity-halftone: 0.22;
 
   color-scheme: light;
 }
@@ -55,6 +59,9 @@
   --rv-color-letter: var(--rv-palette-parchment-200);
   --rv-glow: 1;
   --rv-blend-roller: screen;
+  --rv-filter-photo: grayscale(1) sepia(0.5) contrast(1.1) brightness(0.82);
+  --rv-blend-halftone: screen;
+  --rv-opacity-halftone: 0.12;
 
   color-scheme: dark;
 }

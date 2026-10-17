@@ -1,0 +1,101 @@
+/* =====================================================================
+   site.css — v2 additions (Oct 2026)
+   APPEND this to the END of the v1 site.css (after the v8 layer).
+   Order matters: these rules intentionally override earlier ones.
+   Removed vs. the design file: .sm-group / .sm-head / .sm-sub / .doc-meta
+   (the sitemap was simplified to one flat list, so they are dead code).
+   Everything else is verbatim from the design.
+   ===================================================================== */
+/* ===== v9: default (WYSIWYG) page + sitemap ===== */
+.prose a{color:var(--accent);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.prose a:hover{color:var(--ink)}
+.prose strong{font-weight:600}
+.prose h4{font-family:var(--display);font-style:italic;font-weight:400;font-size:26px;line-height:1.2;margin:36px 0 10px}
+.prose ol{padding-left:0;list-style:none;counter-reset:ol}
+.prose ol li{counter-increment:ol;padding-left:44px}
+.prose ol li::before{content:counter(ol,upper-roman) ".";color:var(--accent);font-family:var(--display);font-size:19px;width:36px;text-align:right;left:0}
+.prose li>ul,.prose li>ol{margin:10px 0 0}
+.prose :not(pre)>code{font-family:var(--mono);font-size:.82em;background:var(--paper);border:1px solid var(--faint);padding:1px 6px}
+.prose hr{border:0;height:24px;margin:48px 0;background:radial-gradient(circle,var(--ink) 1.6px,transparent 2px) center/28px 24px repeat-x;opacity:.7}
+.prose table{width:100%;border-collapse:collapse;font-size:17px;border-top:3px double var(--ink);border-bottom:1px solid var(--ink)}
+.prose th{font-family:var(--mono);font-weight:500;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);text-align:left;padding:12px 14px 12px 0;border-bottom:1px solid var(--ink)}
+.prose td{padding:12px 14px 12px 0;border-bottom:1px solid var(--faint);vertical-align:top}
+.prose .table-wrap{overflow-x:auto}
+.prose .callout{background:var(--paper);border:1px solid var(--ink);padding:20px 24px;font-size:18px}
+.prose .callout .mono{display:block;color:var(--accent);margin-bottom:6px}
+/* ===== v10: tighter index rows on phones ===== */
+@container page (max-width:600px){
+.ix-h,.ix{grid-template-columns:40px minmax(0,1fr) 20px;gap:12px}
+}
+/* ===== v13: about page ===== */
+.about-intro{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:72px;align-items:start}
+@container page (max-width:900px){.about-intro{grid-template-columns:minmax(0,1fr);gap:48px}}
+.portrait{position:relative;margin:0;padding:14px;background:var(--paper);border:1px solid var(--ink);box-shadow:10px 12px 0 var(--faint);transform:rotate(-1.2deg)}
+.portrait-frame{position:relative;aspect-ratio:4/5;overflow:hidden;border:1px solid var(--ink);background-color:var(--chart);background-image:repeating-linear-gradient(45deg,var(--hatch) 0 1px,transparent 1px 7px)}
+/* The photo filter: drop an <img> inside .portrait-frame and it is toned to the site */
+.portrait-frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) sepia(.45) contrast(1.12) brightness(.96)}
+.portrait-frame::before{content:"";position:absolute;inset:0;z-index:1;background:var(--accent);mix-blend-mode:color;opacity:.16;pointer-events:none}
+.portrait-frame::after{content:"";position:absolute;inset:0;z-index:2;background:radial-gradient(var(--ink) .7px,transparent 1.1px) 0 0/4px 4px;mix-blend-mode:multiply;opacity:.22;pointer-events:none}
+.theme-night .portrait-frame img{filter:grayscale(1) sepia(.5) contrast(1.1) brightness(.82)}
+.theme-night .portrait-frame::after{mix-blend-mode:screen;opacity:.12}
+.portrait-vignette{position:absolute;inset:0;z-index:3;box-shadow:inset 0 0 90px rgba(29,25,19,.45);pointer-events:none}
+.portrait-ph{position:absolute;inset:0;z-index:4;display:flex;align-items:center;justify-content:center}
+.portrait-ph span{background:var(--paper);border:1px solid var(--ink);padding:8px 12px}
+.portrait figcaption{display:flex;justify-content:space-between;gap:12px;padding-top:12px;color:var(--ink-2)}
+.portrait .pm{position:absolute;right:-26px;bottom:52px;z-index:5;background:var(--paper);transform:rotate(-14deg);width:92px;height:92px}
+.portrait .stamp{position:absolute;left:-22px;top:-22px;z-index:5;transform:rotate(-6deg)}
+.about-story .prose{max-width:none;margin:0}
+.about-sign{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;border-top:1px solid var(--ink);padding-top:22px;margin-top:8px;flex-wrap:wrap}
+/* logbook timeline */
+.logbook{position:relative;display:flex;flex-direction:column;gap:0;margin-top:40px}
+.logbook::before{content:"";position:absolute;left:150px;top:10px;bottom:10px;border-left:2px dashed var(--accent);opacity:.75}
+.log-entry{position:relative;display:grid;grid-template-columns:130px 40px minmax(0,1fr) minmax(0,260px);gap:0 24px;align-items:baseline;padding:30px 0;border-bottom:1px solid var(--faint)}
+.log-entry:last-child{border-bottom:0}
+.log-when{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);text-align:right}
+.log-port{position:relative;width:18px;height:18px;border-radius:50%;background:var(--ground);border:2px solid var(--accent);justify-self:center;align-self:center;transform:translateX(-4px)}
+.log-port::after{content:"";position:absolute;inset:4px;border-radius:50%;background:var(--accent)}
+.log-entry.is-now .log-port{box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 22%,transparent)}
+.log-role{font-family:var(--display);font-size:30px;line-height:1.1;margin:0}
+.log-co{font-family:var(--display);font-style:italic;color:var(--ink-2);font-size:19px}
+.log-desc{margin:10px 0 0;font-size:17px;line-height:1.55;color:var(--ink-2);max-width:60ch}
+.log-where{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);text-align:right}
+@container page (max-width:900px){
+.logbook::before{left:9px}
+.log-entry{grid-template-columns:20px minmax(0,1fr);gap:4px 20px}
+.log-when{grid-column:2;text-align:left;order:-1}
+.log-port{grid-column:1;grid-row:1 / span 3;align-self:start;transform:none;margin-top:4px}
+.log-where{grid-column:2;text-align:left}
+}
+/* instruments aboard */
+.instruments{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:3px double var(--ink);border-bottom:1px solid var(--ink);margin-top:40px}
+.instr{padding:28px 28px 30px;border-left:1px solid var(--ink)}
+.instr:first-child{border-left:0;padding-left:0}
+.instr h3{font-family:var(--display);font-weight:400;font-size:32px;margin:6px 0 16px}
+.instr ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.instr li{display:flex;align-items:baseline;gap:10px;font-size:17px}
+.instr li::before{content:"";flex:none;width:6px;height:6px;border:1px solid var(--accent);transform:rotate(45deg) translateY(-2px)}
+@container page (max-width:900px){.instruments{grid-template-columns:minmax(0,1fr)}.instr{border-left:0;border-top:1px solid var(--faint);padding-left:0}.instr:first-child{border-top:0}}
+/* ports of call */
+.ports{display:flex;flex-wrap:wrap;gap:28px;align-items:center;margin-top:36px}
+.ports .stamp:nth-child(odd){transform:rotate(-3deg)}.ports .stamp:nth-child(even){transform:rotate(2.5deg)}
+.ports .stamp-in{width:96px;height:112px;font-size:10px}
+.ports .stamp-in b{font-family:var(--display);font-weight:400;font-size:20px;letter-spacing:0;text-transform:none}
+.ports .ph-next .stamp-in{background:transparent!important;border:1.5px dashed var(--ink-2);color:var(--ink-2)}
+.ports .ph-next .stamp-in svg{stroke:var(--ink-2)}
+.sec-sub{font-family:var(--display);font-weight:400;font-size:clamp(40px,4.6cqw,64px);line-height:1;margin:20px 0 0}
+.sec-sub em{color:var(--accent)}
+/* ===== v14: about on tablet & phone, 5-point menu ===== */
+@container page (max-width:900px){
+.portrait{max-width:440px;width:100%;margin:0 auto;box-sizing:border-box}
+}
+@container page (max-width:600px){
+.portrait{max-width:300px}
+.portrait .pm{right:-12px;width:72px;height:72px;font-size:8.5px}
+.portrait .stamp{left:-10px;top:-14px}
+.ports{gap:18px}
+.ports .stamp-in{width:78px;height:92px;font-size:9px}
+.ports .stamp-in b{font-size:16px}
+.log-role{font-size:24px}
+.instr h3{font-size:28px}
+}
+.ml-n{font-size:10px;letter-spacing:.04em}

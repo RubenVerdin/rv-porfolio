@@ -8,6 +8,7 @@
   --rv-shadow-hard-lg: 10px 12px 0 var(--rv-color-ink);
   --rv-shadow-paper: 6px 8px 0 var(--rv-color-faint);
   --rv-shadow-paper-lg: 8px 10px 0 var(--rv-color-faint);
+  --rv-shadow-paper-xl: 10px 12px 0 var(--rv-color-faint);
   --rv-shadow-note: 3px 6px 0 var(--rv-palette-umber-900-a18);
   --rv-shadow-pin: 0 2px 0 var(--rv-palette-black-a30);
   --rv-shadow-envelope: 0 26px 40px -18px var(--rv-palette-black-a45), 0 2px 0 var(--rv-palette-black-a08);
@@ -17,4 +18,7 @@
   --rv-shadow-crease: 0 2px 1px var(--rv-palette-umber-900-a25);
   --rv-shadow-pocket: 0 -1px 0 var(--rv-palette-umber-900-a22);
   --rv-shadow-stamp: 0 1px 0 var(--rv-color-faint);
+  --rv-shadow-vignette: inset 0 0 90px var(--rv-palette-umber-900-a45);
+  // Glow ring around the current port in the about logbook.
+  --rv-shadow-port-ring: 0 0 0 6px color-mix(in srgb, var(--rv-color-accent) 22%, transparent);
 }

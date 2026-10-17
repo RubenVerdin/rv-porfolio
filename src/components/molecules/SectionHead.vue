@@ -1,10 +1,12 @@
 <script setup lang="ts">
 // Kicker bar over a big display title with an italic accent:
 // "Section B — The Atlas of Works" / "Good ideas. *Carefully* made."
+// A link with `to: null` is a placeholder (e.g. "[Download CV] ↓") and
+// renders unlinked.
 withDefaults(defineProps<{
   kicker: string
   aside?: string
-  link?: { label: string, to: string }
+  link?: { label: string, to: string | null, arrow?: '→' | '↓' }
   title?: string
   accent?: string
   /** Text after the accent, e.g. "made." */
@@ -12,6 +14,8 @@ withDefaults(defineProps<{
   tag?: 'h1' | 'h2'
   /** `page` = the quieter page heading (no rule, enters on load). */
   variant?: 'section' | 'page'
+  /** `sub` = the smaller heading under a section bar ("Ports of experience."). */
+  size?: 'lg' | 'sub'
 }>(), {
   aside: undefined,
   link: undefined,
@@ -20,6 +24,7 @@ withDefaults(defineProps<{
   tail: undefined,
   tag: 'h2',
   variant: 'section',
+  size: 'lg',
 })
 </script>
 
@@ -33,12 +38,18 @@ withDefaults(defineProps<{
         {{ kicker }}
       </MonoLabel>
       <NuxtLink
-        v-if="link"
+        v-if="link?.to"
         :to="link.to"
         class="section-head__link"
       >
-        {{ link.label }} →
+        {{ link.label }} {{ link.arrow ?? '→' }}
       </NuxtLink>
+      <span
+        v-else-if="link"
+        class="section-head__link"
+      >
+        {{ link.label }} {{ link.arrow ?? '→' }}
+      </span>
       <MonoLabel
         v-else-if="aside"
         class="section-head__kicker"
@@ -51,7 +62,10 @@ withDefaults(defineProps<{
       :is="tag"
       v-if="title || accent"
       class="section-head__title"
-      :class="{ 'u-press-in': variant === 'section' }"
+      :class="{
+        'section-head__title--sub': size === 'sub',
+        'u-press-in': variant === 'section' && size === 'lg',
+      }"
     >
       {{ title }} <em
         v-if="accent"
@@ -87,6 +101,13 @@ withDefaults(defineProps<{
     font-size: var(--rv-text-section);
     line-height: var(--rv-leading-95);
     letter-spacing: var(--rv-tracking-neg-1-5);
+  }
+
+  &__title--sub {
+    margin-top: var(--rv-space-20);
+    font-size: var(--rv-text-section-sub);
+    line-height: var(--rv-leading-100);
+    letter-spacing: var(--rv-tracking-0);
   }
 
   &__accent {

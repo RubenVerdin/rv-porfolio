@@ -51,5 +51,36 @@ export default defineContentConfig({
         rawbody: z.string(),
       }),
     }),
+    // One-off CMS pages (Privacy, Terms…) → pages/[...slug].vue.
+    // `content/pages/privacy.md` is served at `/privacy`.
+    pages: defineCollection({
+      type: 'page',
+      source: { include: 'pages/*.md', prefix: '/' },
+      schema: z.object({
+        // PageHead kicker; defaults to the fallback's "The Fine Print".
+        kicker: z.string().optional(),
+        // Italic accent after the title.
+        accent: z.string().optional(),
+        // "Last updated · October 17, 2026"
+        updated: z.date().optional(),
+      }),
+    }),
+    // The lorem a content page falls back to, field by field and for the
+    // body (Page.dc.html), so a page always looks complete. Not routed.
+    pageFallback: defineCollection({
+      type: 'page',
+      source: 'fallback/page.md',
+      schema: z.object({
+        kicker: z.string(),
+        accent: z.string(),
+        updatedPlaceholder: z.string(),
+      }),
+    }),
+    // The About page's "short story" (prose). Everything else on /about is
+    // layout copy in data/about.ts. Not routed on its own.
+    about: defineCollection({
+      type: 'page',
+      source: 'about/story.md',
+    }),
   },
 })

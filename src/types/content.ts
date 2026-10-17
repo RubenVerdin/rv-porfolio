@@ -4,7 +4,10 @@
 
 export type Edition = 'day' | 'night'
 
-export type Section = 'home' | 'work' | 'writing' | 'contact'
+/** Primary navigation keys; a page's `section` meta highlights one. */
+export type NavKey = 'home' | 'work' | 'writing' | 'about' | 'contact'
+
+export type CompassPoint = 'N' | 'NE' | 'E' | 'SE' | 'S'
 
 export type FooterVariant = 'back-page' | 'cta' | 'plain'
 
@@ -81,17 +84,23 @@ export interface Territory {
   position: { left: number, top: number }
 }
 
+/** One destination, shown in the top nav and as a menu-letter heading. */
 export interface NavItem {
-  label: string
+  key: NavKey
   to: string
-  section: Section
+  label: string
+  /** Compass point in the menu letter. */
+  point: CompassPoint
+  /** Menu-letter subline, e.g. "atlas of works". */
+  sub: string
 }
 
-export interface MenuItem {
-  point: 'N' | 'E' | 'S' | 'W'
-  label: string
-  aside: string
-  to: string
+/** A row on /sitemap. */
+export interface SitemapEntry {
+  title: string
+  note: string
+  /** null = not live yet (placeholder); renders unlinked. */
+  to: string | null
 }
 
 export interface NewsItem {
@@ -109,8 +118,8 @@ export interface LinkRow {
 
 export interface FooterLink {
   label: string
-  /** null = page not designed yet; renders as an inert link. */
-  href: string | null
+  /** null = not live yet (RSS); renders as an inert link. */
+  to: string | null
 }
 
 export interface CrossBannerPreset {
@@ -121,4 +130,57 @@ export interface CrossBannerPreset {
   cta: string
   to: string
   words: string[]
+}
+
+/** PageHead props — shared by listing pages and content pages. */
+export interface PageHeadView {
+  kicker: string
+  aside?: string
+  title: string
+  accent?: string
+  dek?: string
+}
+
+// ── About ────────────────────────────────────────────────────────────
+
+export interface AboutPortrait {
+  /** Omit until the photo exists: the hatched placeholder shows instead. */
+  src?: string
+  alt: string
+  caption: string
+  credit: string
+}
+
+/** One port on the logbook route. */
+export interface LogEntry {
+  /** "[2024] — Now" */
+  when: string
+  role: string
+  company: string
+  description: string
+  /** "Toronto, CA" */
+  where: string
+  /** The present port: glowing ring on the dot. */
+  current?: boolean
+}
+
+/** A column of "Instruments aboard", named after a chart territory. */
+export interface Instrument {
+  territory: Territory['id']
+  items: string[]
+}
+
+export interface InstrumentView {
+  /** "I. · Costa del Código" — from the territory, so it matches the chart. */
+  kicker: string
+  /** "Developer" */
+  role: string
+  items: string[]
+}
+
+/** A "ports of call" stamp. */
+export interface PortStamp extends StampView {
+  place: string
+  /** The dashed "Next port" stamp. */
+  placeholder?: boolean
 }
