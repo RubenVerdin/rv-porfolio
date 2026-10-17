@@ -1,0 +1,62 @@
+// Layout, borders, radii, sizes, layers.
+
+:root {
+  --rv-container-max: 1320px;
+
+  --rv-border-hairline: 1px;
+  --rv-border-medium: 1.5px;
+  --rv-border-thick: 2px;
+  --rv-border-double: 3px;
+  --rv-border-envelope: 10px;
+
+  --rv-radius-none: 0;
+  --rv-radius-sm: 2px;
+  --rv-radius-round: 50%;
+  --rv-radius-pill: 999px;
+
+  // Interactive minimums
+  --rv-size-touch: 44px;
+  --rv-size-control: 36px;
+  --rv-size-button: 48px;
+  --rv-size-button-lg: 56px;
+
+  // Icons
+  --rv-size-icon-xs: 14px;
+  --rv-size-icon-sm: 18px;
+  --rv-size-icon-md: 24px;
+  --rv-size-icon-lg: 26px;
+
+  // Component geometry (from the design; named so components never carry
+  // raw lengths)
+  --rv-size-menu-letter: 500px;
+  --rv-size-sticky-note: 270px;
+  --rv-size-fact-min: 180px;
+  --rv-size-letter-row: clamp(30px, 5.6cqw, 44px);
+  --rv-size-seal: clamp(76px, 16cqw, 112px);
+  --rv-size-cartouche-min: 190px;
+  --rv-offset-plate-stamp: 58px;
+  --rv-height-banner: 680px;
+  --rv-height-banner-md: 600px;
+  --rv-height-banner-sm: 560px;
+  --rv-basis-news-item: 260px;
+  --rv-basis-copy: 360px;
+  --rv-basis-envelope: 480px;
+  --rv-basis-lead-message: 520px;
+  --rv-basis-lead-address: 320px;
+  // Headroom above an envelope for the letter to rise into
+  --rv-space-envelope-stage: clamp(120px, 18%, 200px);
+  --rv-space-envelope-stage-lg: clamp(180px, 28%, 280px);
+
+  // 3D
+  --rv-perspective-card: 1800px;
+  --rv-perspective-letter: 1400px;
+
+  // Textures
+  --rv-texture-halftone: 3px;
+  --rv-texture-airmail: 9px;
+
+  // Layers
+  --rv-layer-base: 1;
+  --rv-layer-raised: 2;
+  --rv-layer-overlay: 50;
+}

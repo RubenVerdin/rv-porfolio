@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Lead dispatch</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/b8569f53f40f3bff4438ba4f6b0942a3">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="{{scope}}">
+<article class="lead tx">
+<div class="lead-l">
+<div class="mono" style="color: var(--accent)">Dispatch No. 0427 · Featured · Opinion</div>
+<h2 class="lead-h"><a href="WritingDetail.dc.html" style="text-decoration: none">Building Maintainable Vue Component Libraries</a></h2>
+<p class="dek">Lessons learned shipping a token-driven component library that scales across projects without turning into a maintenance burden.</p>
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px; margin-top: auto; padding-top: 18px">
+<div><div style="font-family: var(--display); font-style: italic; font-size: 26px">R. Verdin</div><div class="mono" style="color: var(--ink-2)">Correspondent</div></div>
+<a href="WritingDetail.dc.html" class="btn btn-ink">Read the dispatch <span class="arr">→</span></a>
+</div>
+</div>
+<div class="lead-r">
+<div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px">
+<div style="display: flex; align-items: center"><div class="pm" style="transform: rotate(-8deg)">APR 30<br>2025</div><svg class="pm-waves" viewBox="0 0 90 40" aria-hidden="true"><path d="M0,8 q11,-7 22,0 t22,0 t22,0 t22,0"></path><path d="M0,20 q11,-7 22,0 t22,0 t22,0 t22,0"></path><path d="M0,32 q11,-7 22,0 t22,0 t22,0 t22,0"></path></svg></div>
+<div class="stamp"><div class="stamp-in st-seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5l9 15 9-15"></path><path d="M8 5l4 7 4-7"></path></svg>VUE</div></div>
+</div>
+<div class="mono" style="color: var(--ink-2)">9 min read</div>
+<div class="addr"><div>To: whoever builds the next one</div><div>Frontend teams, everywhere</div></div>
+</div>
+</article>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"inPage": {"editor": null, "default": false}, "$preview": {"width": 1320, "height": 520}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var scope = this.props.inPage ? 'cmp' : 'cmp theme-day cmp-alone';
+    return { scope: scope };
+  }
+}
+</script>
+</body>
+</html>

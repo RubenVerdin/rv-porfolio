@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Atlas plate</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/b8569f53f40f3bff4438ba4f6b0942a3">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="{{scope}}" style="height: 100%; flex: 1 1 auto; display: flex; flex-direction: column">
+<a href="{{href}}" class="plate" style="flex: 1; box-sizing: border-box">
+<div class="plate-top"><span class="plate-no">{{no}}</span><span class="mono" style="color: var(--ink-2)">{{idx}} — {{cat}}</span></div>
+<div class="plate-img" style="min-height: {{imgH}}"><div class="plate-ph"><span class="mono">[ Project image · 4:3 ]</span></div></div>
+<div class="plate-cap"><div><h3 class="plate-title">{{title}}</h3><div class="mono plate-meta">{{meta}}</div></div><span class="mono plate-go">View plate <span class="arr">→</span></span></div>
+<div class="plate-stamp">Plate<br>No. {{idx}}</div>
+</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"inPage": {"editor": null, "default": false}, "item": {"editor": null}, "$preview": {"width": 640, "height": 640}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var scope = this.props.inPage ? 'cmp' : 'cmp theme-day cmp-alone';
+    var it = this.props.item || { no: 'Plate I.', idx: '01', cat: 'Digital publishing', title: 'The Modern Index', meta: 'Editorial design · Development · 2025', href: 'WorkDetail.dc.html' };
+    return { scope: scope, no: it.no, idx: it.idx, cat: it.cat, title: it.title, meta: it.meta, href: it.href || 'WorkDetail.dc.html', imgH: it.imgH || '300px' };
+  }
+}
+</script>
+</body>
+</html>

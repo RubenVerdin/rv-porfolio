@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Correspondence</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/b8569f53f40f3bff4438ba4f6b0942a3">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rv {{themeClass}}" style="min-height: 100vh">
+<dc-import name="Header" in-page="{{ true }}" current="writing" night="{{night}}" on-day="{{setDay}}" on-night="{{setNight}}" hint-size="100%,110px"></dc-import>
+<dc-import name="PageHead" in-page="{{ true }}" kicker="Section C — Correspondence" aside="Five dispatches" title="Stupid, weird, original." accent="Honest." dek="Essays on craft &amp; cities — on code, design, and the places in between." hint-size="100%,380px"></dc-import>
+<section class="wrap" aria-label="Dispatches" style="padding-bottom: 120px">
+<dc-import name="LeadDispatch" in-page="{{ true }}" hint-size="100%,520px"></dc-import>
+<div class="mono" style="margin: 72px 0 56px; display: flex; align-items: center; gap: 16px"><span>More dispatches</span><span style="flex: 1; border-top: 1px solid var(--ink)"></span><span style="color: var(--ink-2)">Hover to turn over</span></div>
+<div class="cards">
+<sc-for list="{{cards}}" as="c" hint-placeholder-count="4">
+<dc-import name="Postcard" in-page="{{ true }}" item="{{c}}" hint-size="100%,410px"></dc-import>
+</sc-for>
+</div>
+</section>
+<dc-import name="CrossBanner" in-page="{{ true }}" kicker="Next port · The Atlas of Works" title="See the" accent="atlas." dek="Good ideas, carefully made — every project catalogued as a plate." cta="Open the atlas" href="WorkList.dc.html" words="The Atlas|plates|Projects|works" hint-size="100%,680px"></dc-import>
+<dc-import name="BackPage" in-page="{{ true }}" hint-size="100%,1000px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"edition": {"editor": "enum", "options": ["Day", "Night"], "default": "Day"}, "$preview": {"width": 1440, "height": 2800}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { night: null };
+  }
+  renderVals() {
+    var self = this;
+    var night = this.state.night !== null ? this.state.night : (this.props.edition === 'Night');
+    return {
+      themeClass: night ? 'theme-night' : 'theme-day',
+      night: night,
+      setDay: function () { self.setState({ night: false }); },
+      setNight: function () { self.setState({ night: true }); },
+      cards: [{"num": "No. 02", "cat": "CSS", "title": "Modern CSS I Reach For Every Day", "word": "CSS", "bg": "bg-sun", "read": "6 min read", "pm1": "APR 30", "pm2": "2025", "stCls": "st-navy", "icon": "M8 6l-5 6 5 6M16 6l5 6-5 6", "stLabel": "CSS", "tilt": "-1.2deg", "href": "WritingDetail.dc.html"}, {"num": "No. 03", "cat": "Writing", "title": "Writing Is Thinking: Notes From a Developer’s Notebook", "word": "The\nNotebook", "bg": "bg-ruled", "read": "7 min read", "pm1": "APR 12", "pm2": "2025", "stCls": "st-red", "icon": "M4 20l4-1 11-11-3-3L5 16z", "stLabel": "INK", "tilt": "0.9deg", "href": "WritingDetail.dc.html"}, {"num": "No. 04", "cat": "Systems", "title": "Design Tokens Are a Contract, Not a Palette", "word": "Token\nBay", "bg": "bg-tiles", "read": "5 min read", "pm1": "MAR 21", "pm2": "2025", "stCls": "st-brown", "icon": "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z", "stLabel": "SYS", "tilt": "0.6deg", "href": "WritingDetail.dc.html"}, {"num": "No. 05", "cat": "Cities", "title": "What Toronto’s Laneways Taught Me About Navigation", "word": "The\nLaneways", "bg": "bg-lanes", "read": "5 min read", "pm1": "MAR 02", "pm2": "2025", "stCls": "st-steel", "icon": "M3 21V9l5-3v15M8 21V6l6 3v12M14 21V9l7-3v15", "stLabel": "CITY", "tilt": "-0.8deg", "href": "WritingDetail.dc.html"}]
+    };
+  }
+}
+</script>
+</body>
+</html>

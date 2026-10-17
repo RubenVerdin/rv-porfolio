@@ -1,0 +1,26 @@
+body {
+  background-color: var(--rv-color-ground);
+  color: var(--rv-color-ink);
+  font-family: var(--rv-font-body);
+  transition:
+    background-color var(--rv-duration-theme) ease,
+    color var(--rv-duration-theme) ease;
+}
+
+::selection {
+  background: var(--rv-color-accent);
+  color: var(--rv-color-on-accent);
+}
+
+a {
+  color: inherit;
+}
+
+a:hover {
+  color: var(--rv-color-accent);
+}
+
+:focus-visible {
+  outline: var(--rv-border-thick) solid var(--rv-color-accent);
+  outline-offset: var(--rv-space-4);
+}

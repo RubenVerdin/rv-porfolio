@@ -1,0 +1,68 @@
+// Auto-injected into every SCSS block (nuxt.config → vite.css additionalData).
+// Mixins only — nothing here may emit CSS on its own.
+
+@use 'sass:map';
+
+// Page breakpoints — container queries on the page root (`.app`), as in the
+// design. Custom properties can't be used in container conditions, so these
+// live here rather than in tokens.
+$page-breakpoints: (
+  lg: 1024px,
+  md: 900px,
+  map: 760px,
+  sm: 720px,
+  xs: 600px,
+);
+
+@mixin page-below($key) {
+  @container page (max-width: #{map.get($page-breakpoints, $key)}) {
+    @content;
+  }
+}
+
+// Component containers (named so nested containers don't capture the query).
+@mixin container-below($name, $width) {
+  @container #{$name} (max-width: #{$width}) {
+    @content;
+  }
+}
+
+// Viewport fallback for content teleported out of the page container
+// (the menu letter). Same widths as the page breakpoints.
+@mixin viewport-below($key) {
+  @media (max-width: #{map.get($page-breakpoints, $key)}) {
+    @content;
+  }
+}
+
+// The design's `.mono` label: IBM Plex Mono, 12px, tracked uppercase.
+@mixin label($size: var(--rv-text-12), $tracking: var(--rv-tracking-8)) {
+  font-family: var(--rv-font-mono);
+  font-size: $size;
+  letter-spacing: $tracking;
+  text-transform: uppercase;
+}
+
+// Edition cross-fade for surfaces that change colour with the theme.
+@mixin theme-transition($props...) {
+  transition-property: $props;
+  transition-duration: var(--rv-duration-theme);
+  transition-timing-function: ease;
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@mixin focus-ring($offset: 4px) {
+  outline: var(--rv-border-thick) solid var(--rv-color-accent);
+  outline-offset: $offset;
+}

@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ruben Verdin — Homepage</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/b8569f53f40f3bff4438ba4f6b0942a3">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+
+<div class="rv {{themeClass}}" style="min-height: 100vh">
+
+<!-- top bar -->
+<div class="wrap"><div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; padding-bottom: 14px; border-bottom: 1px solid var(--ink)">
+<div style="display: flex; align-items: center; gap: 14px">
+<div class="tx" style="width: 40px; height: 40px; border-radius: 50%; background: var(--seal); color: #F1E8D4; display: flex; align-items: center; justify-content: center; font-family: var(--display); font-size: 17px; box-shadow: 0 0 0 3px var(--ground), 0 0 0 4px var(--seal)">RV</div>
+<div class="mono edition" style="color: var(--ink-2)">Edition v2.0.0 · Toronto · {{today}}</div>
+</div>
+<div class="tb-right">
+<nav class="topnav" aria-label="Primary">
+<a href="WorkList.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">Work</a>
+<a href="WritingList.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">Writing</a>
+<a href="Contact.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">Contact</a>
+</nav>
+<div class="ed" role="group" aria-label="Theme">
+<button type="button" class="ed-btn {{dayCls}}" aria-pressed="{{dayPressed}}" onClick="{{setDay}}"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="3"></circle><path d="M8 1v2M8 13v2M1 8h2M13 8h2M3 3l1.4 1.4M11.6 11.6L13 13M3 13l1.4-1.4M11.6 4.4L13 3"></path></svg><span class="ed-l">Day</span></button>
+<button type="button" class="ed-btn {{nightCls}}" aria-pressed="{{nightPressed}}" onClick="{{setNight}}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 9.5A5.5 5.5 0 1 1 6.5 3a4.5 4.5 0 0 0 6.5 6.5z"></path></svg><span class="ed-l">Night</span></button>
+</div>
+<button type="button" class="burger" aria-label="Open menu" aria-expanded="{{menuExpanded}}" onClick="{{openMenu}}"><svg class="compass" viewBox="0 0 24 24" aria-hidden="true"><circle class="c-ring" cx="12" cy="12" r="10.5"></circle><path class="c-ticks" d="M12 1.5v2.5M12 20v2.5M1.5 12h2.5M20 12h2.5"></path><g class="c-needle"><path class="c-n" d="M12 4.5l2.4 7.5h-4.8z"></path><path class="c-s" d="M12 19.5l2.4-7.5h-4.8z"></path></g><circle cx="12" cy="12" r="1.2"></circle></svg><span class="mono">Menu</span></button>
+</div>
+</div></div>
+
+<sc-if value="{{menuOpen}}" hint-placeholder-val="{{ false }}">
+<div class="menu-veil">
+<button type="button" class="menu-scrim" aria-label="Close menu" onClick="{{closeMenu}}"></button>
+<div class="menu-letter" role="dialog" aria-modal="true" aria-label="Menu">
+<button type="button" class="ml-close" aria-label="Close menu" onClick="{{closeMenu}}"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16"></path></svg></button>
+<div class="ml-letterhead">
+<div class="ml-mono">RV</div>
+<div class="mono" style="color: #4F4536">Edition v2.0.0 · Toronto · {{today}}</div>
+</div>
+<div class="ml-body">
+<div class="ml-salute">Dear reader,</div>
+<p class="ml-p">Where shall we set sail? Pick a heading below and I’ll take you there.</p>
+</div>
+<nav aria-label="Menu" class="ml-nav">
+<a href="#about" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">N</span><span class="ml-t">The Chart</span><span class="ml-dots"></span><span class="ml-s">what I do</span></a>
+<a href="WorkList.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">E</span><span class="ml-t">Work</span><span class="ml-dots"></span><span class="ml-s">atlas of works</span></a>
+<a href="WritingList.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">S</span><span class="ml-t">Writing</span><span class="ml-dots"></span><span class="ml-s">correspondence</span></a>
+<a href="Contact.dc.html" class="ml-link" onClick="{{closeMenu}}"><span class="ml-n">W</span><span class="ml-t">Contact</span><span class="ml-dots"></span><span class="ml-s">the back page</span></a>
+</nav>
+<div class="ml-sign">
+<div><div class="ml-p" style="font-style: italic">Yours in code &amp; ink,</div><div class="ml-name">R. Verdin</div></div>
+<div class="ml-seal" aria-hidden="true">RV</div>
+</div>
+</div>
+</div>
+</sc-if>
+
+<!-- nameplate -->
+<header class="wrap">
+<div class="nameplate">
+<h1 class="mast" aria-label="Ruben Verdin"><span>R</span><span>u</span><span>b</span><span>e</span><span>n</span><span> </span><span>V</span><span>e</span><span>r</span><span>d</span><span>i</span><span>n</span><i class="roller" aria-hidden="true"></i></h1>
+<p class="np-intro">Mexican-born developer and designer in Toronto. I build front-ends that feel considered, design the systems that keep them consistent, and write about the craft between.</p>
+</div>
+<div class="newsline">
+<div class="nl-track">
+<div class="nl-item"><b>Now booking</b> Available for new projects &amp; collaborations</div>
+<div class="nl-item"><b>Home port</b> Toronto, Ontario</div>
+<div class="nl-item"><b>Off the press</b> Building Maintainable Vue Component Libraries</div>
+<div class="nl-item nl-dup" aria-hidden="true"><b>Now booking</b> Available for new projects &amp; collaborations</div>
+<div class="nl-item nl-dup" aria-hidden="true"><b>Home port</b> Toronto, Ontario</div>
+<div class="nl-item nl-dup" aria-hidden="true"><b>Off the press</b> Building Maintainable Vue Component Libraries</div>
+</div>
+</div>
+</header>
+
+<!-- hero: the interactive chart -->
+<section id="about" class="wrap" aria-label="Map of what I do" style="padding-top: 8px">
+<figure style="margin: 0">
+<div class="chart-frame tx">
+<div class="chart-inner map-box">
+<div class="map-stage">
+<svg viewBox="0 0 1200 660" aria-hidden="true">
+<defs>
+<pattern id="hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line class="hatch-line" x1="0" y1="0" x2="0" y2="6"></line></pattern>
+<pattern id="hatchOn" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(-45)"><line class="hatch-on" x1="0" y1="0" x2="0" y2="5"></line></pattern>
+<mask id="routeReveal" maskUnits="userSpaceOnUse" x="0" y="0" width="1200" height="660"><path class="route-mask" pathLength="1000" d="M330,428 C300,350 330,262 405,228 C520,140 740,140 860,180 C990,240 1000,360 900,404"></path></mask>
+<path id="routePath" d="M330,428 C300,350 330,262 405,228 C520,140 740,140 860,180 C990,240 1000,360 900,404"></path>
+</defs>
+<g>
+<line class="grat" x1="0" y1="110" x2="1200" y2="110"></line><line class="grat" x1="0" y1="220" x2="1200" y2="220"></line><line class="grat" x1="0" y1="330" x2="1200" y2="330"></line><line class="grat" x1="0" y1="440" x2="1200" y2="440"></line><line class="grat" x1="0" y1="550" x2="1200" y2="550"></line>
+<line class="grat" x1="150" y1="0" x2="150" y2="660"></line><line class="grat" x1="300" y1="0" x2="300" y2="660"></line><line class="grat" x1="450" y1="0" x2="450" y2="660"></line><line class="grat" x1="600" y1="0" x2="600" y2="660"></line><line class="grat" x1="750" y1="0" x2="750" y2="660"></line><line class="grat" x1="900" y1="0" x2="900" y2="660"></line><line class="grat" x1="1050" y1="0" x2="1050" y2="660"></line>
+</g>
+<g>
+<line class="rh-a" x1="600" y1="320" x2="1360" y2="320"></line><line class="rh-c" x1="600" y1="320" x2="1345" y2="468"></line><line class="rh-b" x1="600" y1="320" x2="1302" y2="611"></line><line class="rh-c" x1="600" y1="320" x2="1232" y2="742"></line><line class="rh-a" x1="600" y1="320" x2="1137" y2="857"></line><line class="rh-c" x1="600" y1="320" x2="1022" y2="952"></line><line class="rh-b" x1="600" y1="320" x2="891" y2="1022"></line><line class="rh-c" x1="600" y1="320" x2="748" y2="1065"></line><line class="rh-a" x1="600" y1="320" x2="600" y2="1080"></line><line class="rh-c" x1="600" y1="320" x2="452" y2="1065"></line><line class="rh-b" x1="600" y1="320" x2="309" y2="1022"></line><line class="rh-c" x1="600" y1="320" x2="178" y2="952"></line><line class="rh-a" x1="600" y1="320" x2="63" y2="857"></line><line class="rh-c" x1="600" y1="320" x2="-32" y2="742"></line><line class="rh-b" x1="600" y1="320" x2="-102" y2="611"></line><line class="rh-c" x1="600" y1="320" x2="-145" y2="468"></line><line class="rh-a" x1="600" y1="320" x2="-160" y2="320"></line><line class="rh-c" x1="600" y1="320" x2="-145" y2="172"></line><line class="rh-b" x1="600" y1="320" x2="-102" y2="29"></line><line class="rh-c" x1="600" y1="320" x2="-32" y2="-102"></line><line class="rh-a" x1="600" y1="320" x2="63" y2="-217"></line><line class="rh-c" x1="600" y1="320" x2="178" y2="-312"></line><line class="rh-b" x1="600" y1="320" x2="309" y2="-382"></line><line class="rh-c" x1="600" y1="320" x2="452" y2="-425"></line><line class="rh-a" x1="600" y1="320" x2="600" y2="-440"></line><line class="rh-c" x1="600" y1="320" x2="748" y2="-425"></line><line class="rh-b" x1="600" y1="320" x2="891" y2="-382"></line><line class="rh-c" x1="600" y1="320" x2="1022" y2="-312"></line><line class="rh-a" x1="600" y1="320" x2="1137" y2="-217"></line><line class="rh-c" x1="600" y1="320" x2="1232" y2="-102"></line><line class="rh-b" x1="600" y1="320" x2="1302" y2="29"></line><line class="rh-c" x1="600" y1="320" x2="1345" y2="172"></line>
+</g>
+<!-- bearing lines to the chosen territory -->
+<line class="bearing {{landDev}}" x1="600" y1="320" x2="405" y2="228" pathLength="100"></line>
+<line class="bearing {{landDes}}" x1="600" y1="320" x2="860" y2="180" pathLength="100"></line>
+<line class="bearing {{landWri}}" x1="600" y1="320" x2="900" y2="404" pathLength="100"></line>
+<line class="bearing {{landTra}}" x1="600" y1="320" x2="330" y2="428" pathLength="100"></line>
+<!-- territories -->
+<g class="terr {{landDev}}" onClick="{{pickDev}}">
+<path class="land-shade" d="M70,80 C160,40 300,50 380,90 C440,120 450,180 410,230 C380,268 330,262 300,290 C260,326 190,318 150,290 C110,262 60,250 52,200 C44,150 30,110 70,80 Z"></path>
+<path class="land" d="M70,80 C160,40 300,50 380,90 C440,120 450,180 410,230 C380,268 330,262 300,290 C260,326 190,318 150,290 C110,262 60,250 52,200 C44,150 30,110 70,80 Z"></path>
+<path class="glyph" transform="translate(96 228)" d="M10,0 L0,10 L10,20 M30,0 L40,10 L30,20 M24,-2 L16,22"></path>
+<g class="glyph" transform="translate(326 104)"><rect x="0" y="0" width="38" height="28" rx="2"></rect><path d="M0,7 L38,7 M7,13 L13,18 L7,23 M16,23 L24,23"></path></g>
+<g class="glyph" transform="translate(206 246)"><circle cx="0" cy="0" r="4"></circle><circle cx="0" cy="34" r="4"></circle><circle cx="22" cy="12" r="4"></circle><path d="M0,4 L0,30 M22,16 C22,26 4,24 2,31"></path></g>
+</g>
+<g class="terr {{landDes}}" onClick="{{pickDes}}">
+<path class="land-shade" d="M800,90 C850,60 930,70 950,110 C970,150 920,180 870,175 C820,170 770,125 800,90 Z M990,150 C1040,120 1120,130 1135,175 C1150,220 1100,250 1050,245 C1000,240 960,190 990,150 Z M780,250 C805,232 845,238 852,262 C858,286 830,300 805,296 C780,292 765,268 780,250 Z"></path>
+<path class="land" d="M800,90 C850,60 930,70 950,110 C970,150 920,180 870,175 C820,170 770,125 800,90 Z M990,150 C1040,120 1120,130 1135,175 C1150,220 1100,250 1050,245 C1000,240 960,190 990,150 Z M780,250 C805,232 845,238 852,262 C858,286 830,300 805,296 C780,292 765,268 780,250 Z"></path>
+<path class="glyph" transform="translate(1046 176)" d="M0,24 L36,24 L0,-10 Z M7,17 L17,17 L7,7 Z"></path>
+<g class="glyph" transform="translate(828 92)"><path d="M0,34 C8,4 44,4 52,34 M0,34 L-6,14 M52,34 L58,14"></path><rect x="-9" y="10" width="6" height="6"></rect><rect x="55" y="10" width="6" height="6"></rect><rect x="-3" y="31" width="6" height="6"></rect><rect x="49" y="31" width="6" height="6"></rect></g>
+<g class="glyph" transform="translate(788 254)"><rect x="0" y="0" width="12" height="18"></rect><rect x="16" y="0" width="12" height="18"></rect><rect x="32" y="0" width="12" height="18"></rect><path d="M0,24 L44,24"></path></g>
+</g>
+<g class="terr {{landWri}}" onClick="{{pickWri}}">
+<path class="land-shade" d="M760,470 C800,410 900,400 980,420 C1060,440 1140,470 1150,540 C1158,600 1080,630 1000,628 C930,626 900,600 880,570 C900,540 880,505 850,505 C820,505 815,545 790,555 C760,565 740,520 760,470 Z"></path>
+<path class="land" d="M760,470 C800,410 900,400 980,420 C1060,440 1140,470 1150,540 C1158,600 1080,630 1000,628 C930,626 900,600 880,570 C900,540 880,505 850,505 C820,505 815,545 790,555 C760,565 740,520 760,470 Z"></path>
+<path class="glyph" transform="translate(1086 470)" d="M0,34 C10,12 26,0 42,-6 C32,10 20,22 4,28 M0,34 L-5,42 M8,24 L20,14"></path>
+<g class="glyph" transform="translate(782 448)"><path d="M26,6 C18,0 6,0 0,4 L0,30 C6,26 18,26 26,32 C34,26 46,26 52,30 L52,4 C46,0 34,0 26,6 Z M26,6 L26,32 M6,11 L20,11 M6,17 L20,17 M32,11 L46,11 M32,17 L46,17"></path></g>
+<g class="glyph" transform="translate(1064 572)"><rect x="0" y="0" width="34" height="26"></rect><path d="M4,5 L30,5 M4,10 L16,10 M4,15 L16,15 M4,20 L16,20 M20,10 L30,10 L30,20 L20,20 Z"></path></g>
+</g>
+<g class="terr {{landTra}}" onClick="{{pickTra}}">
+<path class="land-shade" d="M90,430 C150,395 260,400 330,425 C390,446 420,490 400,540 C385,580 340,585 320,610 C300,635 250,640 215,615 C175,588 150,560 110,548 C70,536 50,470 90,430 Z"></path>
+<path class="land" d="M90,430 C150,395 260,400 330,425 C390,446 420,490 400,540 C385,580 340,585 320,610 C300,635 250,640 215,615 C175,588 150,560 110,548 C70,536 50,470 90,430 Z"></path>
+<g class="glyph" transform="translate(116 452)"><ellipse cx="12" cy="30" rx="8" ry="11"></ellipse><ellipse cx="4" cy="14" rx="6" ry="8" transform="rotate(-25 4 14)"></ellipse><ellipse cx="21" cy="12" rx="6" ry="8" transform="rotate(20 21 12)"></ellipse><path d="M12,41 L12,46 M2,46 L22,46"></path></g>
+<g class="glyph" transform="translate(350 494)"><rect x="0" y="6" width="34" height="24" rx="2"></rect><path d="M11,6 L11,1 L23,1 L23,6 M0,15 L34,15 M8,6 L8,30 M26,6 L26,30"></path></g>
+<path class="glyph" transform="translate(286 560)" d="M0,30 L6,30 L6,24 L12,24 L12,18 L18,18 L18,12 L22,12 L22,6 L30,6 L30,12 L34,12 L34,18 L40,18 L40,24 L46,24 L46,30 L52,30 M-4,30 L56,30 M26,6 L26,0"></path>
+</g>
+<text class="sea" x="600" y="214">OCEANVS DIGITALIS</text>
+<g transform="translate(600 320)"><g class="rose"><path class="rose-sun" d="M63.7,-5.8 L76.0,0.0 L63.7,5.8 Z M61.1,19.1 L70.2,29.1 L56.7,29.7 Z M49.1,41.0 L53.7,53.7 L41.0,49.1 Z M29.7,56.7 L29.1,70.2 L19.1,61.1 Z M5.8,63.7 L0.0,76.0 L-5.8,63.7 Z M-19.1,61.1 L-29.1,70.2 L-29.7,56.7 Z M-41.0,49.1 L-53.7,53.7 L-49.1,41.0 Z M-56.7,29.7 L-70.2,29.1 L-61.1,19.1 Z M-63.7,5.8 L-76.0,0.0 L-63.7,-5.8 Z M-61.1,-19.1 L-70.2,-29.1 L-56.7,-29.7 Z M-49.1,-41.0 L-53.7,-53.7 L-41.0,-49.1 Z M-29.7,-56.7 L-29.1,-70.2 L-19.1,-61.1 Z M-5.8,-63.7 L-0.0,-76.0 L5.8,-63.7 Z M19.1,-61.1 L29.1,-70.2 L29.7,-56.7 Z M41.0,-49.1 L53.7,-53.7 L49.1,-41.0 Z M56.7,-29.7 L70.2,-29.1 L61.1,-19.1 Z"></path><circle class="rose-ring" cx="0" cy="0" r="60"></circle><circle class="rose-ring" cx="0" cy="0" r="54"></circle><polygon class="rose-star" points="0.0,-46.0 3.8,-9.2 18.4,-18.4 9.2,-3.8 46.0,0.0 9.2,3.8 18.4,18.4 3.8,9.2 0.0,46.0 -3.8,9.2 -18.4,18.4 -9.2,3.8 -46.0,0.0 -9.2,-3.8 -18.4,-18.4 -3.8,-9.2"></polygon><polygon class="rose-n" points="0,-46 3.8,-9.2 0,0 -3.8,-9.2"></polygon></g></g>
+<path class="serpent" d="M90,352 q12,-16 24,0 q12,16 24,0 q12,-16 24,0 q8,10 18,4"></path>
+<path class="serpent" d="M84,354 q-6,-10 -2,-16 q6,-2 8,6"></path>
+<text class="lbl-sm" x="92" y="380">HIC SVNT BVGS</text>
+<path class="route-base" d="M330,428 C300,350 330,262 405,228 C520,140 740,140 860,180 C990,240 1000,360 900,404" mask="url(#routeReveal)"></path>
+<g class="port p1"><circle class="ring" cx="330" cy="428" r="8"></circle><circle class="dot" cx="330" cy="428" r="3"></circle></g>
+<g class="port p2"><circle class="ring" cx="405" cy="228" r="8"></circle><circle class="dot" cx="405" cy="228" r="3"></circle></g>
+<g class="port p3"><circle class="ring" cx="860" cy="180" r="8"></circle><circle class="dot" cx="860" cy="180" r="3"></circle></g>
+<g class="port p4"><circle class="ring" cx="900" cy="404" r="8"></circle><circle class="dot" cx="900" cy="404" r="3"></circle></g>
+<circle class="pulse {{landTra}}" cx="330" cy="428" r="10"></circle>
+<circle class="pulse {{landDev}}" cx="405" cy="228" r="10"></circle>
+<circle class="pulse {{landDes}}" cx="860" cy="180" r="10"></circle>
+<circle class="pulse {{landWri}}" cx="900" cy="404" r="10"></circle>
+<text class="lbl" x="346" y="452">México</text>
+<text class="lbl-sm" x="346" y="466">ORIGEN</text>
+<text class="lbl" x="420" y="222">Toronto</text>
+<text class="lbl-sm" x="420" y="236">HOME PORT</text>
+<g>
+<animateMotion dur="9s" begin="0.8s" fill="freeze" rotate="auto" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines="0.6 0.1 0.4 1"><mpath href="#routePath"></mpath></animateMotion>
+<g transform="translate(0 -4)"><g class="bob"><path class="ship-hull" d="M-13,0 L13,0 L8,6 L-9,6 Z"></path><path class="ship-sail" d="M0,-1 L0,-20 L11,-2 Z"></path><path class="ship-sail" d="M-2,-17 L-11,-2 L-2,-2 Z"></path><path class="ship-flag" d="M0,-20 L6,-23 L0,-25 Z"></path></g></g>
+</g>
+<rect class="ticks" x="3" y="3" width="1194" height="654"></rect>
+</svg>
+<div class="chart-glow"></div>
+
+<!-- territory buttons (the real controls) -->
+<button type="button" class="tbtn {{btnDev}}" style="left: 20%; top: 25%" aria-pressed="{{prDev}}" onClick="{{pickDev}}"><span class="tb-n">I.</span><span class="tb-t">Developer</span><span class="tb-s">Costa del Código</span></button>
+<button type="button" class="tbtn {{btnDes}}" style="left: 87%; top: 46%" aria-pressed="{{prDes}}" onClick="{{pickDes}}"><span class="tb-n">II.</span><span class="tb-t">Designer</span><span class="tb-s">Islas del Diseño</span></button>
+<button type="button" class="tbtn {{btnWri}}" style="left: 82%; top: 82%" aria-pressed="{{prWri}}" onClick="{{pickWri}}"><span class="tb-n">III.</span><span class="tb-t">Writer</span><span class="tb-s">Bahía de las Letras</span></button>
+<button type="button" class="tbtn {{btnTra}}" style="left: 18%; top: 77%" aria-pressed="{{prTra}}" onClick="{{pickTra}}"><span class="tb-n">IV.</span><span class="tb-t">Traveler</span><span class="tb-s">Tierra Natal</span></button>
+
+<div class="map-note"><span class="mono">How to read this chart</span><span>Click a territory to see what I do there.</span></div>
+</div>
+<div class="terr-legend" role="group" aria-label="Territories">
+<span class="lg-h">Tap a territory to see what I do there.</span>
+<button type="button" class="lg {{btnDev}}" aria-pressed="{{prDev}}" onClick="{{pickDev}}"><span class="tb-t">I. Developer</span><span class="tb-s">Costa del Código</span></button>
+<button type="button" class="lg {{btnDes}}" aria-pressed="{{prDes}}" onClick="{{pickDes}}"><span class="tb-t">II. Designer</span><span class="tb-s">Islas del Diseño</span></button>
+<button type="button" class="lg {{btnWri}}" aria-pressed="{{prWri}}" onClick="{{pickWri}}"><span class="tb-t">III. Writer</span><span class="tb-s">Bahía de las Letras</span></button>
+<button type="button" class="lg {{btnTra}}" aria-pressed="{{prTra}}" onClick="{{pickTra}}"><span class="tb-t">IV. Traveler</span><span class="tb-s">Tierra Natal</span></button>
+</div>
+
+<!-- cartouche -->
+<div class="carto {{cartoCls}}" aria-live="polite">
+<sc-if value="{{showNone}}" hint-placeholder-val="{{ true }}">
+<div class="carto-in">
+<div class="mono" style="color: var(--accent)">How to read this chart</div>
+<div class="carto-t">Four territories, one voyage.</div>
+<p class="carto-p">Choose a territory on the chart above to see what I do there.</p>
+</div>
+</sc-if>
+<sc-if value="{{showDev}}" hint-placeholder-val="{{ false }}">
+<div class="carto-in">
+<div class="mono" style="color: var(--accent)">I. · Costa del Código</div>
+<div class="carto-t">Developer</div>
+<p class="carto-p">I build front-ends that feel considered — Vue, TypeScript, the details.</p>
+<a href="WorkList.dc.html" class="carto-a">See the work →</a>
+</div>
+</sc-if>
+<sc-if value="{{showDes}}" hint-placeholder-val="{{ false }}">
+<div class="carto-in">
+<div class="mono" style="color: var(--accent)">II. · Islas del Diseño</div>
+<div class="carto-t">Designer</div>
+<p class="carto-p">I design the systems that keep them consistent — tokens, components, docs.</p>
+<a href="WorkList.dc.html" class="carto-a">Open the atlas →</a>
+</div>
+</sc-if>
+<sc-if value="{{showWri}}" hint-placeholder-val="{{ false }}">
+<div class="carto-in">
+<div class="mono" style="color: var(--accent)">III. · Bahía de las Letras</div>
+<div class="carto-t">Writer</div>
+<p class="carto-p">I write about the craft between the two — essays on code, design &amp; cities.</p>
+<a href="WritingList.dc.html" class="carto-a">Read the dispatches →</a>
+</div>
+</sc-if>
+<sc-if value="{{showTra}}" hint-placeholder-val="{{ false }}">
+<div class="carto-in">
+<div class="mono" style="color: var(--accent)">IV. · Tierra Natal · México</div>
+<div class="carto-t">Traveler</div>
+<p class="carto-p">Born in Mexico, anchored in Toronto. [Places you’ve been, or where you’re headed next.]</p>
+<a href="WritingList.dc.html" class="carto-a">Notes from the road →</a>
+</div>
+</sc-if>
+</div>
+</div>
+</div>
+<figcaption style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; padding-top: 12px">
+<span style="font-family: var(--display); font-style: italic; font-size: 16px">Carta Itineraria — de México a Toronto, Anno MMXXVI</span>
+<span class="mono" style="color: var(--ink-2)">Scale: 1 commit ≈ 1 league</span>
+</figcaption>
+</figure>
+</section>
+
+<!-- ticker -->
+
+
+<!-- the atlas of works -->
+<section id="work" class="wrap" style="padding-top: 120px; padding-bottom: 40px">
+<div class="sec-head">
+<span class="mono">Section B — The Atlas of Works · Plates I–IV</span>
+<a href="WorkList.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">See all projects →</a>
+</div>
+<h2 class="sec-title press-in" style="margin-bottom: 48px">Good ideas. <em>Carefully</em> made.</h2>
+<div class="atlas">
+<div class="pl-1 reveal"><dc-import name="Plate" in-page="{{ true }}" item="{{p1}}" hint-size="100%,480px"></dc-import></div>
+<div class="pl-2 reveal"><dc-import name="Plate" in-page="{{ true }}" item="{{p2}}" hint-size="100%,700px"></dc-import></div>
+<div class="pl-3 reveal"><dc-import name="Plate" in-page="{{ true }}" item="{{p3}}" hint-size="100%,400px"></dc-import></div>
+<div class="pl-4 reveal"><dc-import name="Plate" in-page="{{ true }}" item="{{p4}}" hint-size="100%,400px"></dc-import></div>
+</div>
+</section>
+
+<!-- correspondence -->
+<section id="writing" class="wrap" style="padding-top: 100px; padding-bottom: 130px">
+<div class="sec-head">
+<span class="mono">Section C — Correspondence</span>
+<a href="WritingList.dc.html" class="mono" style="text-decoration: none; padding: 12px 0">View all writing →</a>
+</div>
+<h2 class="sec-title press-in" style="margin-bottom: 48px">Stupid, weird, original. <em>Honest.</em></h2>
+
+<div class="reveal"><dc-import name="LeadDispatch" in-page="{{ true }}" hint-size="100%,520px"></dc-import></div>
+
+<div class="mono" style="margin: 72px 0 56px; display: flex; align-items: center; gap: 16px"><span>More dispatches</span><span style="flex: 1; border-top: 1px solid var(--ink)"></span><span style="color: var(--ink-2)">Hover to turn over</span></div>
+
+<div class="cards">
+<sc-for list="{{cards}}" as="c" hint-placeholder-count="4">
+<dc-import name="Postcard" in-page="{{ true }}" item="{{c}}" hint-size="100%,410px"></dc-import>
+</sc-for>
+</div>
+</section>
+
+<dc-import name="BackPage" in-page="{{ true }}" hint-size="100%,1000px"></dc-import>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"edition":{"editor":"enum","options":["Day","Night"],"default":"Day"},"$preview":{"width":1440,"height":5200}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { night: null, env: 'closed', terr: '' };
+  }
+  renderVals() {
+    var night = this.state && this.state.night !== null ? this.state.night : (this.props.edition === 'Night');
+    var self = this;
+    var env = (this.state && this.state.env) || 'closed';
+    var terr = (this.state && this.state.terr) || '';
+    var pick = function (id) { return function () { self.setState({ terr: (self.state && self.state.terr) === id ? '' : id }); }; };
+    var today = '';
+    try {
+      today = new Date().toLocaleDateString('en-CA', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+    } catch (e) { today = ''; }
+    return {
+      themeClass: night ? 'theme-night' : 'theme-day',
+      dayCls: night ? '' : 'is-on',
+      nightCls: night ? 'is-on' : '',
+      dayPressed: night ? 'false' : 'true',
+      nightPressed: night ? 'true' : 'false',
+      setDay: function () { self.setState({ night: false }); },
+      setNight: function () { self.setState({ night: true }); },
+      p1: {"no": "Plate I.", "idx": "01", "cat": "Digital publishing", "title": "The Modern Index", "meta": "Editorial design · Development · 2025", "href": "WorkDetail.dc.html", "imgH": "340px"},
+      p2: {"no": "Plate II.", "idx": "03", "cat": "Cities & culture", "title": "Common Ground", "meta": "Research · Digital archive · 2025", "href": "WorkDetail.dc.html", "imgH": "560px"},
+      p3: {"no": "Plate III.", "idx": "02", "cat": "Design systems", "title": "Fieldwork: a system for growth", "meta": "Systems · Documentation · 2025", "href": "WorkDetail.dc.html", "imgH": "240px"},
+      p4: {"no": "Plate IV.", "idx": "04", "cat": "Art & direction", "title": "Edition No. 04", "meta": "Identity · Editorial · 2024", "href": "WorkDetail.dc.html", "imgH": "240px"},
+      cards: [{"num": "No. 02", "cat": "CSS", "title": "Modern CSS I Reach For Every Day", "word": "CSS", "bg": "bg-sun", "read": "6 min read", "pm1": "APR 30", "pm2": "2025", "stCls": "st-navy", "icon": "M8 6l-5 6 5 6M16 6l5 6-5 6", "stLabel": "CSS", "href": "WritingDetail.dc.html", "tilt": "-1.2deg"}, {"num": "No. 03", "cat": "Writing", "title": "Writing Is Thinking: Notes From a Developer’s Notebook", "word": "The\nNotebook", "bg": "bg-ruled", "read": "7 min read", "pm1": "APR 12", "pm2": "2025", "stCls": "st-red", "icon": "M4 20l4-1 11-11-3-3L5 16z", "stLabel": "INK", "href": "WritingDetail.dc.html", "tilt": "0.9deg"}, {"num": "No. 04", "cat": "Systems", "title": "Design Tokens Are a Contract, Not a Palette", "word": "Token\nBay", "bg": "bg-tiles", "read": "5 min read", "pm1": "MAR 21", "pm2": "2025", "stCls": "st-brown", "icon": "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z", "stLabel": "SYS", "href": "WritingDetail.dc.html", "tilt": "0.6deg"}, {"num": "No. 05", "cat": "Cities", "title": "What Toronto’s Laneways Taught Me About Navigation", "word": "The\nLaneways", "bg": "bg-lanes", "read": "5 min read", "pm1": "MAR 02", "pm2": "2025", "stCls": "st-steel", "icon": "M3 21V9l5-3v15M8 21V6l6 3v12M14 21V9l7-3v15", "stLabel": "CITY", "href": "WritingDetail.dc.html", "tilt": "-0.8deg"}],
+      menuOpen: !!(this.state && this.state.menu),
+      menuExpanded: (this.state && this.state.menu) ? 'true' : 'false',
+      openMenu: function () { self.setState({ menu: true }); },
+      closeMenu: function () { self.setState({ menu: false }); },
+      landDev: terr === 'dev' ? 'is-on' : (terr ? 'is-dim' : ''),
+      landDes: terr === 'des' ? 'is-on' : (terr ? 'is-dim' : ''),
+      landWri: terr === 'wri' ? 'is-on' : (terr ? 'is-dim' : ''),
+      landTra: terr === 'tra' ? 'is-on' : (terr ? 'is-dim' : ''),
+      btnDev: terr === 'dev' ? 'is-on' : '', btnDes: terr === 'des' ? 'is-on' : '',
+      btnWri: terr === 'wri' ? 'is-on' : '', btnTra: terr === 'tra' ? 'is-on' : '',
+      prDev: terr === 'dev' ? 'true' : 'false', prDes: terr === 'des' ? 'true' : 'false',
+      prWri: terr === 'wri' ? 'true' : 'false', prTra: terr === 'tra' ? 'true' : 'false',
+      terrOn: !!terr, showNone: !terr, cartoCls: terr ? '' : 'is-empty', showDev: terr === 'dev', showDes: terr === 'des', showWri: terr === 'wri', showTra: terr === 'tra',
+      pickDev: pick('dev'), pickDes: pick('des'), pickWri: pick('wri'), pickTra: pick('tra'),
+      envClass: env === 'open' ? 'is-open' : (env === 'closing' ? 'is-closing' : ''),
+      envClosed: env !== 'open',
+      envHitLabel: env === 'open' ? 'Close the envelope' : 'Break the seal and open the envelope',
+      envExpanded: env === 'open' ? 'true' : 'false',
+      envLabel: env === 'open' ? 'Seal it again' : 'Break the seal',
+      letterHidden: env === 'open' ? 'false' : 'true',
+      letterTab: env === 'open' ? '0' : '-1',
+      toggleEnv: function () {
+        var cur = (self.state && self.state.env) || 'closed';
+        if (self._envT) { clearTimeout(self._envT); }
+        if (cur === 'open') {
+          self.setState({ env: 'closing' });
+          self._envT = setTimeout(function () { self.setState({ env: 'closed' }); }, 2200);
+        } else {
+          self.setState({ env: 'open' });
+        }
+      },
+      today: today
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+// Semantic colour roles. Day is the default; Night applies when the reader
+// picks it (`data-theme="night"` on <html>) or, with no saved choice, when
+// the device prefers dark (decision 2026-10-17: follow device settings).
+
+@mixin day-edition {
+  --rv-color-ground: var(--rv-palette-parchment-300);
+  --rv-color-paper: var(--rv-palette-parchment-150);
+  --rv-color-chart: var(--rv-palette-parchment-450);
+  --rv-color-ink: var(--rv-palette-umber-900);
+  --rv-color-ink-muted: var(--rv-palette-umber-700);
+  --rv-color-line: var(--rv-palette-umber-600);
+  --rv-color-faint: var(--rv-palette-umber-900-a14);
+  --rv-color-hatch: var(--rv-palette-umber-900-a28);
+  --rv-color-accent: var(--rv-palette-oxblood-600);
+  --rv-color-on-accent: var(--rv-palette-parchment-150);
+  --rv-color-seal: var(--rv-palette-forest-700);
+  --rv-color-inverse-bg: var(--rv-palette-umber-900);
+  --rv-color-inverse-fg: var(--rv-palette-parchment-250);
+  --rv-color-inverse-muted: var(--rv-palette-umber-200);
+  --rv-color-inverse-rule: var(--rv-palette-parchment-350-a25);
+  --rv-color-code-rule: var(--rv-palette-parchment-350-a20);
+  --rv-color-telegram: var(--rv-palette-telegram-400);
+  --rv-color-sticky-note: var(--rv-palette-telegram-300);
+  --rv-color-envelope: var(--rv-palette-parchment-400);
+  --rv-color-envelope-shade: var(--rv-palette-parchment-500);
+  --rv-color-envelope-inside: var(--rv-palette-parchment-550);
+  --rv-color-letter: var(--rv-palette-parchment-50);
+  --rv-color-chart-glow: var(--rv-palette-brass-500-a22);
+  --rv-glow: 0;
+  --rv-blend-roller: multiply;
+
+  color-scheme: light;
+}
+
+@mixin night-edition {
+  --rv-color-ground: var(--rv-palette-umber-950);
+  --rv-color-paper: var(--rv-palette-umber-850);
+  --rv-color-chart: var(--rv-palette-umber-925);
+  --rv-color-ink: var(--rv-palette-parchment-350);
+  --rv-color-ink-muted: var(--rv-palette-umber-300);
+  --rv-color-line: var(--rv-palette-brass-500);
+  --rv-color-faint: var(--rv-palette-parchment-350-a14);
+  --rv-color-hatch: var(--rv-palette-brass-500-a32);
+  --rv-color-accent: var(--rv-palette-coral-400);
+  --rv-color-on-accent: var(--rv-palette-umber-950);
+  --rv-color-seal: var(--rv-palette-forest-400);
+  --rv-color-inverse-bg: var(--rv-palette-umber-800);
+  --rv-color-inverse-fg: var(--rv-palette-parchment-350);
+  --rv-color-inverse-muted: var(--rv-palette-umber-300);
+  --rv-color-telegram: var(--rv-palette-telegram-500);
+  --rv-color-sticky-note: var(--rv-palette-telegram-600);
+  --rv-color-envelope: var(--rv-palette-parchment-600);
+  --rv-color-envelope-shade: var(--rv-palette-parchment-650);
+  --rv-color-envelope-inside: var(--rv-palette-parchment-700);
+  --rv-color-letter: var(--rv-palette-parchment-200);
+  --rv-glow: 1;
+  --rv-blend-roller: screen;
+
+  color-scheme: dark;
+}
+
+:root {
+  @include day-edition;
+}
+
+:root[data-theme='night'] {
+  @include night-edition;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='day']) {
+    @include night-edition;
+  }
+}

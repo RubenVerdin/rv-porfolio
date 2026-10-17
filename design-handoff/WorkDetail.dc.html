@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Modern Index — Plate I</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/b8569f53f40f3bff4438ba4f6b0942a3">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rv {{themeClass}}" style="min-height: 100vh">
+<dc-import name="Header" in-page="{{ true }}" current="work" night="{{night}}" on-day="{{setDay}}" on-night="{{setNight}}" hint-size="100%,110px"></dc-import>
+<article>
+<header class="wrap doc-head">
+<nav class="crumbs mono" aria-label="Breadcrumb"><a href="WorkList.dc.html">The Atlas of Works</a><span aria-hidden="true">/</span><span>Plate I.</span></nav>
+<div style="display: flex; align-items: baseline; gap: 18px; flex-wrap: wrap"><span class="plate-no" style="color: var(--accent)">Plate I.</span><span class="mono" style="color: var(--ink-2)">01 — Digital publishing</span></div>
+<h1 class="doc-title">The Modern Index</h1>
+<p class="ph-dek">[One-sentence summary of the project — what it is and who it’s for.]</p>
+<dl class="facts" style="margin: 8px 0 0">
+<div><dt>Role</dt><dd>[Your role]</dd></div>
+<div><dt>Disciplines</dt><dd>Editorial design · Development</dd></div>
+<div><dt>Year</dt><dd>2025</dd></div>
+<div><dt>Visit</dt><dd><a href="WorkDetail.dc.html">[Live site] ↗</a></dd></div>
+</dl>
+</header>
+<div class="wrap">
+<figure class="hero-plate" style="margin: 0">
+<div class="plate-img"><div class="plate-ph"><span class="mono">[ Cover image · 16:9 ]</span></div></div>
+<figcaption class="mono" style="display: flex; justify-content: space-between; gap: 12px; padding-top: 12px; color: var(--ink-2)"><span>Plate I. — The Modern Index</span><span>[Image credit]</span></figcaption>
+</figure>
+</div>
+<div class="wrap" style="padding-top: 80px; padding-bottom: 100px">
+<div class="prose">
+<h3>The brief</h3>
+<p class="lede">The project story starts here, set a little larger with a drop cap. [Replace with the brief: the problem, who it was for, and why it mattered.]</p>
+<p class="ph">[Second paragraph — constraints, timeline, the team you worked with.]</p>
+<h2>[Section heading]</h2>
+<p class="ph">[How you approached it: research, decisions, the trade-offs you made and why.]</p>
+<blockquote>[A line worth pulling out.]<cite>— [Client or collaborator]</cite></blockquote>
+<p class="ph">[The build — stack, architecture, the details that made it feel considered.]</p>
+<pre><div class="code-h"><span>[filename]</span><span>[language]</span></div><code>// [code snippet]</code></pre>
+<figure><div class="plate-img"><div class="plate-ph"><span class="mono">[ Process image · 3:2 ]</span></div></div><figcaption><span>Fig. 1 — [Caption]</span><span>[Credit]</span></figcaption></figure>
+<h3>The outcome</h3>
+<ul><li class="ph">[Result or metric you can stand behind]</li><li class="ph">[What changed for the people using it]</li><li class="ph">[What you’d do differently]</li></ul>
+</div>
+</div>
+</article>
+<nav class="wrap" aria-label="More plates" style="padding-bottom: 40px">
+<div class="pager">
+<a href="WorkDetail.dc.html"><span class="mono" style="color: var(--ink-2)">← Previous · Plate IV.</span><span class="pg-t">Edition No. 04</span></a>
+<a href="WorkDetail.dc.html"><span class="mono" style="color: var(--ink-2)">Next · Plate II. →</span><span class="pg-t">Common Ground</span></a>
+</div>
+</nav>
+<dc-import name="Footer" in-page="{{ true }}" hint-size="100%,360px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"edition": {"editor": "enum", "options": ["Day", "Night"], "default": "Day"}, "$preview": {"width": 1440, "height": 3900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { night: null };
+  }
+  renderVals() {
+    var self = this;
+    var night = this.state.night !== null ? this.state.night : (this.props.edition === 'Night');
+    return {
+      themeClass: night ? 'theme-night' : 'theme-day',
+      night: night,
+      setDay: function () { self.setState({ night: false }); },
+      setNight: function () { self.setState({ night: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

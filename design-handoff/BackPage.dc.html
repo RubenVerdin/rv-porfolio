@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Back page & footer</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/b8569f53f40f3bff4438ba4f6b0942a3">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="{{scope}}">
+<!-- back page: sealed envelope -->
+<section id="contact" class="wrap" aria-label="Contact" style="padding-top: 60px; padding-bottom: 90px">
+<div class="sec-head">
+<span class="mono">Section D — The Back Page</span>
+<span class="mono" style="color: var(--ink-2)">Sealed &amp; sent from Toronto</span>
+</div>
+<div class="backpage">
+<div class="bp-copy">
+<h2 class="sec-title" style="margin: 0">Let’s work <em>together.</em></h2>
+<p style="font-size: 20px; line-height: 1.55; margin: 0; color: var(--ink-2); max-width: 42ch; text-wrap: pretty">Available for new projects and collaborations. There’s a letter in the envelope with every way to reach me — break the seal.</p>
+<button type="button" class="btn btn-ink" style="align-self: flex-start; cursor: pointer; font-family: var(--mono)" onClick="{{toggleEnv}}" aria-expanded="{{envExpanded}}">{{envLabel}} <span class="arr">→</span></button>
+</div>
+<div class="bp-stage">
+<svg width="0" height="0" style="position: absolute" aria-hidden="true"><defs><radialGradient id="sealWax" cx="36%" cy="30%" r="75%"><stop offset="0" stop-color="#5E9466"></stop><stop offset=".55" stop-color="#2E5236"></stop><stop offset="1" stop-color="#1A3120"></stop></radialGradient></defs></svg>
+<div class="env {{envClass}}">
+<div class="env-back"></div>
+<div class="env-letter" aria-hidden="{{letterHidden}}">
+<button type="button" class="lt-close" aria-label="Fold the letter back into the envelope" tabindex="{{letterTab}}" onClick="{{toggleEnv}}"></button>
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px">
+<span style="font-family: var(--display); font-style: italic; font-size: clamp(20px, 4cqw, 30px)">Dear reader,</span>
+<span style="font-family: var(--mono); font-size: 10px; letter-spacing: .14em; color: #4F4536">TORONTO · {{today}}</span>
+</div>
+<p style="margin: 0; font-size: clamp(13px, 2.3cqw, 16px); line-height: 1.5; color: #4F4536">The quickest routes to my desk, in order of speed:</p>
+<div style="display: flex; flex-direction: column">
+<a href="#contact" class="lt-row" tabindex="{{letterTab}}"><span class="k">Email</span><span class="dots"></span><span class="v">[your@email.com]</span></a>
+<a href="#contact" class="lt-row" tabindex="{{letterTab}}"><span class="k">LinkedIn</span><span class="dots"></span><span class="v">/in/[handle] ↗</span></a>
+<a href="#contact" class="lt-row" tabindex="{{letterTab}}"><span class="k">GitHub</span><span class="dots"></span><span class="v">@[handle] ↗</span></a>
+<a href="#contact" class="lt-row" tabindex="{{letterTab}}"><span class="k">Instagram</span><span class="dots"></span><span class="v">@[handle] ↗</span></a>
+</div>
+<div style="margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 12px">
+<div><div style="font-family: var(--display); font-style: italic; font-size: clamp(14px, 2.4cqw, 17px); color: #4F4536">Yours in code &amp; ink,</div><div style="font-family: var(--display); font-style: italic; font-size: clamp(22px, 4.4cqw, 32px)">R. Verdin</div></div>
+<span style="font-family: var(--mono); font-size: 10px; letter-spacing: .14em; color: #9A2E1F; border: 1.5px solid #9A2E1F; padding: 4px 8px; transform: rotate(-4deg)">REPLY PAID</span>
+</div>
+</div>
+<div class="env-pocket"><div class="pk-l"><div></div></div><div class="pk-r"><div></div></div><div class="pk-b"><div></div></div></div>
+<div class="env-frame"></div>
+<div class="env-mark" style="left: 5%; bottom: 9%"><div class="avion">PAR AVION<br>BY AIR MAIL</div></div>
+<div class="env-mark" style="right: 5%; bottom: 8%; display: flex; align-items: center; gap: 4px">
+<svg viewBox="0 0 90 40" aria-hidden="true" style="width: 70px; height: 32px; stroke: #1D1913; fill: none; stroke-width: 1.6; opacity: .7"><path d="M0,8 q11,-7 22,0 t22,0 t22,0 t22,0"></path><path d="M0,20 q11,-7 22,0 t22,0 t22,0 t22,0"></path><path d="M0,32 q11,-7 22,0 t22,0 t22,0 t22,0"></path></svg>
+<div class="stamp"><div class="stamp-in" style="background: #9A2E1F; width: 52px; height: 62px"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 15l9-11 9 11"></path><path d="M12 4v16M7 20h10"></path></svg>RV</div></div>
+</div>
+<div class="env-flap"><div class="flap-face flap-front"><div></div></div><div class="flap-face flap-back"><div></div></div></div>
+<div class="env-seal" aria-hidden="true">
+<div class="seal-half seal-l"><svg viewBox="0 0 100 100"><path class="seal-blob" d="M97.9,44.6 Q98.8,50.0 95.6,54.8 Q92.5,59.7 92.4,65.1 Q92.4,70.4 88.0,73.6 Q83.6,76.8 81.2,81.5 Q78.8,86.2 74.2,88.4 Q69.6,90.6 64.5,91.2 Q59.5,91.8 54.8,95.9 Q50.0,100.1 45.2,95.9 Q40.5,91.7 35.4,91.4 Q30.2,91.0 26.7,87.3 Q23.2,83.6 19.7,80.3 Q16.3,76.9 12.7,73.3 Q9.0,69.7 6.0,65.2 Q2.9,60.7 2.8,55.4 Q2.6,50.0 4.8,45.1 Q7.0,40.2 7.4,34.9 Q7.8,29.7 9.7,24.5 Q11.6,19.4 16.3,16.5 Q21.0,13.6 25.7,11.4 Q30.4,9.2 34.7,5.6 Q39.0,1.9 44.5,2.5 Q50.0,3.2 55.4,2.9 Q60.8,2.7 65.1,6.3 Q69.3,9.9 73.2,12.9 Q77.1,16.0 80.5,19.5 Q83.9,23.0 87.1,26.8 Q90.2,30.6 93.6,34.9 Q97.0,39.3 97.9,44.6 Z"></path><circle class="seal-ring" cx="50" cy="50" r="33"></circle><circle class="seal-ring2" cx="50" cy="50" r="30"></circle><text class="seal-hi" x="51" y="62">RV</text><text class="seal-txt" x="50" y="61">RV</text></svg></div>
+<div class="seal-half seal-r"><svg viewBox="0 0 100 100"><path class="seal-blob" d="M97.9,44.6 Q98.8,50.0 95.6,54.8 Q92.5,59.7 92.4,65.1 Q92.4,70.4 88.0,73.6 Q83.6,76.8 81.2,81.5 Q78.8,86.2 74.2,88.4 Q69.6,90.6 64.5,91.2 Q59.5,91.8 54.8,95.9 Q50.0,100.1 45.2,95.9 Q40.5,91.7 35.4,91.4 Q30.2,91.0 26.7,87.3 Q23.2,83.6 19.7,80.3 Q16.3,76.9 12.7,73.3 Q9.0,69.7 6.0,65.2 Q2.9,60.7 2.8,55.4 Q2.6,50.0 4.8,45.1 Q7.0,40.2 7.4,34.9 Q7.8,29.7 9.7,24.5 Q11.6,19.4 16.3,16.5 Q21.0,13.6 25.7,11.4 Q30.4,9.2 34.7,5.6 Q39.0,1.9 44.5,2.5 Q50.0,3.2 55.4,2.9 Q60.8,2.7 65.1,6.3 Q69.3,9.9 73.2,12.9 Q77.1,16.0 80.5,19.5 Q83.9,23.0 87.1,26.8 Q90.2,30.6 93.6,34.9 Q97.0,39.3 97.9,44.6 Z"></path><circle class="seal-ring" cx="50" cy="50" r="33"></circle><circle class="seal-ring2" cx="50" cy="50" r="30"></circle><text class="seal-hi" x="51" y="62">RV</text><text class="seal-txt" x="50" y="61">RV</text></svg></div>
+</div>
+<button type="button" class="env-hit" aria-label="{{envHitLabel}}" onClick="{{toggleEnv}}"></button>
+</div>
+</div>
+</div>
+</section>
+<footer class="wrap" style="padding-bottom: 40px">
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px; border-top: 3px double var(--ink); padding-top: 22px">
+<p style="margin: 0; max-width: 60ch; font-size: 14px; line-height: 1.6; color: var(--ink-2)"><span class="mono" style="color: var(--ink)">Colophon — </span>Set in IM Fell English, Newsreader, Antonio &amp; IBM Plex Mono. Independent views on software, design, and urbanism. Content is for general information, not professional advice.</p>
+<nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 4px 22px; align-items: center">
+<span class="mono" style="color: var(--ink-2)">© 2026 Ruben Verdin</span>
+<a href="#contact" class="mono" style="text-decoration: none; padding: 12px 0">RSS</a>
+<a href="#contact" class="mono" style="text-decoration: none; padding: 12px 0">Privacy</a>
+<a href="#contact" class="mono" style="text-decoration: none; padding: 12px 0">Sitemap</a>
+</nav>
+</div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"inPage": {"editor": null, "default": false}, "$preview": {"width": 1440, "height": 1000}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { env: 'closed' };
+  }
+  renderVals() {
+    var scope = this.props.inPage ? 'cmp' : 'cmp theme-day cmp-alone';
+    var today = ''; try { today = new Date().toLocaleDateString('en-CA', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }); } catch (e) {}
+    var self = this;
+    var env = this.state.env;
+    return {
+      scope: scope, today: today,
+      envClass: env === 'open' ? 'is-open' : (env === 'closing' ? 'is-closing' : ''),
+      envExpanded: env === 'open' ? 'true' : 'false',
+      envLabel: env === 'open' ? 'Seal it again' : 'Break the seal',
+      letterHidden: env === 'open' ? 'false' : 'true',
+      letterTab: env === 'open' ? '0' : '-1',
+      envHitLabel: env === 'open' ? 'Close the envelope' : 'Break the seal and open the envelope',
+      toggleEnv: function () {
+        if (self._t) { clearTimeout(self._t); }
+        if (self.state.env === 'open') {
+          self.setState({ env: 'closing' });
+          self._t = setTimeout(function () { self.setState({ env: 'closed' }); }, 2200);
+        } else {
+          self.setState({ env: 'open' });
+        }
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>

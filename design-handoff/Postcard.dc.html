@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dispatch postcard</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/b8569f53f40f3bff4438ba4f6b0942a3">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="{{scope}}">
+<a href="{{href}}" class="pc" aria-label="{{label}}" style="transform: rotate({{tilt}})">
+<div class="pc-in">
+<div class="face front {{bg}}"><span class="greet">Greetings from</span><span class="big">{{word}}</span><div class="strip"><span>{{title}}</span><span class="mono">{{num}}</span></div></div>
+<div class="face back"><div class="back-l"><div class="mono" style="color: var(--accent)">{{num}} · {{cat}}</div><h3 class="back-title">{{title}}</h3><span class="mono">{{read}} · Read →</span></div><div class="back-r"><div style="display: flex; justify-content: space-between; align-items: flex-start"><div class="pm">{{pm1}}<br>{{pm2}}</div><div class="stamp"><div class="stamp-in {{stCls}}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="{{icon}}"></path></svg>{{stLabel}}</div></div></div><div class="addr" style="margin-top: auto"><div>To: you, the reader</div><div>From: R. Verdin, Toronto</div></div></div></div>
+</div>
+</a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"inPage": {"editor": null, "default": false}, "item": {"editor": null}, "$preview": {"width": 620, "height": 420}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var scope = this.props.inPage ? 'cmp' : 'cmp theme-day cmp-alone';
+    var it = this.props.item || { num: 'No. 02', cat: 'CSS', title: 'Modern CSS I Reach For Every Day', word: 'CSS', bg: 'bg-sun', read: '6 min read', pm1: 'APR 30', pm2: '2025', stCls: 'st-navy', icon: 'M8 6l-5 6 5 6M16 6l5 6-5 6', stLabel: 'CSS' };
+    return { scope: scope, href: it.href || 'WritingDetail.dc.html', label: it.num + ' — ' + it.title + ', ' + it.read,
+      num: it.num, cat: it.cat, title: it.title, word: it.word, bg: it.bg, read: it.read, pm1: it.pm1, pm2: it.pm2, stCls: it.stCls, icon: it.icon, stLabel: it.stLabel, tilt: it.tilt || '-1deg' };
+  }
+}
+</script>
+</body>
+</html>

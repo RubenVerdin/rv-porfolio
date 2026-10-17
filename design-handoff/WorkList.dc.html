@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Atlas of Works</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/b8569f53f40f3bff4438ba4f6b0942a3">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rv {{themeClass}}" style="min-height: 100vh">
+<dc-import name="Header" in-page="{{ true }}" current="work" night="{{night}}" on-day="{{setDay}}" on-night="{{setNight}}" hint-size="100%,110px"></dc-import>
+<dc-import name="PageHead" in-page="{{ true }}" kicker="Section B — The Atlas of Works" aside="Plates I–IV" title="Good ideas." accent="Carefully made." dek="Every project, catalogued as a plate. Choose one to read how it came together." hint-size="100%,380px"></dc-import>
+<section class="wrap" aria-label="Projects" style="padding-bottom: 120px">
+<div class="atlas">
+<div class="pl-1 reveal"><dc-import name="Plate" in-page="{{ true }}" item="{{p1}}" hint-size="100%,480px"></dc-import></div>
+<div class="pl-2 reveal"><dc-import name="Plate" in-page="{{ true }}" item="{{p2}}" hint-size="100%,700px"></dc-import></div>
+<div class="pl-3 reveal"><dc-import name="Plate" in-page="{{ true }}" item="{{p3}}" hint-size="100%,400px"></dc-import></div>
+<div class="pl-4 reveal"><dc-import name="Plate" in-page="{{ true }}" item="{{p4}}" hint-size="100%,400px"></dc-import></div>
+</div>
+</section>
+<dc-import name="CrossBanner" in-page="{{ true }}" kicker="Next port · Correspondence" title="Read the" accent="dispatches." dek="Essays on craft &amp; cities — sent from Toronto." cta="Open the correspondence" href="WritingList.dc.html" words="Correspondence|essays|Dispatches|notes" hint-size="100%,680px"></dc-import>
+<dc-import name="BackPage" in-page="{{ true }}" hint-size="100%,1000px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"edition": {"editor": "enum", "options": ["Day", "Night"], "default": "Day"}, "$preview": {"width": 1440, "height": 3300}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { night: null };
+  }
+  renderVals() {
+    var self = this;
+    var night = this.state.night !== null ? this.state.night : (this.props.edition === 'Night');
+    return {
+      themeClass: night ? 'theme-night' : 'theme-day',
+      night: night,
+      setDay: function () { self.setState({ night: false }); },
+      setNight: function () { self.setState({ night: true }); },
+      p1: {"no": "Plate I.", "idx": "01", "cat": "Digital publishing", "title": "The Modern Index", "meta": "Editorial design · Development · 2025", "href": "WorkDetail.dc.html", "imgH": "340px"}, p2: {"no": "Plate II.", "idx": "03", "cat": "Cities & culture", "title": "Common Ground", "meta": "Research · Digital archive · 2025", "href": "WorkDetail.dc.html", "imgH": "560px"}, p3: {"no": "Plate III.", "idx": "02", "cat": "Design systems", "title": "Fieldwork: a system for growth", "meta": "Systems · Documentation · 2025", "href": "WorkDetail.dc.html", "imgH": "240px"}, p4: {"no": "Plate IV.", "idx": "04", "cat": "Art & direction", "title": "Edition No. 04", "meta": "Identity · Editorial · 2024", "href": "WorkDetail.dc.html", "imgH": "240px"}
+    };
+  }
+}
+</script>
+</body>
+</html>

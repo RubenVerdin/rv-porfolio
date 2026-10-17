@@ -1,0 +1,52 @@
+// Spacing scale — named by px value. These are the only spacing steps the
+// design uses; add a step here rather than writing a literal in a component.
+
+:root {
+  --rv-space-0: 0;
+  --rv-space-1: 1px;
+  --rv-space-2: 2px;
+  --rv-space-3: 3px;
+  --rv-space-4: 4px;
+  --rv-space-5: 5px;
+  --rv-space-6: 6px;
+  --rv-space-8: 8px;
+  --rv-space-9: 9px;
+  --rv-space-10: 10px;
+  --rv-space-11: 11px;
+  --rv-space-12: 12px;
+  --rv-space-14: 14px;
+  --rv-space-16: 16px;
+  --rv-space-18: 18px;
+  --rv-space-20: 20px;
+  --rv-space-22: 22px;
+  --rv-space-24: 24px;
+  --rv-space-26: 26px;
+  --rv-space-28: 28px;
+  --rv-space-30: 30px;
+  --rv-space-32: 32px;
+  --rv-space-36: 36px;
+  --rv-space-40: 40px;
+  --rv-space-44: 44px;
+  --rv-space-48: 48px;
+  --rv-space-52: 52px;
+  --rv-space-56: 56px;
+  --rv-space-60: 60px;
+  --rv-space-64: 64px;
+  --rv-space-72: 72px;
+  --rv-space-80: 80px;
+  --rv-space-90: 90px;
+  --rv-space-92: 92px;
+  --rv-space-100: 100px;
+  --rv-space-110: 110px;
+  --rv-space-120: 120px;
+  --rv-space-130: 130px;
+  --rv-space-150: 150px;
+
+  // Fluid
+  --rv-space-gutter: clamp(16px, 4cqw, 56px);
+  --rv-space-card: clamp(24px, 4cqw, 48px);
+  --rv-space-card-sm: clamp(24px, 3cqw, 36px);
+  --rv-space-letter-block: clamp(14px, 3.4cqw, 30px);
+  --rv-space-letter-inline: clamp(16px, 4cqw, 36px);
+  --rv-space-letter-gap: clamp(6px, 1.4cqw, 12px);
+}

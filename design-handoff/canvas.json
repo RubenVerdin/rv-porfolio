@@ -1,0 +1,331 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Artboard-skay.dc.html": {
+      "h": 1954,
+      "title": "Artboard 1",
+      "w": 3032,
+      "x": -251,
+      "y": -23
+    },
+    "BackPage.dc.html": {
+      "h": 1000,
+      "is_interactive": true,
+      "title": "Component — Back page & footer",
+      "w": 1440,
+      "x": 7803,
+      "y": 31597
+    },
+    "Contact-Mobile.dc.html": {
+      "h": 2400,
+      "is_interactive": true,
+      "title": "Contact — Mobile",
+      "w": 390,
+      "x": 5677,
+      "y": 28777
+    },
+    "Contact-Tablet.dc.html": {
+      "h": 2100,
+      "is_interactive": true,
+      "title": "Contact — Tablet",
+      "w": 834,
+      "x": 4763,
+      "y": 28777
+    },
+    "Contact.dc.html": {
+      "expand": "fill",
+      "h": 1336,
+      "is_interactive": true,
+      "title": "Contact",
+      "w": 1440,
+      "x": 3243,
+      "y": 28777
+    },
+    "CrossBanner.dc.html": {
+      "h": 680,
+      "is_interactive": true,
+      "title": "Component — Cross-link banner",
+      "w": 1440,
+      "x": 13123,
+      "y": 31597
+    },
+    "Envelope.dc.html": {
+      "h": 820,
+      "is_interactive": true,
+      "title": "Component — Envelope",
+      "w": 900,
+      "x": 10743,
+      "y": 31597
+    },
+    "Footer.dc.html": {
+      "h": 360,
+      "is_interactive": true,
+      "title": "Component — Footer",
+      "w": 1440,
+      "x": 6283,
+      "y": 31597
+    },
+    "Header.dc.html": {
+      "h": 110,
+      "is_interactive": true,
+      "title": "Component — Header",
+      "w": 1440,
+      "x": 3243,
+      "y": 31597
+    },
+    "LeadDispatch.dc.html": {
+      "h": 520,
+      "is_interactive": true,
+      "title": "Component — Lead dispatch",
+      "w": 1320,
+      "x": 11723,
+      "y": 31597
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 5247,
+      "is_interactive": true,
+      "title": "Homepage — Desktop",
+      "w": 1440,
+      "x": 3243,
+      "y": -23
+    },
+    "Mobile.dc.html": {
+      "h": 7200,
+      "is_interactive": true,
+      "title": "Homepage — Mobile",
+      "w": 390,
+      "x": 5677,
+      "y": -23
+    },
+    "PageHead.dc.html": {
+      "h": 380,
+      "is_interactive": true,
+      "title": "Component — Page heading",
+      "w": 1440,
+      "x": 4763,
+      "y": 31597
+    },
+    "Plate.dc.html": {
+      "h": 640,
+      "is_interactive": true,
+      "title": "Component — Plate",
+      "w": 640,
+      "x": 9323,
+      "y": 31597
+    },
+    "Postcard.dc.html": {
+      "h": 420,
+      "is_interactive": true,
+      "title": "Component — Postcard",
+      "w": 620,
+      "x": 10043,
+      "y": 31597
+    },
+    "Tablet.dc.html": {
+      "h": 6231,
+      "is_interactive": true,
+      "title": "Homepage — Tablet",
+      "w": 834,
+      "x": 4763,
+      "y": -23
+    },
+    "WorkDetail-Mobile.dc.html": {
+      "h": 3900,
+      "is_interactive": true,
+      "title": "Work detail — Mobile",
+      "w": 390,
+      "x": 5677,
+      "y": 13017
+    },
+    "WorkDetail-Tablet.dc.html": {
+      "h": 3500,
+      "is_interactive": true,
+      "title": "Work detail — Tablet",
+      "w": 834,
+      "x": 4763,
+      "y": 13017
+    },
+    "WorkDetail.dc.html": {
+      "expand": "fill",
+      "h": 3470,
+      "is_interactive": true,
+      "title": "Work — Detail",
+      "w": 1440,
+      "x": 3243,
+      "y": 13017
+    },
+    "WorkList-Mobile.dc.html": {
+      "h": 5000,
+      "is_interactive": true,
+      "title": "Work listing — Mobile",
+      "w": 390,
+      "x": 5677,
+      "y": 7597
+    },
+    "WorkList-Tablet.dc.html": {
+      "h": 5000,
+      "is_interactive": true,
+      "title": "Work listing — Tablet",
+      "w": 834,
+      "x": 4763,
+      "y": 7597
+    },
+    "WorkList.dc.html": {
+      "expand": "fill",
+      "h": 3300,
+      "is_interactive": true,
+      "title": "Work — Listing",
+      "w": 1440,
+      "x": 3243,
+      "y": 7597
+    },
+    "WritingDetail-Mobile.dc.html": {
+      "h": 5200,
+      "is_interactive": true,
+      "title": "Writing detail — Mobile",
+      "w": 390,
+      "x": 5677,
+      "y": 23157
+    },
+    "WritingDetail-Tablet.dc.html": {
+      "h": 4500,
+      "is_interactive": true,
+      "title": "Writing detail — Tablet",
+      "w": 834,
+      "x": 4763,
+      "y": 23157
+    },
+    "WritingDetail.dc.html": {
+      "expand": "fill",
+      "h": 4148,
+      "is_interactive": true,
+      "title": "Writing — Detail",
+      "w": 1440,
+      "x": 3243,
+      "y": 23157
+    },
+    "WritingList-Mobile.dc.html": {
+      "h": 4376,
+      "is_interactive": true,
+      "title": "Writing listing — Mobile",
+      "w": 390,
+      "x": 5677,
+      "y": 17337
+    },
+    "WritingList-Tablet.dc.html": {
+      "h": 3622,
+      "is_interactive": true,
+      "title": "Writing listing — Tablet",
+      "w": 834,
+      "x": 4763,
+      "y": 17337
+    },
+    "WritingList.dc.html": {
+      "expand": "fill",
+      "h": 3622,
+      "is_interactive": true,
+      "title": "Writing — Listing",
+      "w": 1440,
+      "x": 3243,
+      "y": 17337
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-17T04:26:25.841Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {},
+  "notes": {
+    "components": {
+      "kind": "title1",
+      "maxW": 8000,
+      "text": "Shared components",
+      "w": 240,
+      "x": 3243,
+      "y": 31297
+    },
+    "row_contact": {
+      "kind": "title1",
+      "maxW": 2830,
+      "text": "Contact",
+      "w": 240,
+      "x": 3243,
+      "y": 28477
+    },
+    "row_home": {
+      "kind": "title1",
+      "maxW": 2830,
+      "text": "Homepage",
+      "w": 240,
+      "x": 3243,
+      "y": -323
+    },
+    "row_work": {
+      "kind": "title1",
+      "maxW": 2830,
+      "text": "Work — Listing",
+      "w": 240,
+      "x": 3243,
+      "y": 7297
+    },
+    "row_workd": {
+      "kind": "title1",
+      "maxW": 2830,
+      "text": "Work — Detail",
+      "w": 240,
+      "x": 3243,
+      "y": 12717
+    },
+    "row_writ": {
+      "kind": "title1",
+      "maxW": 2830,
+      "text": "Writing — Listing",
+      "w": 240,
+      "x": 3243,
+      "y": 17037
+    },
+    "row_writd": {
+      "kind": "title1",
+      "maxW": 2830,
+      "text": "Writing — Detail",
+      "w": 240,
+      "x": 3243,
+      "y": 22857
+    }
+  },
+  "order": [
+    "Artboard-skay.dc.html",
+    "Main.dc.html",
+    "Tablet.dc.html",
+    "Mobile.dc.html",
+    "WorkList.dc.html",
+    "WorkDetail.dc.html",
+    "WritingList.dc.html",
+    "WritingDetail.dc.html",
+    "Contact.dc.html",
+    "Header.dc.html",
+    "PageHead.dc.html",
+    "Footer.dc.html",
+    "Plate.dc.html",
+    "Postcard.dc.html",
+    "Envelope.dc.html",
+    "BackPage.dc.html",
+    "LeadDispatch.dc.html",
+    "WorkList-Tablet.dc.html",
+    "WorkList-Mobile.dc.html",
+    "WorkDetail-Tablet.dc.html",
+    "WorkDetail-Mobile.dc.html",
+    "WritingList-Tablet.dc.html",
+    "WritingList-Mobile.dc.html",
+    "WritingDetail-Tablet.dc.html",
+    "WritingDetail-Mobile.dc.html",
+    "Contact-Tablet.dc.html",
+    "Contact-Mobile.dc.html",
+    "CrossBanner.dc.html"
+  ],
+  "pages": [],
+  "title": "Design"
+}

@@ -1,0 +1,20 @@
+// Shadows. The design uses hard, offset "printed" shadows in ink, soft
+// shadows only on physical objects (envelope, letters, wax).
+
+:root {
+  --rv-shadow-hard-xs: 2px 2px 0 var(--rv-color-ink);
+  --rv-shadow-hard-sm: 3px 3px 0 var(--rv-color-ink);
+  --rv-shadow-hard-md: 4px 6px 0 var(--rv-color-ink);
+  --rv-shadow-hard-lg: 10px 12px 0 var(--rv-color-ink);
+  --rv-shadow-paper: 6px 8px 0 var(--rv-color-faint);
+  --rv-shadow-paper-lg: 8px 10px 0 var(--rv-color-faint);
+  --rv-shadow-note: 3px 6px 0 var(--rv-palette-umber-900-a18);
+  --rv-shadow-pin: 0 2px 0 var(--rv-palette-black-a30);
+  --rv-shadow-envelope: 0 26px 40px -18px var(--rv-palette-black-a45), 0 2px 0 var(--rv-palette-black-a08);
+  --rv-shadow-letter: 0 10px 30px -10px var(--rv-palette-black-a35);
+  --rv-shadow-menu: 0 1px 0 var(--rv-palette-black-a08), 0 30px 60px -20px var(--rv-palette-black-a60);
+  --rv-shadow-wax: 0 4px 4px var(--rv-palette-black-a35);
+  --rv-shadow-crease: 0 2px 1px var(--rv-palette-umber-900-a25);
+  --rv-shadow-pocket: 0 -1px 0 var(--rv-palette-umber-900-a22);
+  --rv-shadow-stamp: 0 1px 0 var(--rv-color-faint);
+}

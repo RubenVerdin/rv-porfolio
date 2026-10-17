@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Page heading</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/b8569f53f40f3bff4438ba4f6b0942a3">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="{{scope}}">
+<div class="wrap pagehead">
+<div class="sec-head"><span class="mono">{{kicker}}</span><span class="mono" style="color: var(--ink-2)">{{aside}}</span></div>
+<h1 class="sec-title">{{title}} <em>{{accent}}</em></h1>
+<p class="ph-dek">{{dek}}</p>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"inPage": {"editor": null, "default": false}, "kicker": {"editor": "text", "default": "Section B — The Atlas of Works"}, "aside": {"editor": "text", "default": "Plates I–IV"}, "title": {"editor": "text", "default": "Good ideas."}, "accent": {"editor": "text", "default": "Carefully made."}, "dek": {"editor": "text", "default": "Every project, catalogued as a plate."}, "$preview": {"width": 1440, "height": 380}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var scope = this.props.inPage ? 'cmp' : 'cmp theme-day cmp-alone';
+    var p = this.props;
+    return { scope: scope, kicker: p.kicker ?? '', aside: p.aside ?? '', title: p.title ?? '', accent: p.accent ?? '', dek: p.dek ?? '' };
+  }
+}
+</script>
+</body>
+</html>

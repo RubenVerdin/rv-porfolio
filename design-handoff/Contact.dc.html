@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Contact — The Back Page</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/b8569f53f40f3bff4438ba4f6b0942a3">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rv {{themeClass}}" style="min-height: 100vh">
+<dc-import name="Header" in-page="{{ true }}" current="contact" night="{{night}}" on-day="{{setDay}}" on-night="{{setNight}}" hint-size="100%,110px"></dc-import>
+<dc-import name="PageHead" in-page="{{ true }}" kicker="Section D — The Back Page" aside="Sealed &amp; sent from Toronto" title="Let’s work" accent="together." dek="Available for new projects and collaborations. The letter’s already open — pick whichever route suits you." hint-size="100%,380px"></dc-import>
+<section class="wrap" aria-label="Ways to reach me" style="padding-top: 24px; padding-bottom: 120px">
+<div class="contact-grid">
+<div><dc-import name="Envelope" in-page="{{ true }}" start-open="{{ true }}" hint-size="100%,720px"></dc-import></div>
+<article class="pcard" aria-label="Find me, call me">
+<div class="pcard-top"><span class="pcard-word">POST CARD</span><div class="stamp"><div class="stamp-in st-red"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M3 12h18M12 3l3 9-3 9-3-9z"></path></svg>MX·CA</div></div></div>
+<div class="pcard-body">
+<div class="pcard-msg">
+<p style="margin: 0 0 14px">Hola —</p>
+<p style="margin: 0">Say hello any time. Every letter gets a reply.</p>
+<div style="display: flex; align-items: center; gap: 4px; margin-top: 22px"><div class="pm" style="transform: rotate(-10deg); width: 72px; height: 72px">TORONTO<br>ON</div><svg class="pm-waves" viewBox="0 0 90 40" aria-hidden="true" style="width: 70px"><path d="M0,8 q11,-7 22,0 t22,0 t22,0 t22,0"></path><path d="M0,20 q11,-7 22,0 t22,0 t22,0 t22,0"></path><path d="M0,32 q11,-7 22,0 t22,0 t22,0 t22,0"></path></svg></div>
+</div>
+<div class="pcard-rows">
+<div class="pc-row"><span class="k">Find me</span><span class="v">Toronto, Ontario</span></div>
+<div class="pc-row"><span class="k">Originally</span><span class="v">México</span></div>
+<a href="Contact.dc.html" class="pc-row"><span class="k">Call me</span><span class="v">[+1 (000) 000-0000]</span></a>
+<a href="Contact.dc.html" class="pc-row"><span class="k">Write me</span><span class="v">[your@email.com]</span></a>
+<div class="pc-row"><span class="k">Hours</span><span class="v">[Mon–Fri] · Eastern Time</span></div>
+</div>
+</div>
+<div class="pcard-foot"><span class="avion-sm">PAR AVION</span><span style="font-family: var(--display); font-style: italic; font-size: 20px">— R. Verdin</span></div>
+</article>
+</div>
+</section>
+<dc-import name="Footer" in-page="{{ true }}" show-cta="{{ false }}" hint-size="100%,160px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"edition": {"editor": "enum", "options": ["Day", "Night"], "default": "Day"}, "$preview": {"width": 1440, "height": 1900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { night: null };
+  }
+  renderVals() {
+    var self = this;
+    var night = this.state.night !== null ? this.state.night : (this.props.edition === 'Night');
+    return {
+      themeClass: night ? 'theme-night' : 'theme-day',
+      night: night,
+      setDay: function () { self.setState({ night: false }); },
+      setNight: function () { self.setState({ night: true }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

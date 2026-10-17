@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Building Maintainable Vue Component Libraries</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="/_blob/b8569f53f40f3bff4438ba4f6b0942a3">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="rv {{themeClass}}" style="min-height: 100vh">
+<dc-import name="Header" in-page="{{ true }}" current="writing" night="{{night}}" on-day="{{setDay}}" on-night="{{setNight}}" hint-size="100%,110px"></dc-import>
+<article>
+<header class="wrap doc-head" style="align-items: center; text-align: center">
+<nav class="crumbs mono" aria-label="Breadcrumb"><a href="WritingList.dc.html">Correspondence</a><span aria-hidden="true">/</span><span>Dispatch No. 0427</span></nav>
+<div class="mono" style="color: var(--accent)">Featured · Opinion · 9 min read</div>
+<h1 class="doc-title" style="max-width: 18ch">Building Maintainable Vue Component Libraries</h1>
+<p class="ph-dek" style="max-width: 46ch">Lessons learned shipping a token-driven component library that scales across projects without turning into a maintenance burden.</p>
+<div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap; justify-content: center; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); padding: 14px 32px; margin-top: 8px">
+<div style="text-align: left"><div style="font-family: var(--display); font-style: italic; font-size: 24px">R. Verdin</div><div class="mono" style="color: var(--ink-2)">Correspondent · Toronto</div></div>
+<div class="pm" style="transform: rotate(-8deg)">APR 30<br>2025</div>
+<div class="stamp"><div class="stamp-in st-seal"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5l9 15 9-15"></path><path d="M8 5l4 7 4-7"></path></svg>VUE</div></div>
+</div>
+</header>
+<div class="wrap" style="padding-top: 40px; padding-bottom: 80px">
+<div class="prose">
+<p class="lede">The dispatch opens here, set a little larger with a drop cap so the first line pulls the reader in. [Replace with your opening paragraph.]</p>
+<p class="ph">[Body paragraph. Comfortable 68-character measure, 20px type — the writing is the hero of this page.]</p>
+<h2>[Section heading]</h2>
+<p class="ph">[Body paragraph.]</p>
+<blockquote>[A line worth pulling out.]<cite>— R. Verdin</cite></blockquote>
+<p class="ph">[Body paragraph.]</p>
+<pre><div class="code-h"><span>[Component].vue</span><span>Vue</span></div><code>&lt;!-- [code snippet] --&gt;</code></pre>
+<p class="ph">[Body paragraph.]</p>
+<figure><div class="plate-img"><div class="plate-ph"><span class="mono">[ Image · 3:2 ]</span></div></div><figcaption><span>Fig. 1 — [Caption]</span><span>[Credit]</span></figcaption></figure>
+<h3>[Takeaways]</h3>
+<ul><li class="ph">[Point]</li><li class="ph">[Point]</li><li class="ph">[Point]</li></ul>
+</div>
+<div class="signoff" style="margin-top: 56px">
+<div><div style="font-family: var(--display); font-style: italic; font-size: 18px; color: var(--ink-2)">Yours in code &amp; ink,</div><div style="font-family: var(--display); font-style: italic; font-size: 32px">R. Verdin</div></div>
+<a href="WritingList.dc.html" class="btn btn-line">All dispatches <span class="arr">→</span></a>
+</div>
+</div>
+</article>
+<section class="wrap" aria-label="More dispatches" style="padding-bottom: 100px">
+<div class="mono" style="margin: 0 0 56px; display: flex; align-items: center; gap: 16px"><span>More dispatches</span><span style="flex: 1; border-top: 1px solid var(--ink)"></span></div>
+<div class="cards">
+<sc-for list="{{cards}}" as="c" hint-placeholder-count="2">
+<dc-import name="Postcard" in-page="{{ true }}" item="{{c}}" hint-size="100%,410px"></dc-import>
+</sc-for>
+</div>
+</section>
+<dc-import name="BackPage" in-page="{{ true }}" hint-size="100%,1000px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"edition": {"editor": "enum", "options": ["Day", "Night"], "default": "Day"}, "$preview": {"width": 1440, "height": 4100}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { night: null };
+  }
+  renderVals() {
+    var self = this;
+    var night = this.state.night !== null ? this.state.night : (this.props.edition === 'Night');
+    return {
+      themeClass: night ? 'theme-night' : 'theme-day',
+      night: night,
+      setDay: function () { self.setState({ night: false }); },
+      setNight: function () { self.setState({ night: true }); },
+      cards: [{"num": "No. 02", "cat": "CSS", "title": "Modern CSS I Reach For Every Day", "word": "CSS", "bg": "bg-sun", "read": "6 min read", "pm1": "APR 30", "pm2": "2025", "stCls": "st-navy", "icon": "M8 6l-5 6 5 6M16 6l5 6-5 6", "stLabel": "CSS", "tilt": "-1.2deg", "href": "WritingDetail.dc.html"}, {"num": "No. 03", "cat": "Writing", "title": "Writing Is Thinking: Notes From a Developer’s Notebook", "word": "The\nNotebook", "bg": "bg-ruled", "read": "7 min read", "pm1": "APR 12", "pm2": "2025", "stCls": "st-red", "icon": "M4 20l4-1 11-11-3-3L5 16z", "stLabel": "INK", "tilt": "0.9deg", "href": "WritingDetail.dc.html"}]
+    };
+  }
+}
+</script>
+</body>
+</html>
