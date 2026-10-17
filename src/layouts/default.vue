@@ -1,12 +1,14 @@
 <script setup lang="ts">
 // The page root: the `page` container every component's container queries
-// resolve against, the halftone ground, header, and the page's closing.
+// resolve against, the halftone ground, the voyage band (reading progress),
+// header, and the page's closing.
 const route = useRoute()
 const footer = computed(() => route.meta.footer ?? 'back-page')
 </script>
 
 <template>
   <div class="page">
+    <VoyageProgress />
     <SiteHeader :current="route.meta.section" />
     <main class="page__main">
       <slot />

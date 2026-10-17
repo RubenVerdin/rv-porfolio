@@ -1,0 +1,42 @@
+/* =====================================================================
+   site.css — v3 additions (2026-10-17): inked scrollbar + voyage band
+   Verbatim from the design canvas (layers v15–v17). In the canvas these are
+   gated to the homepage with `.rv-home`; the code applies them site-wide
+   (decision 2026-10-17). Already implemented — see ../../CHANGES.md.
+   ===================================================================== */
+/* ===== v15–17: themed scrollbar + voyage progress (homepage only for now: .rv-home) ===== */
+/* scrollbar: thin ink on paper by day, brass on dark paper by night; color-scheme flips native UI */
+html:has(.rv-home){color-scheme:light;scrollbar-width:thin;scrollbar-color:#4F4536 #EEE5D0;background:#EEE5D0}
+html:has(.rv-home.theme-night){color-scheme:dark;scrollbar-color:#C9A45C #14110D;background:#14110D}
+html:has(.rv-home)::-webkit-scrollbar{width:10px;height:10px}
+html:has(.rv-home)::-webkit-scrollbar-track{background:#EEE5D0;border-left:1px solid rgba(29,25,19,.14)}
+html:has(.rv-home)::-webkit-scrollbar-thumb{background:#4F4536;border:3px solid #EEE5D0;border-radius:0}
+html:has(.rv-home.theme-night)::-webkit-scrollbar-track{background:#14110D;border-left-color:rgba(235,223,198,.14)}
+html:has(.rv-home.theme-night)::-webkit-scrollbar-thumb{background:#C9A45C;border-color:#14110D}
+.rv-home .menu-letter{scrollbar-width:thin;scrollbar-color:#4F4536 #F8F1DF}
+/* sticky needs clip (hidden makes .rv a scroll container) */
+.rv.rv-home{overflow:clip}
+.vp-sticky{position:sticky;top:0;z-index:45;height:0}
+/* voyage progress band */
+.vp{position:absolute;left:0;right:0;top:0;height:48px;background-color:var(--ground);box-shadow:0 1px 0 var(--ink),0 4px 0 -2px var(--faint);transform:translateY(-10px);opacity:0;pointer-events:none;transition:transform .29s cubic-bezier(.3,0,.2,1),opacity .2s ease,background-color .6s ease}
+.vp.is-shown{transform:none;opacity:1;transition:transform .36s cubic-bezier(.2,.7,.2,1),opacity .26s ease,background-color .6s ease}
+.cmp-alone .vp{position:relative;transform:none;opacity:1}
+.vp-in{display:flex;align-items:flex-end;gap:18px;height:100%}
+.vp-lab{flex:none;color:var(--ink-2);white-space:nowrap;font-size:10px;line-height:14px;margin-bottom:3px}
+.vp-lab b{font-weight:500;color:var(--accent);display:inline-block;min-width:4ch;text-align:right}
+.vp-track{position:relative;flex:1;height:100%}
+.vp-todo,.vp-done{position:absolute;left:0;top:35px;height:6px}
+.vp-todo{right:0;background:radial-gradient(circle,var(--ink-2) 1px,transparent 1.4px) left center/9px 6px repeat-x;opacity:.45}
+.vp-done{width:var(--vp-w,0%);background:radial-gradient(circle,var(--accent) 1.6px,transparent 2px) left center/9px 6px repeat-x;transition:width .12s linear}
+.vp-ticks{position:absolute;left:0;right:0;top:42px;height:4px;background:repeating-linear-gradient(to right,var(--ink-2) 0 1px,transparent 1px 10%);opacity:.35}
+.vp-ship{position:absolute;left:var(--vp-w,0%);top:2px;width:30px;height:34px;margin-left:-15px;transition:left .12s linear}
+.vp-ship svg{width:100%;height:100%;overflow:visible}
+.vp-ship .hull{fill:var(--ink)}
+.vp-ship .sail{fill:var(--paper);stroke:var(--ink);stroke-width:1;stroke-linejoin:round}
+.vp-ship .flag{fill:var(--accent)}
+.vp-port{position:relative;flex:none;align-self:flex-end;margin-bottom:4px;width:12px;height:12px;border-radius:50%;border:2px solid var(--accent);box-sizing:border-box}
+.vp-port::after{content:"";position:absolute;inset:2px;border-radius:50%;background:var(--accent)}
+.vp-port::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:1.5px solid var(--accent);opacity:0}
+.vp.is-docked .vp-port::before{animation:vp-pulse 1.6s ease-out infinite}
+@keyframes vp-pulse{0%{transform:scale(.5);opacity:.9}100%{transform:scale(1.6);opacity:0}}
+@container page (max-width:1024px){.vp-sticky{display:none}}

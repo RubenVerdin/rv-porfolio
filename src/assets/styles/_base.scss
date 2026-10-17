@@ -24,3 +24,29 @@ a:hover {
   outline: var(--rv-border-thick) solid var(--rv-color-accent);
   outline-offset: var(--rv-space-4);
 }
+
+// The window scrollbar, inked to the edition: thin ink on paper by day,
+// brass at night (tokens in _semantic.scss). The standard properties
+// inherit, so inner scrollers follow unless they set their own
+// (code blocks, the menu letter).
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--rv-color-scrollbar-thumb) var(--rv-color-scrollbar-track);
+}
+
+// Safari has no `scrollbar-color`; Chromium ignores these once it's set.
+html::-webkit-scrollbar {
+  width: var(--rv-size-scrollbar);
+  height: var(--rv-size-scrollbar);
+}
+
+html::-webkit-scrollbar-track {
+  background: var(--rv-color-scrollbar-track);
+  border-left: var(--rv-border-hairline) solid var(--rv-color-faint);
+}
+
+html::-webkit-scrollbar-thumb {
+  background: var(--rv-color-scrollbar-thumb);
+  border: var(--rv-border-double) solid var(--rv-color-scrollbar-track);
+  border-radius: var(--rv-radius-none);
+}

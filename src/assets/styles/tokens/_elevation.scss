@@ -19,6 +19,8 @@
   --rv-shadow-pocket: 0 -1px 0 var(--rv-palette-umber-900-a22);
   --rv-shadow-stamp: 0 1px 0 var(--rv-color-faint);
   --rv-shadow-vignette: inset 0 0 90px var(--rv-palette-umber-900-a45);
+  // Voyage band: an ink rule with a faint printed under-rule.
+  --rv-shadow-band: 0 1px 0 var(--rv-color-ink), 0 4px 0 -2px var(--rv-color-faint);
   // Glow ring around the current port in the about logbook.
   --rv-shadow-port-ring: 0 0 0 6px color-mix(in srgb, var(--rv-color-accent) 22%, transparent);
 }

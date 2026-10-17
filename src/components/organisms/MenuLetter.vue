@@ -85,6 +85,8 @@ defineExpose({ open, isOpen })
   justify-content: center;
   overflow-y: auto;
   padding: var(--rv-space-92) var(--rv-space-16) var(--rv-space-24);
+  // Scrolls over the scrim: a letter-paper thumb on no track.
+  scrollbar-color: var(--rv-object-letter-paper) transparent;
   perspective: var(--rv-perspective-letter);
 
   &__scrim {

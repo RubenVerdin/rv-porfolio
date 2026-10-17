@@ -32,6 +32,9 @@
   --rv-filter-photo: grayscale(1) sepia(0.45) contrast(1.12) brightness(0.96);
   --rv-blend-halftone: multiply;
   --rv-opacity-halftone: 0.22;
+  // Window scrollbar: thin ink on paper.
+  --rv-color-scrollbar-thumb: var(--rv-palette-umber-700);
+  --rv-color-scrollbar-track: var(--rv-palette-parchment-300);
 
   color-scheme: light;
 }
@@ -62,6 +65,9 @@
   --rv-filter-photo: grayscale(1) sepia(0.5) contrast(1.1) brightness(0.82);
   --rv-blend-halftone: screen;
   --rv-opacity-halftone: 0.12;
+  // Window scrollbar: brass on dark paper.
+  --rv-color-scrollbar-thumb: var(--rv-palette-brass-500);
+  --rv-color-scrollbar-track: var(--rv-palette-umber-950);
 
   color-scheme: dark;
 }

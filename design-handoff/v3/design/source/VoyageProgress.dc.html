@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Voyage progress</title>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="../styles/site.v3-additions.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=IM+Fell+English:ital@0;1&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div class="{{scope}}">
+<div class="vp {{vpClass}}" aria-hidden="true">
+<div class="wrap vp-in">
+<span class="mono vp-lab">Log · <b>{{pctLabel}}</b></span>
+<div class="vp-track">
+<div class="vp-todo"></div>
+<div class="vp-ticks"></div>
+<div class="vp-done" style="width: {{pctCss}}"></div>
+<div class="vp-ship" style="left: {{pctCss}}"><svg viewBox="-15 -27 30 34"><g class="bob"><path class="hull" d="M-13,0 L13,0 L8,6 L-9,6 Z"></path><path class="sail" d="M0,-1 L0,-20 L11,-2 Z"></path><path class="sail" d="M-2,-17 L-11,-2 L-2,-2 Z"></path><path class="flag" d="M0,-20 L6,-23 L0,-25 Z"></path></g></svg></div>
+</div>
+<span class="vp-port"></span>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"inPage": {"editor": null, "default": false}, "preview": {"editor": "range", "min": 0, "max": 100, "step": 1, "unit": "%", "default": 38}, "$preview": {"width": 1440, "height": 48}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { live: false, p: 0, stuck: false };
+  }
+  componentDidMount() {
+    var self = this;
+    var raf = 0;
+    var measure = function (target) {
+      raf = 0;
+      var el = (!target || target === document || target === document.documentElement || target === document.body) ? (document.scrollingElement || document.documentElement) : target;
+      var max = el.scrollHeight - el.clientHeight;
+      if (max < 8) { if (self.state.live) { self.setState({ live: false }); } return; }
+      var top = el.scrollTop;
+      var p = Math.max(0, Math.min(1, top / max));
+      self.setState({ live: true, p: p, stuck: top > 88 });
+    };
+    this._onScroll = function (e) {
+      var t = e && e.target;
+      if (!raf) { raf = requestAnimationFrame(function () { measure(t); }); }
+    };
+    document.addEventListener('scroll', this._onScroll, { capture: true, passive: true });
+    window.addEventListener('resize', this._onScroll, { passive: true });
+    measure(null);
+  }
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this._onScroll, { capture: true });
+    window.removeEventListener('resize', this._onScroll);
+  }
+  renderVals() {
+    var scope = this.props.inPage ? 'cmp' : 'cmp theme-day cmp-alone';
+    var prev = this.props.preview ?? 38;
+    var p = this.state.live ? this.state.p : Math.max(0, Math.min(100, prev)) / 100;
+    var pct = Math.round(p * 100);
+    var cls = [];
+    if (this.state.live && this.state.stuck) { cls.push('is-shown'); }
+    if (p >= 0.995) { cls.push('is-docked'); }
+    return {
+      scope: scope,
+      vpClass: cls.join(' '),
+      pctCss: (p * 100).toFixed(2) + '%',
+      pctLabel: pct + '%'
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -38,6 +38,8 @@
   --rv-height-banner: 680px;
   --rv-height-banner-md: 600px;
   --rv-height-banner-sm: 560px;
+  --rv-height-voyage-band: 48px;
+  --rv-size-scrollbar: 10px;
   --rv-basis-news-item: 260px;
   --rv-basis-copy: 360px;
   --rv-basis-envelope: 480px;
@@ -60,5 +62,6 @@
   // Layers
   --rv-layer-base: 1;
   --rv-layer-raised: 2;
+  --rv-layer-sticky: 40;
   --rv-layer-overlay: 50;
 }

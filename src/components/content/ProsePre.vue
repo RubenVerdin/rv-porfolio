@@ -57,6 +57,7 @@ const languageLabel = computed(() => props.language ?? 'text')
     margin: 0;
     padding: var(--rv-space-18);
     overflow-x: auto;
+    scrollbar-color: var(--rv-color-inverse-muted) var(--rv-color-inverse-bg);
     font-family: var(--rv-font-mono);
     font-size: var(--rv-text-14);
     line-height: var(--rv-leading-170);

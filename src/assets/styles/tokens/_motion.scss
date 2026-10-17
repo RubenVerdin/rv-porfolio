@@ -1,6 +1,7 @@
 // Motion tokens.
 
 :root {
+  --rv-duration-120: 0.12s;
   --rv-duration-200: 0.2s;
   --rv-duration-250: 0.25s;
   --rv-duration-300: 0.3s;
@@ -30,6 +31,12 @@
   --rv-duration-spin-slow: 60s;
   --rv-duration-spin-slower: 90s;
 
+  // Voyage band: settles in, leaves ~10% quicker so it never lingers
+  --rv-duration-band-in: 0.36s;
+  --rv-duration-band-in-fade: 0.26s;
+  --rv-duration-band-out: 0.29s;
+  --rv-duration-band-out-fade: 0.2s;
+
   // Edition cross-fade
   --rv-duration-theme: 0.6s;
 
@@ -48,4 +55,6 @@
   --rv-ease-fold: cubic-bezier(0.45, 0, 0.2, 1);
   --rv-ease-flap: cubic-bezier(0.3, 0.7, 0.3, 1);
   --rv-ease-tuck: cubic-bezier(0.5, 0, 0.3, 1);
+  --rv-ease-band-in: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --rv-ease-band-out: cubic-bezier(0.3, 0, 0.2, 1);
 }

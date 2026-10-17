@@ -448,3 +448,33 @@ the suggested order 1 → 2 → 3 → 6 → 5 → 4; unchanged pages were not re
 - **Instrument columns:** each column takes its kicker and role from the matching chart territory in `site.ts`, so it can't drift from the homepage. The ports kicker comes from the Traveler territory the same way.
 - **Privacy has no copy yet:** only its title is set, so the page shows the full lorem fallback, which doubles as the visual test page.
 - **Placeholders:** the portrait `src`, `[Download CV]` and every bracketed value stay as they are.
+
+---
+
+## 11. v3 delta (2026-10-17)
+
+Source: `design-handoff/v3/CHANGES.md`. Implemented directly by Claude from the design session
+(the first round through the design-handoff loop, see `design-handoff/README.md`).
+
+| # | Change | Where it landed |
+| --- | --- | --- |
+| 1 | Inked scrollbar | `_base.scss` on `html` (`scrollbar-width/-color` + Safari `::-webkit-scrollbar*`). New tokens: `--rv-color-scrollbar-thumb` / `--rv-color-scrollbar-track` (per edition), `--rv-size-scrollbar`. `ProsePre` and `MenuLetter` set their own colours. |
+| 2 | Voyage band | `organisms/VoyageProgress.vue` + `composables/useScrollProgress.ts`, first child of `.page` in `layouts/default.vue`. New tokens: `--rv-height-voyage-band`, `--rv-layer-sticky`, `--rv-shadow-band`, `--rv-duration-120`, `--rv-duration-band-in(-fade)` / `-out(-fade)`, `--rv-ease-band-in` / `-out`. |
+
+**Decisions (2026-10-17):**
+
+- **Scope:** every page (the canvas only has it on the homepage).
+- **Band sizes:** desktop only. Hidden at `page-below(lg)`.
+- **Band over the scrollbar:** rejected. It needs an inner scroll container, which breaks keyboard scrolling, mobile browser chrome and scroll restoration.
+
+**Verified (2026-10-17):**
+
+- `npm run lint` and `npm run typecheck` pass with no fixes needed.
+- Scroll test in `npm run dev` (headless Chrome over CDP), all passing:
+  - The band reveals at `scrollTop` 89 and hides again at ≤ 88; the header bottom is at 73px.
+  - The ship and the percent track the scroll at 25 / 50 / 75 / 100%.
+  - The port pulses only once docked.
+  - The band is `display: none` at 1024 / 834 / 390 and shows at 1025.
+  - Night mode sets `scrollbar-color` to brass on umber-950 (`rgb(201 164 92) rgb(20 17 13)`).
+  - A client-side navigation resets the band to 0%.
+
