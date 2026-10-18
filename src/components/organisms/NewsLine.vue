@@ -16,7 +16,8 @@ defineProps<{
         :key="item.label"
         class="news-line__item"
       >
-        <b class="news-line__label">{{ item.label }}</b> {{ item.text }}
+        <b class="news-line__label">{{ item.label }}</b>
+        <span class="news-line__text">{{ item.text }}</span>
       </div>
       <div
         v-for="item in items"
@@ -24,7 +25,8 @@ defineProps<{
         class="news-line__item news-line__item--copy"
         aria-hidden="true"
       >
-        <b class="news-line__label">{{ item.label }}</b> {{ item.text }}
+        <b class="news-line__label">{{ item.label }}</b>
+        <span class="news-line__text">{{ item.text }}</span>
       </div>
     </div>
   </div>
@@ -43,7 +45,10 @@ defineProps<{
   }
 
   &__item {
+    display: flex;
     flex: 1 1 var(--rv-basis-news-item);
+    flex-direction: column;
+    gap: var(--rv-space-4);
     padding: var(--rv-space-12) var(--rv-space-20);
     border-left: var(--rv-border-hairline) solid var(--rv-color-faint);
     font-size: var(--rv-text-16);
@@ -61,7 +66,6 @@ defineProps<{
   &__label {
     @include label(var(--rv-text-12), var(--rv-tracking-8));
 
-    margin-right: var(--rv-space-10);
     font-weight: var(--rv-weight-medium);
     color: var(--rv-color-accent);
   }
@@ -87,7 +91,7 @@ defineProps<{
   }
 
   .news-line__item--copy {
-    display: block;
+    display: flex;
   }
 }
 </style>

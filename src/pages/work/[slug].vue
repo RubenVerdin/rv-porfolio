@@ -1,5 +1,5 @@
 <script setup lang="ts">
-definePageMeta({ section: 'work', footer: 'cta' })
+definePageMeta({ section: 'work', footer: 'back-page' })
 
 const route = useRoute()
 const slug = computed(() => String(route.params.slug))

@@ -88,7 +88,7 @@ the back page). Use these for parity checks until the design tool's boards can b
 
 ### Add
 
-- Fonts: IM Fell English (400, italic), Newsreader (opsz 6..72; 400, 600, italic 400), Antonio (500, 700), IBM Plex Mono (400, 500). Use the exact `<link>` from any `.dc.html` `<helmet>` in `app.head.link`, same as v1. `@nuxt/fonts` is an optional upgrade later.
+- Fonts: IM Fell English (400, italic), Newsreader (opsz 6..72; 400, 600, italic 400), Antonio (500, 700). IBM Plex Mono was dropped in §12; code uses the device monospace. Use the exact `<link>` from any `.dc.html` `<helmet>` in `app.head.link`, same as v1. `@nuxt/fonts` is an optional upgrade later.
 - `components` config with `pathPrefix: false`, so `components/atoms/Stamp.vue` registers as `<Stamp>`, not `<AtomsStamp>`. Component names must be unique across levels.
 
 ---
@@ -136,16 +136,16 @@ only use semantic and object tokens.
 | `--glow` | `--rv-glow` | `0` → `1` |
 | `--display` / `--body` / `--cond` / `--mono` | `--rv-font-display` / `-body` / `-condensed` / `-mono` | |
 
-Object tokens (`_objects.css`): `--rv-object-envelope`, `--rv-object-letter`,
-`--rv-object-letter-ink`, `--rv-object-airmail-red`, `--rv-object-airmail-blue`, wax-seal gradient
-stops, and stamp colours `--rv-stamp-{navy,red,brown,steel,seal}`.
+Object tokens (`_objects.scss`): fixed paper colours that never theme: `--rv-object-ink` /
+`-ink-muted` / `-ink-light`, `--rv-object-red` / `-navy` (airmail stripes, stamps),
+`--rv-object-letter-*`, wax-seal stops `--rv-object-wax-*`, and stamp colours `--rv-stamp-*`.
 
 **Spacing and type scale:** the design uses literal px inline (`gap: 14px`, `padding-top: 120px`,
-`margin: 72px 0 56px`…). Step one is an audit: list every distinct value in `site.css` and the
-inline styles, then snap to a scale (4px base, e.g. `--rv-space-1` = 4px … `--rv-space-30` =
-120px) and a type scale (`--rv-text-label: 12px`, display sizes as `clamp()` tokens). Values that
+`margin: 72px 0 56px`…). These were snapped to scales named by their px value (`--rv-space-16`,
+`--rv-text-14`), with fluid display sizes as `clamp()` roles (`--rv-text-display-*`). Values that
 appear once and would distort the scale stay as tokens scoped to the component
-(`--atlas-plate-image-height`), but they're still variables, not literals.
+(`--atlas-plate-image-height`), but they're still variables, not literals. The current scales
+are in §12.
 
 ### Breakpoints
 
@@ -427,7 +427,7 @@ the suggested order 1 → 2 → 3 → 6 → 5 → 4; unchanged pages were not re
 
 | # | Change | Where it landed |
 | --- | --- | --- |
-| 1 | CSS v9–v14 | v9 → `_prose.scss` (links, `strong`, `h4`, Roman `ol`, nested lists, inline code, dotted `hr`, tables) + `content/ProseTable.vue` + `content/Callout.vue`. v10 → `IndexRow`. v13/v14 → scoped in the About components. `.ml-n` → `MenuLink`. New tokens: `--rv-weight-semibold`, `--rv-text-section-sub`, `--rv-leading-120`, `--rv-tracking-4`, `--rv-shadow-paper-xl`, `--rv-shadow-vignette`, `--rv-shadow-port-ring`, `--rv-texture-photo-halftone`, `--rv-texture-rule-dots`, and the theme-aware `--rv-filter-photo` / `--rv-blend-halftone` / `--rv-opacity-halftone`. |
+| 1 | CSS v9–v14 | v9 → `_prose.scss` (links, `strong`, `h4`, Roman `ol`, nested lists, inline code, dotted `hr`, tables) + `content/ProseTable.vue` + `content/Callout.vue`. v10 → `IndexRow`. v13/v14 → scoped in the About components. `.ml-n` → `MenuLink`. New tokens: `--rv-weight-semibold`, `--rv-text-section-sub` (now `--rv-text-display-md`, §12), `--rv-leading-120`, `--rv-tracking-4`, `--rv-shadow-paper-xl` (now `--rv-shadow-paper-lg`, §12), `--rv-shadow-vignette`, `--rv-shadow-port-ring`, `--rv-texture-photo-halftone`, `--rv-texture-rule-dots`, and the theme-aware `--rv-filter-photo` / `--rv-blend-halftone` / `--rv-opacity-halftone`. |
 | 2 | Home + About nav; 5 compass points | `src/data/nav.ts` (`primaryNav`) feeds `SiteHeader`/`PrimaryNav` and `MenuLetter`/`MenuLink`. `Section` → `NavKey` (adds `about`); `section` meta is optional, so `/sitemap` and `/privacy` highlight nothing. |
 | 3 | Footer links | `footerLinks` in `nav.ts`: Privacy → `/privacy`, Sitemap → `/sitemap`; RSS stays inert. |
 | 6 | Default content page | `pages/[...slug].vue` + `pages` collection (`content/pages/*.md`, prefix `/`) + `useContentPage`; lorem fallback in `content/fallback/page.md` (`pageFallback` collection). |
@@ -478,3 +478,42 @@ Source: `design-handoff/v3/CHANGES.md`. Implemented directly by Claude from the 
   - Night mode sets `scrollbar-color` to brass on umber-950 (`rgb(201 164 92) rgb(20 17 13)`).
   - A client-side navigation resets the band to 0%.
 
+---
+
+## 12. Style consolidation (2026-10-18)
+
+Done in a Claude Design session that also maintains the design system "RV Portfolio"
+(<https://claude.ai/artifact/JTu7CvW759HdohkBvfmtNo>), which mirrors `src/assets/styles/tokens/`.
+Landed in commit `55f11dd`: the 7 token files were rewritten (293 → 186 tokens; motion
+untouched) and the old names were renamed across components, pages and global styles.
+
+- **Fonts 4 → 3.** IBM Plex Mono is gone, including from the Google Fonts link. Display (IM Fell
+  English): titles, italic values, figure captions (italic 16px). Body (Newsreader): reading
+  text. Condensed (Antonio): 500 for labels, buttons and datelines (`label()` defaults to 14px,
+  0.08em); 700 for graphic words. `--rv-font-mono` is the device monospace, for code only.
+- **12px floor.** Stamps, postmarks and map labels grew from 8.5–10px to 12px.
+- **Scales:**
+  - Text: 12 13 14 16 17 18 20 24 28 32 36 40 52 68 88, plus fluid roles
+    (`display-xl/lg/md/sm`, `card-title`, `postcard-word`, `territory`, `territory-sub`,
+    `cartouche-body`, `letter-body`, `letter-key`).
+  - Space: 2 4 6 8 10 12 16 20 24 28 32 40 48 56 64 80 96 120 150, plus `gutter`, `card`,
+    `letter`, `letter-gap`. 14 → 16 and 18 → 20.
+  - Leading: 0.9 1 1.1 1.2 1.3 1.4 1.5 1.7 (section titles 0.95 → 0.9).
+  - Tracking: -0.015 0 0.04 0.08 0.16 0.24 0.5em.
+  - Shadows: `hard-sm/md/lg`, `paper-sm` / `paper` / `paper-lg`, `lift`, `pocket`, `float`,
+    `letter`, `wax`, `vignette`, `band`, `port-ring`.
+  - Object colours merged into `--rv-object-ink` / `-ink-muted` / `-ink-light` / `-red` /
+    `-navy` / `-letter-shade`.
+
+**Workflow:** colour and font work may start in the design system; values land only in
+`src/assets/styles/tokens/`, which stays the source the design system re-syncs from.
+
+**Verified (2026-10-18):**
+
+- `npm run lint`, `npm run typecheck` and `npm run generate` (45 routes) pass with no fixes.
+- Every `var(--rv-*)` in `src/` resolves to a defined token; the only unused token is
+  `--rv-ease-linear`.
+- Headless Chrome, Day and Night at 1440 (plus the menu letter at 1024): stamps, postmarks, the
+  voyage chart labels, the ports-of-call stamps, the contact postcard, the open envelope letter,
+  postcard backs, the prose table and the menu letter all fit. Territory-button titles (Antonio
+  700, `line-height: 1`) overhang their box by 2px; overflow is visible, so nothing clips.
