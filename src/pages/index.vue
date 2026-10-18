@@ -83,8 +83,8 @@ useSeoMeta({
   }
 
   &__correspondence {
-    padding-top: var(--rv-space-100);
-    padding-bottom: var(--rv-space-130);
+    padding-top: var(--rv-space-96);
+    padding-bottom: var(--rv-space-120);
   }
 
   &__head {
@@ -92,7 +92,7 @@ useSeoMeta({
   }
 
   &__divider {
-    margin: var(--rv-space-72) 0 var(--rv-space-56);
+    margin: var(--rv-space-80) 0 var(--rv-space-56);
   }
 }
 </style>

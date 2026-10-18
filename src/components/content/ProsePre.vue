@@ -43,19 +43,19 @@ const languageLabel = computed(() => props.language ?? 'text')
   @include theme-transition(background-color, color);
 
   &__header {
-    @include label(var(--rv-text-11), var(--rv-tracking-12));
+    @include label(var(--rv-text-12), var(--rv-tracking-8));
 
     display: flex;
     justify-content: space-between;
     gap: var(--rv-space-12);
-    padding: var(--rv-space-10) var(--rv-space-18);
-    border-bottom: var(--rv-border-hairline) solid var(--rv-color-code-rule);
+    padding: var(--rv-space-10) var(--rv-space-20);
+    border-bottom: var(--rv-border-hairline) solid var(--rv-color-inverse-rule);
     color: var(--rv-color-inverse-muted);
   }
 
   &__pre {
     margin: 0;
-    padding: var(--rv-space-18);
+    padding: var(--rv-space-20);
     overflow-x: auto;
     scrollbar-color: var(--rv-color-inverse-muted) var(--rv-color-inverse-bg);
     font-family: var(--rv-font-mono);

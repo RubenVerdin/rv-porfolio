@@ -30,7 +30,7 @@ defineProps<{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--rv-space-4) var(--rv-space-26);
+  gap: var(--rv-space-4) var(--rv-space-28);
 
   &__link {
     @include label;

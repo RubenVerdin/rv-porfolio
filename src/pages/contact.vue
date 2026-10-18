@@ -50,7 +50,7 @@ useSeoMeta({
 @include page-below(md) {
   .contact__grid {
     grid-template-columns: minmax(0, 1fr);
-    gap: var(--rv-space-72);
+    gap: var(--rv-space-80);
   }
 }
 

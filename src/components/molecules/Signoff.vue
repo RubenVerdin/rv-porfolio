@@ -61,7 +61,7 @@ withDefaults(defineProps<{
     font-family: var(--rv-font-body);
     font-size: var(--rv-text-17);
     line-height: var(--rv-leading-150);
-    color: var(--rv-object-letter-ink-muted);
+    color: var(--rv-object-ink-muted);
   }
 
   &--letter &__name {

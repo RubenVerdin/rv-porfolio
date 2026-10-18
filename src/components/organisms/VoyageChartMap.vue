@@ -909,9 +909,10 @@ function modifier(element: 'territory' | 'bearing' | 'pulse', id: TerritoryId) {
   }
 
   &__label-sm {
-    font-family: var(--rv-font-mono);
-    font-size: var(--rv-text-8-5);
-    letter-spacing: var(--rv-tracking-12);
+    font-family: var(--rv-font-condensed);
+    font-weight: var(--rv-weight-medium);
+    font-size: var(--rv-text-12);
+    letter-spacing: var(--rv-tracking-8);
     fill: var(--rv-color-ink-muted);
   }
 

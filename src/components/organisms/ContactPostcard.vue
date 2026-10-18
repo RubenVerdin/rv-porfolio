@@ -47,11 +47,11 @@ import { contactStamp } from '~/data/stamps'
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--rv-space-18);
-  padding: var(--rv-space-26) var(--rv-space-28);
+  gap: var(--rv-space-20);
+  padding: var(--rv-space-28) var(--rv-space-28);
   background: var(--rv-color-paper);
   border: var(--rv-border-hairline) solid var(--rv-color-ink);
-  box-shadow: var(--rv-shadow-paper-lg);
+  box-shadow: var(--rv-shadow-paper);
   transform: rotate(1.2deg);
   transition:
     transform var(--rv-duration-500) var(--rv-ease-soft),
@@ -71,28 +71,29 @@ import { contactStamp } from '~/data/stamps'
   }
 
   &__word {
-    font-family: var(--rv-font-mono);
-    font-size: var(--rv-text-22);
-    letter-spacing: var(--rv-tracking-32);
+    font-family: var(--rv-font-condensed);
+    font-weight: var(--rv-weight-medium);
+    font-size: var(--rv-text-24);
+    letter-spacing: var(--rv-tracking-24);
   }
 
   &__body {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
-    gap: var(--rv-space-22);
+    gap: var(--rv-space-24);
   }
 
   &__message {
-    padding-right: var(--rv-space-22);
+    padding-right: var(--rv-space-24);
     border-right: var(--rv-border-hairline) solid var(--rv-color-ink-muted);
     font-family: var(--rv-font-display);
     font-style: italic;
-    font-size: var(--rv-text-21);
+    font-size: var(--rv-text-20);
     line-height: var(--rv-leading-140);
   }
 
   &__greeting {
-    margin-bottom: var(--rv-space-14);
+    margin-bottom: var(--rv-space-16);
   }
 
   &__cancel {
@@ -101,7 +102,7 @@ import { contactStamp } from '~/data/stamps'
     display: flex;
     align-items: center;
     gap: var(--rv-space-4);
-    margin-top: var(--rv-space-22);
+    margin-top: var(--rv-space-24);
   }
 
   &__postmark {
@@ -121,12 +122,13 @@ import { contactStamp } from '~/data/stamps'
   }
 
   &__avion {
-    padding: var(--rv-space-5) var(--rv-space-9);
-    background: var(--rv-object-airmail-blue);
-    color: var(--rv-object-airmail-ink);
-    font-family: var(--rv-font-mono);
-    font-size: var(--rv-text-10);
-    letter-spacing: var(--rv-tracking-14);
+    padding: var(--rv-space-6) var(--rv-space-10);
+    background: var(--rv-object-navy);
+    color: var(--rv-object-ink-light);
+    font-family: var(--rv-font-condensed);
+    font-weight: var(--rv-weight-medium);
+    font-size: var(--rv-text-12);
+    letter-spacing: var(--rv-tracking-8);
   }
 
   &__signature {
@@ -144,7 +146,7 @@ import { contactStamp } from '~/data/stamps'
 
 @include page-below(xs) {
   .contact-postcard {
-    padding: var(--rv-space-22) var(--rv-space-20);
+    padding: var(--rv-space-24) var(--rv-space-20);
     transform: none;
   }
 

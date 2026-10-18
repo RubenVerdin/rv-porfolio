@@ -98,15 +98,15 @@ const percent = computed(() => `${Math.round(progress.value * 100)}%`)
   &__inner {
     display: flex;
     align-items: flex-end;
-    gap: var(--rv-space-18);
+    gap: var(--rv-space-20);
     height: 100%;
   }
 
   &__log {
-    @include label(var(--rv-text-10));
+    @include label(var(--rv-text-12));
 
     flex: none;
-    margin-bottom: var(--rv-space-3);
+    margin-bottom: var(--rv-space-4);
     color: var(--rv-color-ink-muted);
     line-height: var(--rv-leading-140);
     white-space: nowrap;
@@ -206,7 +206,7 @@ const percent = computed(() => `${Math.round(progress.value * 100)}%`)
       content: '';
       position: absolute;
       inset: calc(-1 * var(--rv-space-6));
-      border: var(--rv-border-medium) solid var(--rv-color-accent);
+      border: var(--rv-border-thick) solid var(--rv-color-accent);
       border-radius: var(--rv-radius-round);
       opacity: 0;
     }

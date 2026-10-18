@@ -22,26 +22,27 @@ defineProps<{
 .menu-link {
   display: flex;
   align-items: baseline;
-  gap: var(--rv-space-14);
+  gap: var(--rv-space-16);
   min-height: var(--rv-size-button-lg);
   padding: var(--rv-space-8) 0;
   text-decoration: none;
-  color: var(--rv-object-letter-ink);
+  color: var(--rv-object-ink);
 
   &__point {
     display: inline-flex;
     flex: none;
     align-items: center;
     justify-content: center;
-    width: var(--rv-space-22);
-    height: var(--rv-space-22);
-    border: var(--rv-border-hairline) solid var(--rv-object-letter-accent);
+    width: var(--rv-space-24);
+    height: var(--rv-space-24);
+    border: var(--rv-border-hairline) solid var(--rv-object-red);
     border-radius: var(--rv-radius-round);
-    font-family: var(--rv-font-mono);
-    font-size: var(--rv-text-10);
+    font-family: var(--rv-font-condensed);
+    font-weight: var(--rv-weight-medium);
+    font-size: var(--rv-text-12);
     letter-spacing: var(--rv-tracking-4);
-    color: var(--rv-object-letter-accent);
-    transform: translateY(calc(var(--rv-space-3) * -1));
+    color: var(--rv-object-red);
+    transform: translateY(calc(var(--rv-space-4) * -1));
   }
 
   &__label {
@@ -58,19 +59,19 @@ defineProps<{
     font-family: var(--rv-font-display);
     font-style: italic;
     font-size: var(--rv-text-16);
-    color: var(--rv-object-letter-ink-muted);
+    color: var(--rv-object-ink-muted);
   }
 
   &:hover {
-    color: var(--rv-object-letter-ink);
+    color: var(--rv-object-ink);
   }
 
   &:hover &__label {
-    color: var(--rv-object-letter-accent);
+    color: var(--rv-object-red);
   }
 
   &:hover &__point {
-    background: var(--rv-object-letter-accent);
+    background: var(--rv-object-red);
     color: var(--rv-object-letter-paper);
   }
 }

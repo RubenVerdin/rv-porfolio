@@ -21,7 +21,7 @@ defineProps<{
 .address-lines {
   display: flex;
   flex-direction: column;
-  gap: var(--rv-space-14);
+  gap: var(--rv-space-16);
 
   &__line {
     padding-bottom: var(--rv-space-6);

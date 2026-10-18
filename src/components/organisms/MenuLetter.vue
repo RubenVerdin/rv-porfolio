@@ -84,7 +84,7 @@ defineExpose({ open, isOpen })
   align-items: flex-start;
   justify-content: center;
   overflow-y: auto;
-  padding: var(--rv-space-92) var(--rv-space-16) var(--rv-space-24);
+  padding: var(--rv-space-96) var(--rv-space-16) var(--rv-space-24);
   // Scrolls over the scrim: a letter-paper thumb on no track.
   scrollbar-color: var(--rv-object-letter-paper) transparent;
   perspective: var(--rv-perspective-letter);
@@ -105,16 +105,16 @@ defineExpose({ open, isOpen })
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: var(--rv-space-18);
+    gap: var(--rv-space-20);
     width: min(var(--rv-size-menu-letter), 100%);
-    padding: var(--rv-space-30) var(--rv-space-40);
+    padding: var(--rv-space-32) var(--rv-space-40);
     background-color: var(--rv-object-letter-paper);
     // Two fold creases + aged edges.
     background-image:
-      linear-gradient(180deg, transparent 33.1%, var(--rv-object-letter-fold) 33.3%, var(--rv-object-letter-fold-light) 33.6%, transparent 34%, transparent 66.4%, var(--rv-object-letter-fold) 66.6%, var(--rv-object-letter-fold-light) 66.9%, transparent 67.3%),
+      linear-gradient(180deg, transparent 33.1%, var(--rv-object-letter-shade) 33.3%, var(--rv-object-letter-fold-light) 33.6%, transparent 34%, transparent 66.4%, var(--rv-object-letter-shade) 66.6%, var(--rv-object-letter-fold-light) 66.9%, transparent 67.3%),
       radial-gradient(120% 90% at 50% 40%, transparent 60%, var(--rv-object-letter-aging));
-    color: var(--rv-object-letter-ink);
-    box-shadow: var(--rv-shadow-menu);
+    color: var(--rv-object-ink);
+    box-shadow: var(--rv-shadow-float);
     transform-origin: 50% 0;
     animation: unfold var(--rv-duration-800) var(--rv-ease-soft) both;
   }
@@ -131,14 +131,14 @@ defineExpose({ open, isOpen })
     background: transparent;
     border: 0;
     border-radius: var(--rv-radius-round);
-    color: var(--rv-object-letter-ink);
+    color: var(--rv-object-ink);
     cursor: pointer;
 
     --icon-size: var(--rv-size-icon-sm);
     --icon-stroke: 1.6;
 
     &:hover {
-      background: var(--rv-object-letter-hover);
+      background: var(--rv-object-letter-shade);
     }
   }
 
@@ -155,7 +155,7 @@ defineExpose({ open, isOpen })
   &__edition {
     @include label;
 
-    color: var(--rv-object-letter-ink-muted);
+    color: var(--rv-object-ink-muted);
   }
 
   &__body {
@@ -175,7 +175,7 @@ defineExpose({ open, isOpen })
   &__text {
     font-size: var(--rv-text-17);
     line-height: var(--rv-leading-150);
-    color: var(--rv-object-letter-ink-muted);
+    color: var(--rv-object-ink-muted);
   }
 
   &__nav {
@@ -193,7 +193,7 @@ defineExpose({ open, isOpen })
 // Teleported out of the page container → viewport query.
 @include viewport-below(xs) {
   .menu-letter__sheet {
-    padding: var(--rv-space-26) var(--rv-space-24) var(--rv-space-24);
+    padding: var(--rv-space-28) var(--rv-space-24) var(--rv-space-24);
   }
 }
 </style>

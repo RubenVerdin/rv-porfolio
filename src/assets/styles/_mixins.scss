@@ -36,9 +36,11 @@ $page-breakpoints: (
   }
 }
 
-// The design's `.mono` label: IBM Plex Mono, 12px, tracked uppercase.
-@mixin label($size: var(--rv-text-12), $tracking: var(--rv-tracking-8)) {
-  font-family: var(--rv-font-mono);
+// The house label: Antonio 500, 14px, tracked uppercase (`label` style).
+// Pass var(--rv-text-12) for `label-sm`, var(--rv-text-16) for `label-lg`.
+@mixin label($size: var(--rv-text-14), $tracking: var(--rv-tracking-8)) {
+  font-family: var(--rv-font-condensed);
+  font-weight: var(--rv-weight-medium);
   font-size: $size;
   letter-spacing: $tracking;
   text-transform: uppercase;

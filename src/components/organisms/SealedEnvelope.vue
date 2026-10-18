@@ -242,7 +242,7 @@ const stamp = { color: 'red', label: 'RV', icon: 'M3 15l9-11 9 11M12 4v16M7 20h1
     inset: 0;
     z-index: 1;
     background: var(--rv-color-envelope-inside);
-    box-shadow: var(--rv-shadow-envelope);
+    box-shadow: var(--rv-shadow-float);
 
     @include theme-transition(background-color);
   }
@@ -288,7 +288,7 @@ const stamp = { color: 'red', label: 'RV', icon: 'M3 15l9-11 9 11M12 4v16M7 20h1
     pointer-events: none;
     border: var(--rv-border-envelope) solid transparent;
     border-top-width: 0;
-    border-image: repeating-linear-gradient(-45deg, var(--rv-object-airmail-red) 0 14px, transparent 14px 22px, var(--rv-object-airmail-blue) 22px 36px, transparent 36px 44px) 10;
+    border-image: repeating-linear-gradient(-45deg, var(--rv-object-red) 0 14px, transparent 14px 22px, var(--rv-object-navy) 22px 36px, transparent 36px 44px) 10;
   }
 
   &__mark {
@@ -313,11 +313,12 @@ const stamp = { color: 'red', label: 'RV', icon: 'M3 15l9-11 9 11M12 4v16M7 20h1
 
   &__avion {
     padding: var(--rv-space-6) var(--rv-space-10);
-    background: var(--rv-object-airmail-blue);
-    color: var(--rv-object-airmail-ink);
-    font-family: var(--rv-font-mono);
-    font-size: var(--rv-text-11);
-    letter-spacing: var(--rv-tracking-14);
+    background: var(--rv-object-navy);
+    color: var(--rv-object-ink-light);
+    font-family: var(--rv-font-condensed);
+    font-weight: var(--rv-weight-medium);
+    font-size: var(--rv-text-12);
+    letter-spacing: var(--rv-tracking-8);
     line-height: var(--rv-leading-130);
   }
 
@@ -344,7 +345,7 @@ const stamp = { color: 'red', label: 'RV', icon: 'M3 15l9-11 9 11M12 4v16M7 20h1
     }
 
     &--front {
-      filter: drop-shadow(var(--rv-shadow-crease));
+      filter: drop-shadow(var(--rv-shadow-lift));
     }
 
     &--front > div {
@@ -360,7 +361,7 @@ const stamp = { color: 'red', label: 'RV', icon: 'M3 15l9-11 9 11M12 4v16M7 20h1
 
     &--back > div {
       clip-path: polygon(50% 0, 100% 100%, 0 100%);
-      background-color: var(--rv-object-airmail-blue);
+      background-color: var(--rv-object-navy);
       background-image:
         radial-gradient(var(--rv-object-airmail-dots) 1px, transparent 1.2px),
         repeating-linear-gradient(135deg, var(--rv-object-airmail-lines) 0 1px, transparent 1px 9px);
@@ -378,10 +379,10 @@ const stamp = { color: 'red', label: 'RV', icon: 'M3 15l9-11 9 11M12 4v16M7 20h1
     flex-direction: column;
     gap: var(--rv-space-letter-gap);
     height: 92%;
-    padding: var(--rv-space-letter-block) var(--rv-space-letter-inline);
+    padding: var(--rv-space-letter) var(--rv-space-letter);
     background-color: var(--rv-color-letter);
-    background-image: repeating-linear-gradient(0deg, var(--rv-object-letter-lines) 0 1px, transparent 1px 28px);
-    color: var(--rv-object-letter-ink);
+    background-image: repeating-linear-gradient(0deg, var(--rv-object-letter-shade) 0 1px, transparent 1px 28px);
+    color: var(--rv-object-ink);
     box-shadow: var(--rv-shadow-letter);
 
     @include theme-transition(background-color);
@@ -427,20 +428,21 @@ const stamp = { color: 'red', label: 'RV', icon: 'M3 15l9-11 9 11M12 4v16M7 20h1
   &__salute {
     font-family: var(--rv-font-display);
     font-style: italic;
-    font-size: var(--rv-text-letter-salute);
+    font-size: var(--rv-text-card-title);
   }
 
   &__dateline {
-    font-family: var(--rv-font-mono);
-    font-size: var(--rv-text-10);
-    letter-spacing: var(--rv-tracking-14);
-    color: var(--rv-object-letter-ink-muted);
+    font-family: var(--rv-font-condensed);
+    font-weight: var(--rv-weight-medium);
+    font-size: var(--rv-text-12);
+    letter-spacing: var(--rv-tracking-8);
+    color: var(--rv-object-ink-muted);
   }
 
   &__letter-text {
     font-size: var(--rv-text-letter-body);
     line-height: var(--rv-leading-150);
-    color: var(--rv-object-letter-ink-muted);
+    color: var(--rv-object-ink-muted);
   }
 
   &__rows {
@@ -463,21 +465,22 @@ const stamp = { color: 'red', label: 'RV', icon: 'M3 15l9-11 9 11M12 4v16M7 20h1
   }
 
   &__closing {
-    font-size: var(--rv-text-letter-closing);
-    color: var(--rv-object-letter-ink-muted);
+    font-size: var(--rv-text-letter-body);
+    color: var(--rv-object-ink-muted);
   }
 
   &__name {
-    font-size: var(--rv-text-letter-name);
+    font-size: var(--rv-text-card-title);
   }
 
   &__reply {
     padding: var(--rv-space-4) var(--rv-space-8);
-    border: var(--rv-border-medium) solid var(--rv-object-letter-accent);
-    font-family: var(--rv-font-mono);
-    font-size: var(--rv-text-10);
-    letter-spacing: var(--rv-tracking-14);
-    color: var(--rv-object-letter-accent);
+    border: var(--rv-border-thick) solid var(--rv-object-red);
+    font-family: var(--rv-font-condensed);
+    font-weight: var(--rv-weight-medium);
+    font-size: var(--rv-text-12);
+    letter-spacing: var(--rv-tracking-8);
+    color: var(--rv-object-red);
     transform: rotate(-4deg);
   }
 
@@ -520,7 +523,7 @@ const stamp = { color: 'red', label: 'RV', icon: 'M3 15l9-11 9 11M12 4v16M7 20h1
 
   &__wax-ring {
     fill: none;
-    stroke: var(--rv-object-wax-ink);
+    stroke: var(--rv-object-wax-dark);
     stroke-width: 1.6;
     opacity: 0.75;
 
@@ -533,9 +536,9 @@ const stamp = { color: 'red', label: 'RV', icon: 'M3 15l9-11 9 11M12 4v16M7 20h1
 
   &__wax-text {
     font-family: var(--rv-font-display);
-    font-size: var(--rv-text-34);
+    font-size: var(--rv-text-32);
     text-anchor: middle;
-    fill: var(--rv-object-wax-ink);
+    fill: var(--rv-object-wax-dark);
 
     &--highlight {
       fill: var(--rv-object-wax-highlight);
@@ -654,7 +657,7 @@ const stamp = { color: 'red', label: 'RV', icon: 'M3 15l9-11 9 11M12 4v16M7 20h1
 
 @include page-below(xs) {
   .sealed-envelope:not(.sealed-envelope--standalone) {
-    padding-top: var(--rv-space-110);
+    padding-top: var(--rv-space-120);
   }
 }
 

@@ -44,8 +44,8 @@ withDefaults(defineProps<{
   &__title {
     font-family: var(--rv-font-display);
     font-weight: var(--rv-weight-regular);
-    font-size: var(--rv-text-doc-title);
-    line-height: var(--rv-leading-98);
+    font-size: var(--rv-text-display-lg);
+    line-height: var(--rv-leading-100);
     letter-spacing: var(--rv-tracking-neg-1-5);
     text-wrap: balance;
     animation: head-in var(--rv-duration-900) var(--rv-ease-soft) both;
@@ -54,7 +54,7 @@ withDefaults(defineProps<{
   &__dek {
     max-width: var(--rv-measure-dek);
     font-size: var(--rv-text-20);
-    line-height: var(--rv-leading-155);
+    line-height: var(--rv-leading-150);
     color: var(--rv-color-ink-muted);
     text-wrap: pretty;
   }

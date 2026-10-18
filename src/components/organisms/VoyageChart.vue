@@ -113,10 +113,10 @@ const { territories, selected, select, stateOf, isActive, onKeydown } = useVoyag
     flex-direction: column;
     gap: var(--rv-space-4);
     max-width: min(var(--rv-size-sticky-note), 40%);
-    padding: var(--rv-space-14) var(--rv-space-18);
+    padding: var(--rv-space-16) var(--rv-space-20);
     background: var(--rv-color-sticky-note);
-    color: var(--rv-object-note-ink);
-    box-shadow: var(--rv-shadow-note);
+    color: var(--rv-object-ink);
+    box-shadow: var(--rv-shadow-paper-sm);
     transform: translateX(-50%) rotate(-2deg);
 
     &::before {
@@ -128,15 +128,15 @@ const { territories, selected, select, stateOf, isActive, onKeydown } = useVoyag
       height: var(--rv-space-12);
       margin-left: calc(var(--rv-space-6) * -1);
       border-radius: var(--rv-radius-round);
-      background: var(--rv-object-pin);
-      box-shadow: var(--rv-shadow-pin);
+      background: var(--rv-object-red);
+      box-shadow: var(--rv-shadow-lift);
     }
   }
 
   &__note-kicker {
-    @include label(var(--rv-text-10));
+    @include label(var(--rv-text-12));
 
-    color: var(--rv-object-note-ink-muted);
+    color: var(--rv-object-ink-muted);
   }
 
   &__note-text {

@@ -98,7 +98,7 @@ export const contactRows: LinkRow[] = [
 ]
 
 export const colophon
-  = 'Set in IM Fell English, Newsreader, Antonio & IBM Plex Mono. Independent views on software, design, and urbanism. Content is for general information, not professional advice.'
+  = 'Set in IM Fell English, Newsreader & Antonio. Independent views on software, design, and urbanism. Content is for general information, not professional advice.'
 
 export const crossBanners: Record<'toWriting' | 'toWork', CrossBannerPreset> = {
   toWriting: {

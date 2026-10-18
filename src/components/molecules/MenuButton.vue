@@ -60,7 +60,7 @@ defineProps<{
 
 @include page-below(xs) {
   .menu-button {
-    padding: 0 var(--rv-space-9);
+    padding: 0 var(--rv-space-10);
   }
 
   .menu-button__label {

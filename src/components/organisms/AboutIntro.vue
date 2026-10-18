@@ -43,10 +43,10 @@ defineProps<{
   display: grid;
   grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   align-items: start;
-  gap: var(--rv-space-72);
+  gap: var(--rv-space-80);
 
   &__kicker {
-    margin-bottom: var(--rv-space-18);
+    margin-bottom: var(--rv-space-20);
   }
 
   &__prose {
@@ -56,7 +56,7 @@ defineProps<{
 
   &__sign {
     margin-top: var(--rv-space-8);
-    padding-top: var(--rv-space-22);
+    padding-top: var(--rv-space-24);
     border-top: var(--rv-border-hairline) solid var(--rv-color-ink);
   }
 }

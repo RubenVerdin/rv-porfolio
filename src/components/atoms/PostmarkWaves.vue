@@ -30,7 +30,7 @@ withDefaults(defineProps<{
   stroke-width: 1.6;
 
   &--envelope {
-    stroke: var(--rv-object-letter-ink);
+    stroke: var(--rv-object-ink);
     opacity: 0.7;
   }
 }

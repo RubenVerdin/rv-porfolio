@@ -45,8 +45,8 @@ const envelope = useEnvelope()
 <style scoped lang="scss">
 .back-page {
   &__section {
-    padding-top: var(--rv-space-60);
-    padding-bottom: var(--rv-space-90);
+    padding-top: var(--rv-space-64);
+    padding-bottom: var(--rv-space-96);
   }
 
   &__layout {
@@ -68,8 +68,8 @@ const envelope = useEnvelope()
   &__title {
     font-family: var(--rv-font-display);
     font-weight: var(--rv-weight-regular);
-    font-size: var(--rv-text-section);
-    line-height: var(--rv-leading-95);
+    font-size: var(--rv-text-display-lg);
+    line-height: var(--rv-leading-90);
     letter-spacing: var(--rv-tracking-neg-1-5);
   }
 
@@ -80,7 +80,7 @@ const envelope = useEnvelope()
   &__text {
     max-width: 42ch;
     font-size: var(--rv-text-20);
-    line-height: var(--rv-leading-155);
+    line-height: var(--rv-leading-150);
     color: var(--rv-color-ink-muted);
     text-wrap: pretty;
   }

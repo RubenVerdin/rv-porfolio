@@ -77,7 +77,7 @@ defineProps<{
     display: flex;
     flex: 999 1 var(--rv-basis-lead-message);
     flex-direction: column;
-    gap: var(--rv-space-18);
+    gap: var(--rv-space-20);
     min-width: 0;
     padding: var(--rv-space-card);
     border-right: var(--rv-border-hairline) solid var(--rv-color-ink);
@@ -86,9 +86,9 @@ defineProps<{
   &__title {
     font-family: var(--rv-font-display);
     font-weight: var(--rv-weight-regular);
-    font-size: var(--rv-text-lead);
+    font-size: var(--rv-text-display-md);
     line-height: var(--rv-leading-100);
-    letter-spacing: var(--rv-tracking-neg-1);
+    letter-spacing: var(--rv-tracking-neg-1-5);
   }
 
   &__title-link {
@@ -110,13 +110,13 @@ defineProps<{
     justify-content: space-between;
     gap: var(--rv-space-16);
     margin-top: auto;
-    padding-top: var(--rv-space-18);
+    padding-top: var(--rv-space-20);
   }
 
   &__byline {
     font-family: var(--rv-font-display);
     font-style: italic;
-    font-size: var(--rv-text-26);
+    font-size: var(--rv-text-28);
   }
 
   &__address {
@@ -124,9 +124,9 @@ defineProps<{
     display: flex;
     flex: 1 1 var(--rv-basis-lead-address);
     flex-direction: column;
-    gap: var(--rv-space-18);
+    gap: var(--rv-space-20);
     min-width: 0;
-    padding: var(--rv-space-card-sm);
+    padding: var(--rv-space-card);
   }
 
   &__marks {

@@ -31,14 +31,14 @@ defineProps<{
 .page-head {
   display: flex;
   flex-direction: column;
-  gap: var(--rv-space-22);
+  gap: var(--rv-space-24);
   padding-top: var(--rv-space-56);
   padding-bottom: var(--rv-space-48);
 
   &__dek {
     max-width: var(--rv-measure-dek);
     font-size: var(--rv-text-20);
-    line-height: var(--rv-leading-155);
+    line-height: var(--rv-leading-150);
     color: var(--rv-color-ink-muted);
     text-wrap: pretty;
   }
@@ -47,7 +47,7 @@ defineProps<{
 @include page-below(md) {
   .page-head {
     padding-top: var(--rv-space-40);
-    padding-bottom: var(--rv-space-36);
+    padding-bottom: var(--rv-space-40);
   }
 }
 

@@ -10,18 +10,17 @@
   --rv-color-ink-muted: var(--rv-palette-umber-700);
   --rv-color-line: var(--rv-palette-umber-600);
   --rv-color-faint: var(--rv-palette-umber-900-a14);
-  --rv-color-hatch: var(--rv-palette-umber-900-a28);
+  --rv-color-hatch: var(--rv-palette-umber-900-a25);
   --rv-color-accent: var(--rv-palette-oxblood-600);
   --rv-color-on-accent: var(--rv-palette-parchment-150);
   --rv-color-seal: var(--rv-palette-forest-700);
   --rv-color-inverse-bg: var(--rv-palette-umber-900);
-  --rv-color-inverse-fg: var(--rv-palette-parchment-250);
-  --rv-color-inverse-muted: var(--rv-palette-umber-200);
+  --rv-color-inverse-fg: var(--rv-palette-parchment-300);
+  --rv-color-inverse-muted: var(--rv-palette-umber-300);
   --rv-color-inverse-rule: var(--rv-palette-parchment-350-a25);
-  --rv-color-code-rule: var(--rv-palette-parchment-350-a20);
   --rv-color-telegram: var(--rv-palette-telegram-400);
   --rv-color-sticky-note: var(--rv-palette-telegram-300);
-  --rv-color-envelope: var(--rv-palette-parchment-400);
+  --rv-color-envelope: var(--rv-palette-parchment-350);
   --rv-color-envelope-shade: var(--rv-palette-parchment-500);
   --rv-color-envelope-inside: var(--rv-palette-parchment-550);
   --rv-color-letter: var(--rv-palette-parchment-50);
@@ -32,16 +31,15 @@
   --rv-filter-photo: grayscale(1) sepia(0.45) contrast(1.12) brightness(0.96);
   --rv-blend-halftone: multiply;
   --rv-opacity-halftone: 0.22;
-  // Window scrollbar: thin ink on paper.
+  // Window scrollbar: thin ink on paper (track is --rv-color-ground).
   --rv-color-scrollbar-thumb: var(--rv-palette-umber-700);
-  --rv-color-scrollbar-track: var(--rv-palette-parchment-300);
 
   color-scheme: light;
 }
 
 @mixin night-edition {
   --rv-color-ground: var(--rv-palette-umber-950);
-  --rv-color-paper: var(--rv-palette-umber-850);
+  --rv-color-paper: var(--rv-palette-umber-900);
   --rv-color-chart: var(--rv-palette-umber-925);
   --rv-color-ink: var(--rv-palette-parchment-350);
   --rv-color-ink-muted: var(--rv-palette-umber-300);
@@ -59,15 +57,14 @@
   --rv-color-envelope: var(--rv-palette-parchment-600);
   --rv-color-envelope-shade: var(--rv-palette-parchment-650);
   --rv-color-envelope-inside: var(--rv-palette-parchment-700);
-  --rv-color-letter: var(--rv-palette-parchment-200);
+  --rv-color-letter: var(--rv-palette-parchment-300);
   --rv-glow: 1;
   --rv-blend-roller: screen;
   --rv-filter-photo: grayscale(1) sepia(0.5) contrast(1.1) brightness(0.82);
   --rv-blend-halftone: screen;
   --rv-opacity-halftone: 0.12;
-  // Window scrollbar: brass on dark paper.
+  // Window scrollbar: brass on dark paper (track is --rv-color-ground).
   --rv-color-scrollbar-thumb: var(--rv-palette-brass-500);
-  --rv-color-scrollbar-track: var(--rv-palette-umber-950);
 
   color-scheme: dark;
 }

@@ -23,17 +23,17 @@ import { intro, name } from '~/data/site'
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: space-between;
-  gap: var(--rv-space-18) var(--rv-space-56);
-  padding: var(--rv-space-30) 0 var(--rv-space-26);
+  gap: var(--rv-space-20) var(--rv-space-56);
+  padding: var(--rv-space-32) 0 var(--rv-space-28);
 
   // The masthead, inked by a passing roller on load.
   &__name {
     position: relative;
     font-family: var(--rv-font-display);
     font-weight: var(--rv-weight-regular);
-    font-size: var(--rv-text-mast);
+    font-size: var(--rv-text-display-md);
     line-height: var(--rv-leading-100);
-    letter-spacing: var(--rv-tracking-1);
+    letter-spacing: var(--rv-tracking-0);
     white-space: nowrap;
   }
 
@@ -99,7 +99,7 @@ import { intro, name } from '~/data/site'
     flex-wrap: wrap;
     align-items: flex-start;
     gap: var(--rv-space-12);
-    padding: var(--rv-space-22) 0 var(--rv-space-18);
+    padding: var(--rv-space-24) 0 var(--rv-space-20);
   }
 
   .nameplate__name {

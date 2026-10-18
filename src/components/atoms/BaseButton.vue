@@ -49,13 +49,13 @@ withDefaults(defineProps<{
 
 <style scoped lang="scss">
 .base-button {
-  @include label(var(--rv-text-12), var(--rv-tracking-12));
+  @include label;
 
   display: inline-flex;
   align-items: center;
   gap: var(--rv-space-10);
   min-height: var(--rv-size-button);
-  padding: 0 var(--rv-space-22);
+  padding: 0 var(--rv-space-24);
   text-decoration: none;
   border: var(--rv-border-hairline) solid var(--rv-color-ink);
   border-radius: var(--rv-radius-none);
@@ -76,8 +76,8 @@ withDefaults(defineProps<{
 
   &--lg {
     min-height: var(--rv-size-button-lg);
-    padding: 0 var(--rv-space-26);
-    font-size: var(--rv-text-13);
+    padding: 0 var(--rv-space-28);
+    font-size: var(--rv-text-16);
   }
 
   &--ink {
@@ -110,7 +110,7 @@ withDefaults(defineProps<{
     &:hover {
       background: var(--rv-color-telegram);
       border-color: var(--rv-color-telegram);
-      color: var(--rv-object-letter-ink);
+      color: var(--rv-object-ink);
     }
   }
 }

@@ -13,7 +13,7 @@
 <style scoped lang="scss">
 .leader {
   flex: 1;
-  border-bottom: var(--rv-border-hairline) dotted var(--leader-color, var(--rv-object-letter-ink-muted));
+  border-bottom: var(--rv-border-hairline) dotted var(--leader-color, var(--rv-object-ink-muted));
   transform: translateY(var(--leader-offset, -4px));
 }
 </style>

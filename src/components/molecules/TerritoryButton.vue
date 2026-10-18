@@ -47,9 +47,10 @@ withDefaults(defineProps<{
   cursor: pointer;
 
   &__numeral {
-    font-family: var(--rv-font-mono);
-    font-size: var(--rv-text-10);
-    letter-spacing: var(--rv-tracking-14);
+    font-family: var(--rv-font-condensed);
+    font-weight: var(--rv-weight-medium);
+    font-size: var(--rv-text-12);
+    letter-spacing: var(--rv-tracking-8);
   }
 
   &__title {
@@ -76,7 +77,7 @@ withDefaults(defineProps<{
   &--overlay {
     position: absolute;
     align-items: center;
-    padding: var(--rv-space-8) var(--rv-space-14) var(--rv-space-9);
+    padding: var(--rv-space-8) var(--rv-space-16) var(--rv-space-10);
     box-shadow: var(--rv-shadow-hard-sm);
     transform: translate(-50%, -50%);
     transition:
@@ -86,7 +87,7 @@ withDefaults(defineProps<{
       transform var(--rv-duration-300) var(--rv-ease-spring-gentle);
 
     &:hover {
-      transform: translate(-50%, -50%) translateY(calc(var(--rv-space-3) * -1));
+      transform: translate(-50%, -50%) translateY(calc(var(--rv-space-4) * -1));
       box-shadow: var(--rv-shadow-hard-md);
     }
   }
@@ -114,7 +115,7 @@ withDefaults(defineProps<{
 @include container-below(voyage-chart, 760px) {
   .territory-button--overlay {
     padding: var(--rv-space-6) var(--rv-space-8);
-    box-shadow: var(--rv-shadow-hard-xs);
+    box-shadow: var(--rv-shadow-hard-sm);
   }
 
   .territory-button--overlay .territory-button__numeral,

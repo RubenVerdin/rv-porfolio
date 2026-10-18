@@ -44,9 +44,9 @@ defineProps<{
 
   &__item {
     flex: 1 1 var(--rv-basis-news-item);
-    padding: var(--rv-space-12) var(--rv-space-18);
+    padding: var(--rv-space-12) var(--rv-space-20);
     border-left: var(--rv-border-hairline) solid var(--rv-color-faint);
-    font-size: var(--rv-text-15);
+    font-size: var(--rv-text-16);
 
     &:first-child {
       padding-left: 0;
@@ -59,7 +59,7 @@ defineProps<{
   }
 
   &__label {
-    @include label(var(--rv-text-11), var(--rv-tracking-12));
+    @include label(var(--rv-text-12), var(--rv-tracking-8));
 
     margin-right: var(--rv-space-10);
     font-weight: var(--rv-weight-medium);

@@ -44,7 +44,7 @@ defineProps<{
     display: flex;
     flex-direction: column;
     gap: var(--rv-space-4);
-    padding: var(--rv-space-14) var(--rv-space-18);
+    padding: var(--rv-space-16) var(--rv-space-20);
     border-left: var(--rv-border-hairline) solid var(--rv-color-faint);
 
     &:first-child {
@@ -54,7 +54,7 @@ defineProps<{
   }
 
   &__term {
-    @include label(var(--rv-text-11), var(--rv-tracking-12));
+    @include label(var(--rv-text-12), var(--rv-tracking-8));
 
     color: var(--rv-color-ink-muted);
   }
@@ -62,7 +62,7 @@ defineProps<{
   &__value {
     font-family: var(--rv-font-display);
     font-style: italic;
-    font-size: var(--rv-text-19);
+    font-size: var(--rv-text-20);
   }
 }
 

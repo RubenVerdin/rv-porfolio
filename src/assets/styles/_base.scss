@@ -31,7 +31,7 @@ a:hover {
 // (code blocks, the menu letter).
 html {
   scrollbar-width: thin;
-  scrollbar-color: var(--rv-color-scrollbar-thumb) var(--rv-color-scrollbar-track);
+  scrollbar-color: var(--rv-color-scrollbar-thumb) var(--rv-color-ground);
 }
 
 // Safari has no `scrollbar-color`; Chromium ignores these once it's set.
@@ -41,12 +41,12 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-  background: var(--rv-color-scrollbar-track);
+  background: var(--rv-color-ground);
   border-left: var(--rv-border-hairline) solid var(--rv-color-faint);
 }
 
 html::-webkit-scrollbar-thumb {
   background: var(--rv-color-scrollbar-thumb);
-  border: var(--rv-border-double) solid var(--rv-color-scrollbar-track);
+  border: var(--rv-border-double) solid var(--rv-color-ground);
   border-radius: var(--rv-radius-none);
 }

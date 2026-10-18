@@ -44,18 +44,18 @@ const options = [
 .edition-toggle {
   display: flex;
   gap: var(--rv-space-2);
-  padding: var(--rv-space-3);
+  padding: var(--rv-space-4);
   border: var(--rv-border-hairline) solid var(--rv-color-ink);
   border-radius: var(--rv-radius-pill);
 
   &__option {
-    @include label(var(--rv-text-11), var(--rv-tracking-10));
+    @include label(var(--rv-text-12), var(--rv-tracking-8));
 
     display: flex;
     align-items: center;
     gap: var(--rv-space-6);
     min-height: var(--rv-size-control);
-    padding: 0 var(--rv-space-14);
+    padding: 0 var(--rv-space-16);
     background: transparent;
     color: var(--rv-color-ink);
     border: 0;
@@ -78,7 +78,7 @@ const options = [
   }
 
   .edition-toggle__option {
-    padding: 0 var(--rv-space-11);
+    padding: 0 var(--rv-space-12);
   }
 }
 </style>

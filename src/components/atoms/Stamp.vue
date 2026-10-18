@@ -53,9 +53,9 @@ withDefaults(defineProps<{
   --stamp-height: 76px;
 
   flex: none;
-  padding: var(--rv-space-5);
+  padding: var(--rv-space-6);
   background: radial-gradient(circle at 4px 4px, transparent 2.6px, var(--stamp-perf) 3px) -4px -4px / 8px 8px;
-  filter: drop-shadow(var(--rv-shadow-stamp));
+  filter: drop-shadow(var(--rv-shadow-lift));
 
   &--on-envelope {
     --stamp-perf: var(--rv-object-stamp-perf);
@@ -79,13 +79,14 @@ withDefaults(defineProps<{
     gap: var(--rv-space-4);
     width: var(--stamp-width);
     height: var(--stamp-height);
-    font-family: var(--rv-font-mono);
-    font-size: var(--rv-text-9);
-    letter-spacing: var(--rv-tracking-12);
-    color: var(--rv-stamp-ink);
+    font-family: var(--rv-font-condensed);
+    font-weight: var(--rv-weight-medium);
+    font-size: var(--rv-text-12);
+    letter-spacing: var(--rv-tracking-8);
+    color: var(--rv-object-ink-light);
 
-    &--navy { background: var(--rv-stamp-navy); }
-    &--red { background: var(--rv-stamp-red); }
+    &--navy { background: var(--rv-object-navy); }
+    &--red { background: var(--rv-object-red); }
     &--brown { background: var(--rv-stamp-brown); }
     &--steel { background: var(--rv-stamp-steel); }
     &--seal { background: var(--rv-color-seal); }
@@ -94,7 +95,7 @@ withDefaults(defineProps<{
   &__icon {
     width: var(--rv-size-icon-md);
     height: var(--rv-size-icon-md);
-    stroke: var(--rv-stamp-ink);
+    stroke: var(--rv-object-ink-light);
     fill: none;
     stroke-width: 1.5;
   }
@@ -108,12 +109,12 @@ withDefaults(defineProps<{
   }
 
   &--lg &__face {
-    font-size: var(--rv-text-10);
+    font-size: var(--rv-text-12);
   }
 
   &--placeholder &__face {
     background: transparent;
-    border: var(--rv-border-medium) dashed var(--rv-color-ink-muted);
+    border: var(--rv-border-thick) dashed var(--rv-color-ink-muted);
     color: var(--rv-color-ink-muted);
   }
 
@@ -129,7 +130,7 @@ withDefaults(defineProps<{
   }
 
   .stamp--lg .stamp__face {
-    font-size: var(--rv-text-9);
+    font-size: var(--rv-text-12);
   }
 
   .stamp__title {

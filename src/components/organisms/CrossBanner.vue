@@ -551,9 +551,9 @@ const ribbon = computed(() => Array.from({ length: 4 }, () => props.banner.words
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--rv-space-26);
+    gap: var(--rv-space-28);
     width: 100%;
-    padding-top: var(--rv-space-110);
+    padding-top: var(--rv-space-120);
     padding-bottom: var(--rv-space-150);
   }
 
@@ -562,7 +562,7 @@ const ribbon = computed(() => Array.from({ length: 4 }, () => props.banner.words
 
     display: flex;
     align-items: center;
-    gap: var(--rv-space-14);
+    gap: var(--rv-space-16);
     color: var(--rv-color-inverse-muted);
 
     &::before {
@@ -576,9 +576,9 @@ const ribbon = computed(() => Array.from({ length: 4 }, () => props.banner.words
     max-width: 12ch;
     font-family: var(--rv-font-display);
     font-weight: var(--rv-weight-regular);
-    font-size: var(--rv-text-banner);
+    font-size: var(--rv-text-display-xl);
     line-height: var(--rv-leading-90);
-    letter-spacing: var(--rv-tracking-neg-2);
+    letter-spacing: var(--rv-tracking-neg-1-5);
   }
 
   &__title-link,
@@ -615,11 +615,11 @@ const ribbon = computed(() => Array.from({ length: 4 }, () => props.banner.words
   }
 
   &__word {
-    padding: var(--rv-space-14) var(--rv-space-26);
+    padding: var(--rv-space-16) var(--rv-space-28);
     font-family: var(--rv-font-condensed);
     font-weight: var(--rv-weight-bold);
-    font-size: var(--rv-text-44);
-    letter-spacing: var(--rv-tracking-6);
+    font-size: var(--rv-text-40);
+    letter-spacing: var(--rv-tracking-8);
     text-transform: uppercase;
     white-space: nowrap;
     color: transparent;
@@ -657,7 +657,7 @@ const ribbon = computed(() => Array.from({ length: 4 }, () => props.banner.words
 
   .cross-banner__content {
     padding-top: var(--rv-space-80);
-    padding-bottom: var(--rv-space-130);
+    padding-bottom: var(--rv-space-120);
   }
 }
 
@@ -667,11 +667,11 @@ const ribbon = computed(() => Array.from({ length: 4 }, () => props.banner.words
   }
 
   .cross-banner__content {
-    padding: var(--rv-space-64) var(--rv-space-16) var(--rv-space-110);
+    padding: var(--rv-space-64) var(--rv-space-16) var(--rv-space-120);
   }
 
   .cross-banner__title {
-    font-size: var(--rv-text-58);
+    font-size: var(--rv-text-52);
   }
 
   .cross-banner__dek {
@@ -679,11 +679,11 @@ const ribbon = computed(() => Array.from({ length: 4 }, () => props.banner.words
   }
 
   .cross-banner__word {
-    font-size: var(--rv-text-30);
+    font-size: var(--rv-text-32);
   }
 
   .cross-banner__word--alt {
-    font-size: var(--rv-text-26);
+    font-size: var(--rv-text-28);
   }
 }
 

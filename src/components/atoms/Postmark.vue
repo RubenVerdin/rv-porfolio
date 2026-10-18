@@ -30,9 +30,10 @@ withDefaults(defineProps<{
   border-radius: var(--rv-radius-round);
   border: var(--rv-border-thick) solid var(--rv-color-ink);
   text-align: center;
-  font-family: var(--rv-font-mono);
-  font-size: var(--postmark-font-size, var(--rv-text-9-5));
-  letter-spacing: var(--rv-tracking-10);
+  font-family: var(--rv-font-condensed);
+  font-weight: var(--rv-weight-medium);
+  font-size: var(--postmark-font-size, var(--rv-text-12));
+  letter-spacing: var(--rv-tracking-8);
   line-height: var(--rv-leading-140);
   color: var(--rv-color-ink);
   transform: rotate(var(--postmark-rotate, -8deg));

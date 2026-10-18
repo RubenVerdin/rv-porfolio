@@ -48,10 +48,10 @@ defineProps<AboutPortrait & {
 .about-portrait {
   position: relative;
   margin: 0;
-  padding: var(--rv-space-14);
+  padding: var(--rv-space-16);
   background: var(--rv-color-paper);
   border: var(--rv-border-hairline) solid var(--rv-color-ink);
-  box-shadow: var(--rv-shadow-paper-xl);
+  box-shadow: var(--rv-shadow-paper-lg);
   transform: rotate(-1.2deg);
 
   @include theme-transition(background-color);
@@ -139,16 +139,16 @@ defineProps<AboutPortrait & {
     --postmark-size: 92px;
 
     position: absolute;
-    right: calc(var(--rv-space-26) * -1);
-    bottom: var(--rv-space-52);
+    right: calc(var(--rv-space-28) * -1);
+    bottom: var(--rv-space-56);
     z-index: 5;
     background: var(--rv-color-paper);
   }
 
   &__stamp {
     position: absolute;
-    top: calc(var(--rv-space-22) * -1);
-    left: calc(var(--rv-space-22) * -1);
+    top: calc(var(--rv-space-24) * -1);
+    left: calc(var(--rv-space-24) * -1);
     z-index: 5;
     transform: rotate(-6deg);
   }
@@ -169,13 +169,13 @@ defineProps<AboutPortrait & {
 
   .about-portrait__postmark {
     --postmark-size: 72px;
-    --postmark-font-size: var(--rv-text-8-5);
+    --postmark-font-size: var(--rv-text-12);
 
     right: calc(var(--rv-space-12) * -1);
   }
 
   .about-portrait__stamp {
-    top: calc(var(--rv-space-14) * -1);
+    top: calc(var(--rv-space-16) * -1);
     left: calc(var(--rv-space-10) * -1);
   }
 }

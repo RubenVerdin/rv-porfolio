@@ -58,7 +58,7 @@ defineProps<{
   left: 36.5%;
   bottom: 3.5%;
   width: 27%;
-  padding: var(--rv-space-20) var(--rv-space-22);
+  padding: var(--rv-space-20) var(--rv-space-24);
   background: var(--rv-color-paper);
   border: var(--rv-border-hairline) solid var(--rv-color-ink);
   outline: var(--rv-border-hairline) solid var(--rv-color-ink);
@@ -79,19 +79,19 @@ defineProps<{
 
   &__title {
     font-family: var(--rv-font-display);
-    font-size: var(--rv-text-cartouche-title);
+    font-size: var(--rv-text-display-sm);
     line-height: var(--rv-leading-100);
   }
 
   &__line {
     font-size: var(--rv-text-cartouche-body);
-    line-height: var(--rv-leading-145);
+    line-height: var(--rv-leading-140);
     color: var(--rv-color-ink-muted);
     text-wrap: pretty;
   }
 
   &__link {
-    @include label(var(--rv-text-12), var(--rv-tracking-12));
+    @include label;
 
     align-self: flex-start;
     padding: var(--rv-space-8) 0;

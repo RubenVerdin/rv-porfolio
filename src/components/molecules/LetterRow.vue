@@ -38,17 +38,18 @@ defineProps<{
   align-items: baseline;
   gap: var(--rv-space-10);
   min-height: var(--rv-size-letter-row);
-  font-size: var(--rv-text-letter-row);
-  color: var(--rv-object-letter-ink);
+  font-size: var(--rv-text-letter-body);
+  color: var(--rv-object-ink);
   text-decoration: none;
   border-radius: var(--rv-radius-sm);
 
   &__key {
-    font-family: var(--rv-font-mono);
+    font-family: var(--rv-font-condensed);
+    font-weight: var(--rv-weight-medium);
     font-size: var(--rv-text-letter-key);
-    letter-spacing: var(--rv-tracking-14);
+    letter-spacing: var(--rv-tracking-8);
     text-transform: uppercase;
-    color: var(--rv-object-letter-ink-muted);
+    color: var(--rv-object-ink-muted);
   }
 
   &__value {
@@ -58,9 +59,9 @@ defineProps<{
   }
 
   &--link:hover {
-    --leader-color: var(--rv-object-letter-accent);
+    --leader-color: var(--rv-object-red);
 
-    color: var(--rv-object-letter-accent);
+    color: var(--rv-object-red);
   }
 }
 </style>

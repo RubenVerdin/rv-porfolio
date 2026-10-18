@@ -35,7 +35,7 @@ defineProps<{
   text-decoration: none;
 
   &__key {
-    @include label(var(--rv-text-10-5), var(--rv-tracking-14));
+    @include label(var(--rv-text-12), var(--rv-tracking-8));
 
     color: var(--rv-color-ink-muted);
   }

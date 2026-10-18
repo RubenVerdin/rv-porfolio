@@ -83,7 +83,7 @@ withDefaults(defineProps<{
     align-items: baseline;
     justify-content: space-between;
     gap: var(--rv-space-12);
-    padding-top: var(--rv-space-14);
+    padding-top: var(--rv-space-16);
     border-top: var(--rv-border-double) double var(--rv-color-ink);
   }
 
@@ -98,14 +98,14 @@ withDefaults(defineProps<{
     margin-top: var(--rv-space-28);
     font-family: var(--rv-font-display);
     font-weight: var(--rv-weight-regular);
-    font-size: var(--rv-text-section);
-    line-height: var(--rv-leading-95);
+    font-size: var(--rv-text-display-lg);
+    line-height: var(--rv-leading-90);
     letter-spacing: var(--rv-tracking-neg-1-5);
   }
 
   &__title--sub {
     margin-top: var(--rv-space-20);
-    font-size: var(--rv-text-section-sub);
+    font-size: var(--rv-text-display-md);
     line-height: var(--rv-leading-100);
     letter-spacing: var(--rv-tracking-0);
   }
@@ -117,7 +117,7 @@ withDefaults(defineProps<{
   &--page {
     display: flex;
     flex-direction: column;
-    gap: var(--rv-space-22);
+    gap: var(--rv-space-24);
   }
 
   &--page &__bar {
@@ -133,7 +133,7 @@ withDefaults(defineProps<{
 @include page-below(xs) {
   .section-head__kicker,
   .section-head__link {
-    font-size: var(--rv-text-11);
+    font-size: var(--rv-text-12);
   }
 
   .section-head--page {

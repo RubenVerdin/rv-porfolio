@@ -47,7 +47,7 @@ defineProps<LogEntry>()
   grid-template-columns: var(--logbook-entry-when) var(--logbook-entry-port) minmax(0, 1fr) minmax(0, var(--logbook-entry-where));
   align-items: baseline;
   gap: 0 var(--logbook-entry-gap);
-  padding: var(--rv-space-30) 0;
+  padding: var(--rv-space-32) 0;
   border-bottom: var(--rv-border-hairline) solid var(--rv-color-faint);
 
   // The dashed route.
@@ -75,7 +75,8 @@ defineProps<LogEntry>()
 
   &__when,
   &__where {
-    font-family: var(--rv-font-mono);
+    font-family: var(--rv-font-condensed);
+    font-weight: var(--rv-weight-medium);
     text-transform: uppercase;
     text-align: right;
     color: var(--rv-color-ink-muted);
@@ -83,12 +84,12 @@ defineProps<LogEntry>()
 
   &__when {
     font-size: var(--rv-text-12);
-    letter-spacing: var(--rv-tracking-10);
+    letter-spacing: var(--rv-tracking-8);
   }
 
   &__where {
-    font-size: var(--rv-text-11);
-    letter-spacing: var(--rv-tracking-12);
+    font-size: var(--rv-text-12);
+    letter-spacing: var(--rv-tracking-8);
   }
 
   &__port {
@@ -117,14 +118,14 @@ defineProps<LogEntry>()
   &__role {
     font-family: var(--rv-font-display);
     font-weight: var(--rv-weight-regular);
-    font-size: var(--rv-text-30);
+    font-size: var(--rv-text-32);
     line-height: var(--rv-leading-110);
   }
 
   &__company {
     font-family: var(--rv-font-display);
     font-style: italic;
-    font-size: var(--rv-text-19);
+    font-size: var(--rv-text-20);
     color: var(--rv-color-ink-muted);
   }
 
@@ -132,7 +133,7 @@ defineProps<LogEntry>()
     max-width: 60ch;
     margin-top: var(--rv-space-10);
     font-size: var(--rv-text-17);
-    line-height: var(--rv-leading-155);
+    line-height: var(--rv-leading-150);
     color: var(--rv-color-ink-muted);
   }
 }

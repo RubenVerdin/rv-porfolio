@@ -20,7 +20,7 @@ defineProps<{
 .postcard-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--rv-space-40) var(--rv-space-36);
+  gap: var(--rv-space-40) var(--rv-space-40);
 }
 
 @include page-below(xs) {

@@ -65,8 +65,8 @@ withDefaults(defineProps<{
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  gap: var(--rv-space-14);
-  padding: var(--rv-space-14);
+  gap: var(--rv-space-16);
+  padding: var(--rv-space-16);
   background: var(--rv-color-paper);
   border: var(--rv-border-hairline) solid var(--rv-color-ink);
   color: var(--rv-color-ink);
@@ -113,8 +113,8 @@ withDefaults(defineProps<{
     font-family: var(--rv-font-display);
     font-style: italic;
     font-weight: var(--rv-weight-regular);
-    font-size: var(--rv-text-plate-title);
-    line-height: var(--rv-leading-105);
+    font-size: var(--rv-text-display-sm);
+    line-height: var(--rv-leading-110);
   }
 
   &__meta {
@@ -142,11 +142,11 @@ withDefaults(defineProps<{
 
   // The red "Plate No." stamp lands on hover.
   &__stamp {
-    @include label(var(--rv-text-10), var(--rv-tracking-12));
+    @include label(var(--rv-text-12), var(--rv-tracking-8));
 
     position: absolute;
     top: var(--rv-offset-plate-stamp);
-    right: var(--rv-space-26);
+    right: var(--rv-space-28);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -196,7 +196,7 @@ withDefaults(defineProps<{
 
   .atlas-plate__stamp {
     right: var(--rv-space-20);
-    font-size: var(--rv-text-9);
+    font-size: var(--rv-text-12);
   }
 }
 </style>

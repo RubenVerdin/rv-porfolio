@@ -16,22 +16,22 @@
   color: var(--rv-color-ink);
 
   > * {
-    margin: 0 0 var(--rv-space-26);
+    margin: 0 0 var(--rv-space-28);
   }
 
   h2 {
     font-family: var(--rv-font-display);
     font-weight: var(--rv-weight-regular);
-    font-size: var(--rv-text-38);
+    font-size: var(--rv-text-40);
     line-height: var(--rv-leading-110);
-    margin: var(--rv-space-52) 0 var(--rv-space-18);
+    margin: var(--rv-space-56) 0 var(--rv-space-20);
   }
 
   h3 {
-    font-family: var(--rv-font-mono);
+    font-family: var(--rv-font-condensed);
     font-weight: var(--rv-weight-medium);
-    font-size: var(--rv-text-13);
-    letter-spacing: var(--rv-tracking-14);
+    font-size: var(--rv-text-16);
+    letter-spacing: var(--rv-tracking-8);
     text-transform: uppercase;
     color: var(--rv-color-accent);
     margin: var(--rv-space-40) 0 var(--rv-space-12);
@@ -42,7 +42,7 @@
     float: left;
     font-family: var(--rv-font-display);
     font-size: var(--rv-text-88);
-    line-height: var(--rv-leading-88);
+    line-height: var(--rv-leading-90);
     padding: var(--rv-space-8) var(--rv-space-12) 0 0;
   }
 
@@ -50,16 +50,16 @@
     font-family: var(--rv-font-display);
     font-weight: var(--rv-weight-regular);
     font-style: italic;
-    font-size: var(--rv-text-26);
+    font-size: var(--rv-text-28);
     line-height: var(--rv-leading-120);
-    margin: var(--rv-space-36) 0 var(--rv-space-10);
+    margin: var(--rv-space-40) 0 var(--rv-space-10);
   }
 
   a {
     color: var(--rv-color-accent);
     text-decoration: underline;
     text-decoration-thickness: var(--rv-border-hairline);
-    text-underline-offset: var(--rv-space-3);
+    text-underline-offset: var(--rv-space-4);
 
     &:hover {
       color: var(--rv-color-ink);
@@ -74,20 +74,20 @@
   :not(pre) > code {
     font-family: var(--rv-font-mono);
     font-size: 0.82em;
-    padding: var(--rv-space-1) var(--rv-space-6);
+    padding: var(--rv-space-2) var(--rv-space-6);
     background: var(--rv-color-paper);
     border: var(--rv-border-hairline) solid var(--rv-color-faint);
   }
 
   blockquote {
-    margin: var(--rv-space-52) 0;
-    padding: var(--rv-space-26) 0;
+    margin: var(--rv-space-56) 0;
+    padding: var(--rv-space-28) 0;
     border-top: var(--rv-border-double) double var(--rv-color-ink);
     border-bottom: var(--rv-border-hairline) solid var(--rv-color-ink);
     font-family: var(--rv-font-display);
     font-style: italic;
     font-size: var(--rv-text-32);
-    line-height: var(--rv-leading-125);
+    line-height: var(--rv-leading-120);
     text-align: center;
 
     p {
@@ -96,12 +96,13 @@
 
     // A trailing paragraph is the attribution ("> — R. Verdin").
     p:last-child:not(:only-child) {
-      margin-top: var(--rv-space-14);
-      font-family: var(--rv-font-mono);
+      margin-top: var(--rv-space-16);
+      font-family: var(--rv-font-condensed);
+      font-weight: var(--rv-weight-medium);
       font-style: normal;
-      font-size: var(--rv-text-12);
+      font-size: var(--rv-text-14);
       line-height: var(--rv-leading-150);
-      letter-spacing: var(--rv-tracking-12);
+      letter-spacing: var(--rv-tracking-8);
       text-transform: uppercase;
       color: var(--rv-color-ink-muted);
     }
@@ -139,15 +140,15 @@
 
   // Roman numerals, right-aligned in a gutter: "I.", "II.", "III."
   ol > li {
-    padding-left: var(--rv-space-44);
+    padding-left: var(--rv-space-48);
     counter-increment: prose-ol;
 
     &::before {
       content: counter(prose-ol, upper-roman) '.';
-      width: var(--rv-space-36);
+      width: var(--rv-space-40);
       text-align: right;
       font-family: var(--rv-font-display);
-      font-size: var(--rv-text-19);
+      font-size: var(--rv-text-20);
     }
   }
 
@@ -175,17 +176,17 @@
   }
 
   th {
-    @include label(var(--rv-text-11), var(--rv-tracking-12));
+    @include label(var(--rv-text-12), var(--rv-tracking-8));
 
     font-weight: var(--rv-weight-medium);
     text-align: left;
     color: var(--rv-color-ink-muted);
-    padding: var(--rv-space-12) var(--rv-space-14) var(--rv-space-12) 0;
+    padding: var(--rv-space-12) var(--rv-space-16) var(--rv-space-12) 0;
     border-bottom: var(--rv-border-hairline) solid var(--rv-color-ink);
   }
 
   td {
-    padding: var(--rv-space-12) var(--rv-space-14) var(--rv-space-12) 0;
+    padding: var(--rv-space-12) var(--rv-space-16) var(--rv-space-12) 0;
     border-bottom: var(--rv-border-hairline) solid var(--rv-color-faint);
     vertical-align: top;
   }
@@ -194,10 +195,10 @@
 @include page-below(xs) {
   .prose {
     font-size: var(--rv-text-18);
-    line-height: var(--rv-leading-165);
+    line-height: var(--rv-leading-170);
 
     h2 {
-      font-size: var(--rv-text-30);
+      font-size: var(--rv-text-32);
       margin-top: var(--rv-space-40);
     }
 

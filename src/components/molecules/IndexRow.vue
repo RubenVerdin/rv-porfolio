@@ -61,7 +61,7 @@ withDefaults(defineProps<{
   &__title {
     font-family: var(--rv-font-display);
     font-style: italic;
-    font-size: var(--rv-text-30);
+    font-size: var(--rv-text-32);
     line-height: var(--rv-leading-110);
   }
 
@@ -80,7 +80,7 @@ withDefaults(defineProps<{
   }
 
   &:not(.index-row--inert):hover {
-    padding-inline: var(--rv-space-14);
+    padding-inline: var(--rv-space-16);
     background: var(--rv-color-paper);
   }
 
@@ -104,7 +104,7 @@ withDefaults(defineProps<{
   }
 
   .index-row__title {
-    font-size: var(--rv-text-26);
+    font-size: var(--rv-text-28);
   }
 }
 
@@ -117,7 +117,7 @@ withDefaults(defineProps<{
   }
 
   .index-row__title {
-    font-size: var(--rv-text-22);
+    font-size: var(--rv-text-24);
   }
 
   .index-row__number {

@@ -18,7 +18,7 @@ withDefaults(defineProps<{
 .plate-number {
   font-family: var(--rv-font-display);
   font-size: var(--rv-text-20);
-  letter-spacing: var(--rv-tracking-20);
+  letter-spacing: var(--rv-tracking-24);
   text-transform: uppercase;
   white-space: nowrap;
 

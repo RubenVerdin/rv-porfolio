@@ -70,7 +70,7 @@ useSeoMeta({
     }
 
     &--last {
-      padding-bottom: var(--rv-space-130);
+      padding-bottom: var(--rv-space-120);
     }
   }
 }

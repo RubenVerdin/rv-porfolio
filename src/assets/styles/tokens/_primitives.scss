@@ -5,13 +5,9 @@
 :root {
   // Parchment & paper (day grounds, night inks)
   --rv-palette-parchment-50: #FBF7EC;
-  --rv-palette-parchment-100: #F8F1DF;
   --rv-palette-parchment-150: #F6F0E1;
-  --rv-palette-parchment-200: #F2E9D3;
-  --rv-palette-parchment-250: #F1E8D4;
   --rv-palette-parchment-300: #EEE5D0;
   --rv-palette-parchment-350: #EBDFC6;
-  --rv-palette-parchment-400: #EADFC6;
   --rv-palette-parchment-450: #E9DCBE;
   --rv-palette-parchment-500: #E0D2B3;
   --rv-palette-parchment-550: #D5C49F;
@@ -26,12 +22,10 @@
   --rv-palette-telegram-600: #DCC98A;
 
   // Ink & umber (day inks, night grounds)
-  --rv-palette-umber-200: #BDB096;
   --rv-palette-umber-300: #B9AB8F;
   --rv-palette-umber-600: #6B5A3E;
   --rv-palette-umber-700: #4F4536;
   --rv-palette-umber-800: #2A2219;
-  --rv-palette-umber-850: #1D1914;
   --rv-palette-umber-900: #1D1913;
   --rv-palette-umber-925: #1A1611;
   --rv-palette-umber-950: #14110D;
@@ -50,7 +44,6 @@
   --rv-palette-forest-500: #5E9466;
   --rv-palette-forest-700: #2E5236;
   --rv-palette-forest-750: #29492F;
-  --rv-palette-forest-850: #1C3522;
   --rv-palette-forest-900: #1A3120;
 
   // Stamp inks
@@ -58,31 +51,18 @@
   --rv-palette-steel-600: #3E5872;
   --rv-palette-ochre-700: #6B4E1E;
 
-  // Alpha ramps
-  --rv-palette-umber-900-a06: rgb(29 25 19 / 6%);
-  --rv-palette-umber-900-a07: rgb(29 25 19 / 7%);
+  // Alpha ramps (consolidated 2026-10-18: umber-900 also stands in for black)
   --rv-palette-umber-900-a08: rgb(29 25 19 / 8%);
   --rv-palette-umber-900-a14: rgb(29 25 19 / 14%);
-  --rv-palette-umber-900-a18: rgb(29 25 19 / 18%);
-  --rv-palette-umber-900-a22: rgb(29 25 19 / 22%);
   --rv-palette-umber-900-a25: rgb(29 25 19 / 25%);
-  --rv-palette-umber-900-a28: rgb(29 25 19 / 28%);
   --rv-palette-umber-900-a35: rgb(29 25 19 / 35%);
   --rv-palette-umber-900-a45: rgb(29 25 19 / 45%);
-  --rv-palette-umber-950-a55: rgb(20 17 13 / 55%);
+  --rv-palette-umber-900-a60: rgb(29 25 19 / 60%);
   --rv-palette-parchment-350-a14: rgb(235 223 198 / 14%);
-  --rv-palette-parchment-350-a20: rgb(235 223 198 / 20%);
   --rv-palette-parchment-350-a25: rgb(235 223 198 / 25%);
-  --rv-palette-parchment-250-a12: rgb(241 232 212 / 12%);
-  --rv-palette-parchment-250-a28: rgb(241 232 212 / 28%);
   --rv-palette-brass-500-a22: rgb(201 164 92 / 22%);
   --rv-palette-brass-500-a32: rgb(201 164 92 / 32%);
   --rv-palette-ochre-a12: rgb(120 90 40 / 12%);
   --rv-palette-white-a35: rgb(255 255 255 / 35%);
-  --rv-palette-black-a08: rgb(0 0 0 / 8%);
-  --rv-palette-black-a30: rgb(0 0 0 / 30%);
-  --rv-palette-black-a35: rgb(0 0 0 / 35%);
-  --rv-palette-black-a45: rgb(0 0 0 / 45%);
-  --rv-palette-black-a60: rgb(0 0 0 / 60%);
   --rv-palette-white: #FFFFFF;
 }

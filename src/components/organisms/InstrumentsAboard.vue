@@ -51,7 +51,7 @@ defineProps<{
   }
 
   &__column {
-    padding: var(--rv-space-28) var(--rv-space-28) var(--rv-space-30);
+    padding: var(--rv-space-28) var(--rv-space-28) var(--rv-space-32);
     border-left: var(--rv-border-hairline) solid var(--rv-color-ink);
 
     &:first-child {

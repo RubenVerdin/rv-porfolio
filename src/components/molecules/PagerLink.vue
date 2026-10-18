@@ -40,7 +40,7 @@ defineProps<{
   &__title {
     font-family: var(--rv-font-display);
     font-style: italic;
-    font-size: var(--rv-text-30);
+    font-size: var(--rv-text-32);
     line-height: var(--rv-leading-110);
   }
 }

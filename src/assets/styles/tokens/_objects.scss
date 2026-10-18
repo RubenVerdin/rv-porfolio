@@ -2,50 +2,40 @@
 // that keep their colour in both editions, on purpose.
 
 :root {
+  // Ink on paper objects (letters, notes, telegram), and light ink on dark ones
+  --rv-object-ink: var(--rv-palette-umber-900);
+  --rv-object-ink-muted: var(--rv-palette-umber-700);
+  --rv-object-ink-light: var(--rv-palette-parchment-150);
+
+  // Shared object hues: letter accents, pins, airmail, stamps
+  --rv-object-red: var(--rv-palette-oxblood-600);
+  --rv-object-navy: var(--rv-palette-navy-700);
+
   // Letter paper (menu letter + envelope letter)
-  --rv-object-letter-paper: var(--rv-palette-parchment-100);
-  --rv-object-letter-ink: var(--rv-palette-umber-900);
-  --rv-object-letter-ink-muted: var(--rv-palette-umber-700);
-  --rv-object-letter-accent: var(--rv-palette-oxblood-600);
+  --rv-object-letter-paper: var(--rv-palette-parchment-150);
   --rv-object-letter-rule: var(--rv-palette-umber-900-a35);
-  --rv-object-letter-hover: var(--rv-palette-umber-900-a08);
-  --rv-object-letter-lines: var(--rv-palette-umber-900-a06);
-  --rv-object-letter-fold: var(--rv-palette-umber-900-a07);
+  --rv-object-letter-shade: var(--rv-palette-umber-900-a08);
   --rv-object-letter-fold-light: var(--rv-palette-white-a35);
   --rv-object-letter-aging: var(--rv-palette-ochre-a12);
   --rv-object-stamp-perf: var(--rv-palette-parchment-50);
 
-  // Sticky note pin + text
-  --rv-object-pin: var(--rv-palette-oxblood-600);
-  --rv-object-note-ink: var(--rv-palette-umber-900);
-  --rv-object-note-ink-muted: var(--rv-palette-umber-700);
-
-  // Airmail
-  --rv-object-airmail-red: var(--rv-palette-oxblood-600);
-  --rv-object-airmail-blue: var(--rv-palette-navy-700);
-  --rv-object-airmail-ink: var(--rv-palette-parchment-250);
-  --rv-object-airmail-dots: var(--rv-palette-parchment-250-a28);
-  --rv-object-airmail-lines: var(--rv-palette-parchment-250-a12);
+  // Airmail texture
+  --rv-object-airmail-dots: var(--rv-palette-parchment-350-a25);
+  --rv-object-airmail-lines: var(--rv-palette-parchment-350-a14);
 
   // Wax seal
   --rv-object-wax-light: var(--rv-palette-forest-500);
   --rv-object-wax: var(--rv-palette-forest-700);
   --rv-object-wax-edge: var(--rv-palette-forest-750);
   --rv-object-wax-dark: var(--rv-palette-forest-900);
-  --rv-object-wax-ink: var(--rv-palette-forest-850);
   --rv-object-wax-ring: var(--rv-palette-forest-300);
   --rv-object-wax-highlight: var(--rv-palette-forest-200);
-  --rv-object-monogram-ink: var(--rv-palette-parchment-250);
 
-  // Stamps (stamp face ink is always light paper)
-  --rv-stamp-ink: var(--rv-palette-parchment-150);
-  --rv-stamp-navy: var(--rv-palette-navy-700);
-  --rv-stamp-red: var(--rv-palette-oxblood-600);
+  // Stamps (navy and red use --rv-object-navy / --rv-object-red)
   --rv-stamp-brown: var(--rv-palette-ochre-700);
   --rv-stamp-steel: var(--rv-palette-steel-600);
-  --rv-stamp-seal: var(--rv-color-seal);
 
   // Overlays
-  --rv-object-scrim: var(--rv-palette-umber-950-a55);
+  --rv-object-scrim: var(--rv-palette-umber-900-a60);
   --rv-object-mask: var(--rv-palette-white);
 }

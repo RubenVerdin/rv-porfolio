@@ -99,7 +99,7 @@ useSeoMeta({
     justify-content: center;
     gap: var(--rv-space-28);
     margin-top: var(--rv-space-8);
-    padding: var(--rv-space-14) var(--rv-space-32);
+    padding: var(--rv-space-16) var(--rv-space-32);
     border-top: var(--rv-border-hairline) solid var(--rv-color-ink);
     border-bottom: var(--rv-border-hairline) solid var(--rv-color-ink);
   }
@@ -115,7 +115,7 @@ useSeoMeta({
   }
 
   &__more {
-    padding-bottom: var(--rv-space-100);
+    padding-bottom: var(--rv-space-96);
   }
 
   &__divider {

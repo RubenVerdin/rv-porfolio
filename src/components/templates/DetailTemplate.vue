@@ -31,7 +31,7 @@ withDefaults(defineProps<{
   &__body {
     &--airy {
       padding-top: var(--rv-space-80);
-      padding-bottom: var(--rv-space-100);
+      padding-bottom: var(--rv-space-96);
     }
 
     &--snug {

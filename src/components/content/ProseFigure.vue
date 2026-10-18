@@ -34,17 +34,17 @@ withDefaults(defineProps<{
 
 <style scoped lang="scss">
 .prose-figure {
-  margin-block: var(--rv-space-52);
+  margin-block: var(--rv-space-56);
 
   &__caption {
     display: flex;
     justify-content: space-between;
     gap: var(--rv-space-12);
     padding-top: var(--rv-space-10);
-    font-family: var(--rv-font-mono);
-    font-size: var(--rv-text-12);
-    line-height: var(--rv-leading-150);
-    letter-spacing: var(--rv-tracking-8);
+    font-family: var(--rv-font-display);
+    font-style: italic;
+    font-size: var(--rv-text-16);
+    line-height: var(--rv-leading-130);
     color: var(--rv-color-ink-muted);
   }
 }

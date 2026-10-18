@@ -38,7 +38,7 @@ defineProps<{
     flex-wrap: wrap;
     align-items: center;
     gap: var(--rv-space-28);
-    margin-top: var(--rv-space-36);
+    margin-top: var(--rv-space-40);
   }
 
   &__stamp {
@@ -54,7 +54,7 @@ defineProps<{
 
 @include page-below(xs) {
   .ports-of-call__stamps {
-    gap: var(--rv-space-18);
+    gap: var(--rv-space-20);
   }
 }
 </style>

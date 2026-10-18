@@ -107,11 +107,11 @@ useSeoMeta({
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
-    gap: var(--rv-space-18);
+    gap: var(--rv-space-20);
   }
 
   &__cover {
-    padding: var(--rv-space-14);
+    padding: var(--rv-space-16);
     background: var(--rv-color-paper);
     border: var(--rv-border-hairline) solid var(--rv-color-ink);
 

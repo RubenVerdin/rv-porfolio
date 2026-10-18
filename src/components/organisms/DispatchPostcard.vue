@@ -107,7 +107,7 @@ const address = ['To: you, the reader', `From: ${signature}, ${city}`]
 
     &--back {
       display: flex;
-      padding: var(--rv-space-22);
+      padding: var(--rv-space-24);
       transform: rotateY(180deg);
     }
 
@@ -140,15 +140,15 @@ const address = ['To: you, the reader', `From: ${signature}, ${city}`]
     border: var(--rv-border-hairline) solid var(--rv-color-ink);
     font-family: var(--rv-font-display);
     font-style: italic;
-    font-size: var(--rv-text-22);
+    font-size: var(--rv-text-24);
   }
 
   &__word {
     font-family: var(--rv-font-condensed);
     font-weight: var(--rv-weight-bold);
     font-size: var(--rv-text-postcard-word);
-    line-height: var(--rv-leading-88);
-    letter-spacing: var(--rv-tracking-1);
+    line-height: var(--rv-leading-90);
+    letter-spacing: var(--rv-tracking-0);
     text-align: center;
     text-transform: uppercase;
     white-space: pre-line;
@@ -165,7 +165,7 @@ const address = ['To: you, the reader', `From: ${signature}, ${city}`]
     display: flex;
     justify-content: space-between;
     gap: var(--rv-space-12);
-    padding: var(--rv-space-10) var(--rv-space-14);
+    padding: var(--rv-space-10) var(--rv-space-16);
     background: var(--rv-color-paper);
     border-top: var(--rv-border-hairline) solid var(--rv-color-ink);
   }
@@ -188,8 +188,8 @@ const address = ['To: you, the reader', `From: ${signature}, ${city}`]
   &__title {
     font-family: var(--rv-font-display);
     font-weight: var(--rv-weight-regular);
-    font-size: var(--rv-text-postcard-title);
-    line-height: var(--rv-leading-108);
+    font-size: var(--rv-text-card-title);
+    line-height: var(--rv-leading-110);
   }
 
   &__address {

@@ -66,14 +66,14 @@ const menu = useTemplateRef<{ open: (trigger?: EventTarget | null) => void, isOp
     align-items: center;
     justify-content: space-between;
     gap: var(--rv-space-12);
-    padding-block: var(--rv-space-14);
+    padding-block: var(--rv-space-16);
     border-bottom: var(--rv-border-hairline) solid var(--rv-color-ink);
   }
 
   &__brand {
     display: flex;
     align-items: center;
-    gap: var(--rv-space-14);
+    gap: var(--rv-space-16);
   }
 
   &__home {
@@ -85,7 +85,7 @@ const menu = useTemplateRef<{ open: (trigger?: EventTarget | null) => void, isOp
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: var(--rv-space-8) var(--rv-space-22);
+    gap: var(--rv-space-8) var(--rv-space-24);
   }
 }
 

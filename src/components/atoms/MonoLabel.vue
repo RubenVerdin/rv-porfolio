@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// The design's `.mono` label: IBM Plex Mono, uppercase, tracked.
+// The house label: Antonio 500, uppercase, tracked (`label` mixin).
 withDefaults(defineProps<{
   tag?: string
   tone?: 'inherit' | 'ink' | 'muted' | 'accent'
