@@ -89,10 +89,16 @@ const menu = useTemplateRef<{ open: (trigger?: EventTarget | null) => void, isOp
   }
 }
 
-// ≤1024: the edition line moves into the menu letter, nav gives way to Menu.
-@include page-below(lg) {
-  .site-header__edition,
+// ≤1440: the nav gives way to the Menu button (MenuButton shows itself there).
+@include page-below(xl) {
   .site-header__nav {
+    display: none;
+  }
+}
+
+// ≤1024: the edition line moves into the menu letter.
+@include page-below(lg) {
+  .site-header__edition {
     display: none;
   }
 }

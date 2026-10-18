@@ -7,6 +7,7 @@
 // design. Custom properties can't be used in container conditions, so these
 // live here rather than in tokens.
 $page-breakpoints: (
+  xl: 1440px,
   lg: 1024px,
   md: 900px,
   map: 760px,

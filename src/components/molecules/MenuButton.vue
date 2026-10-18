@@ -51,7 +51,8 @@ defineProps<{
   }
 }
 
-@include page-below(lg) {
+// Takes over from the top nav at ≤1440 (SiteHeader hides the nav there).
+@include page-below(xl) {
   .menu-button {
     display: flex;
   }
