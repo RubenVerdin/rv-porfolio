@@ -80,8 +80,15 @@ withDefaults(defineProps<{
     --plate-image-min-height: 560px;
   }
 
+  // Small plates share one image height whatever their caption length; the
+  // caption takes up the slack so the plate still fills its grid row.
   &--small {
     --plate-image-min-height: 240px;
+    --plate-image-grow: 0;
+  }
+
+  &--small &__caption {
+    margin-top: auto;
   }
 
   &:hover {

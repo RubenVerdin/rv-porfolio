@@ -1,16 +1,19 @@
 <script setup lang="ts">
 import type { PlateView } from '~/types/content'
 
-// 24-column atlas: Plate I span 14 · Plate II span 10 × 2 rows ·
-// Plates III & IV span 7. Repeats every four plates. One column ≤900.
+// 24-column atlas, three plates per group: Plate II spans 10 columns × 2 rows
+// on the left; Plates I & III span 14 and stack on the right. Rows are equal
+// (1fr), so the two right plates share the tall plate's height. `dense`
+// lets Plate II back-fill the left column. Repeats every three plates.
+// One column ≤900, in plate order.
 defineProps<{
   plates: PlateView[]
 }>()
 
-const sizes = ['feature', 'tall', 'small', 'small'] as const
+const sizes = ['small', 'tall', 'small'] as const
 
 function slotOf(index: number) {
-  return (index % 4) + 1
+  return (index % 3) + 1
 }
 </script>
 
@@ -24,7 +27,7 @@ function slotOf(index: number) {
     >
       <AtlasPlate
         :plate="plate"
-        :size="sizes[index % 4]"
+        :size="sizes[index % 3]"
       />
     </div>
   </div>
@@ -34,6 +37,8 @@ function slotOf(index: number) {
 .atlas-grid {
   display: grid;
   grid-template-columns: repeat(24, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row dense;
   align-items: stretch;
   gap: var(--rv-space-28);
 
@@ -42,16 +47,16 @@ function slotOf(index: number) {
     flex-direction: column;
     min-height: 0;
 
-    &--1 { grid-column: span 14; }
-    &--2 { grid-column: span 10; grid-row: span 2; }
-    &--3,
-    &--4 { grid-column: span 7; }
+    &--2 { grid-column: 1 / span 10; grid-row: span 2; }
+    &--1,
+    &--3 { grid-column: 11 / span 14; }
   }
 }
 
 @include page-below(md) {
   .atlas-grid {
     grid-template-columns: minmax(0, 1fr);
+    grid-auto-rows: auto;
   }
 
   .atlas-grid__slot {

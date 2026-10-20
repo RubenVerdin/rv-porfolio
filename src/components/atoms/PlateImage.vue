@@ -2,6 +2,8 @@
 // Hatched "plate" image frame. Shows the image when there is one, otherwise
 // the design's labelled placeholder. Parents can drive:
 //   --plate-image-min-height  minimum height when filling a flex column
+//   --plate-image-grow        flex-grow in that column (default 1; 0 holds the
+//                             frame at its min-height)
 //   --plate-image-zoom        scale applied to the content (plate hover)
 withDefaults(defineProps<{
   src?: string
@@ -42,7 +44,7 @@ withDefaults(defineProps<{
 <style scoped lang="scss">
 .plate-image {
   position: relative;
-  flex: 1;
+  flex: var(--plate-image-grow, 1);
   min-height: var(--plate-image-min-height, 220px);
   border: var(--rv-border-hairline) solid var(--rv-color-ink);
   overflow: hidden;
